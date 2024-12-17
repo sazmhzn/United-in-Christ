@@ -338,10 +338,11 @@
       .image-section {
         position: relative;
         display: flex;
-        min-width: 240px;
         flex: 1;
-        flex-basis: 80px;
-        height: 100%;
+        background-color: rebeccapurple;
+      }
+      .image-section img {
+        object-fit: cover;
       }
 
       .hero-image {
@@ -614,33 +615,63 @@
   </head>
   <body style="margin: 0px">
     <header>
-      <nav
-        class="container d-flex justify-content-between align-items-center py-3"
-        aria-label="Main navigation"
-      >
-        <div class="brand">
-          <img
-            class="brand-logo"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f"
-            alt="United Christ Logo"
-            width="40"
-          />
-          <h4 class="brand-text mb-0">United Christ</h4>
-        </div>
+      <nav class="navbar navbar-expand-md" aria-label="Fourth navbar example">
+        <div
+          class="container d-flex align-items-center justify-content-between"
+        >
+          <a class="navbar-brand" href="#">
+            <div class="brand">
+              <img
+                class="brand-logo"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f"
+                alt="United Christ Logo"
+                width="40"
+              />
+              <h4 class="brand-text mb-0">United Christ</h4>
+            </div></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample04"
+            aria-controls="navbarsExample04"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="d-flex gap-4">
-          <div class="nav-links">
-            <a href="/" class="nav-item-active" aria-current="page">Home</a>
-            <a href="/blogs" class="nav-item">Blogs</a>
-            <a href="/prayers" class="nav-item">Prayers</a>
+          <div class="collapse d-flex navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-item-active active text-primary fw-bold"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blogs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link">Prayers</a>
+              </li>
+            </ul>
+
+            <div class="d-flex mx-2 gap-4">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12"
+                alt="Search Icon"
+                width="20"
+              />
+
+              <button class="login-btn btn btn-primary" type="button">
+                Login
+              </button>
+            </div>
           </div>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12"
-            alt="Search Icon"
-            width="20"
-          />
-
-          <button class="login-btn btn btn-primary" type="button">Login</button>
         </div>
       </nav>
     </header>
@@ -712,7 +743,7 @@
 
           <div class="signup-text">
             Don't have an account yet?
-            <a href="#" class="signup-link">Sign Up Now</a>
+            <a href="/SignUp.html" class="signup-link">Sign Up Now</a>
           </div>
         </article>
 
