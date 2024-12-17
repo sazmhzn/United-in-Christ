@@ -8,7 +8,6 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500"
     />
     <title>United in Christ</title>
-    <link rel="stylesheet" href="/navbar.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,33 +18,11 @@
     />
 
     <style>
-      :root {
-        --primary-color: #1477ba;
-        --text-gray: #475569;
-        --white: #fff;
-        --gray-100: #f8f9fa;
-      }
-
-      .brand {
-        color: var(--primary-color);
-      }
-
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
         /* outline: 1px springgreen solid; */
-      }
-
-      html {
-        font-size: 62.5%;
-      }
-
-      body {
-        font-family: "Mulish", sans-serif;
-        font-size: 1.6rem;
-        min-height: 100vh;
-        background-color: #f9fafb;
       }
 
       .visually-hidden {
@@ -68,10 +45,6 @@
         padding: 12px 100px;
       }
 
-      header {
-        background-color: white;
-      }
-
       .nav-content {
         align-self: stretch;
         display: flex;
@@ -85,6 +58,7 @@
       }
 
       .brand {
+        align-self: stretch;
         display: flex;
         align-items: center;
         gap: 4px;
@@ -92,11 +66,7 @@
         letter-spacing: -0.64px;
         justify-content: center;
         margin: auto 0;
-      }
-
-      .brand-text {
-        font-family: "Domine", serif;
-        font-size: 3.2rem;
+        font: 32px/1 Eczar, sans-serif;
       }
 
       .brand-logo {
@@ -105,6 +75,12 @@
         object-position: center;
         width: 56px;
         align-self: stretch;
+        margin: auto 0;
+      }
+
+      .brand-text {
+        align-self: stretch;
+        width: 177px;
         margin: auto 0;
       }
 
@@ -118,17 +94,18 @@
         color: rgb(8, 145, 178);
         white-space: nowrap;
         justify-content: center;
-        font-size: 1.8rem;
+        margin: auto 0;
+        font: 18px/1 Mulish, sans-serif;
+      }
+
+      .nav-item {
+        align-self: stretch;
+        gap: 4px;
+        margin: auto 0;
       }
 
       .nav-item-active {
         font-weight: 700;
-        text-decoration: underline;
-      }
-
-      .nav-item {
-        color: #6c757d;
-        text-decoration: none;
       }
 
       .search-icon {
@@ -144,84 +121,106 @@
         align-self: stretch;
         background-color: rgb(8, 145, 178);
         color: #fff;
-        font-size: 1.8rem;
-        padding: 0.5em 1.5em;
-
+        white-space: nowrap;
+        margin: auto 0;
+        padding: 12px 24px;
+        font: 500 18px/1 Mulish, sans-serif;
         border: none;
         cursor: pointer;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 991px) {
         .main-nav {
-          flex-direction: column;
-          gap: 16px;
-          padding: 12px;
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .nav-content {
+          max-width: 100%;
         }
 
         .nav-links {
-          flex-wrap: wrap;
-          gap: 16px;
+          white-space: initial;
         }
 
-        .login-container {
-          padding: 32px;
+        .nav-item {
+          white-space: initial;
+        }
+
+        .login-btn {
+          white-space: initial;
+          padding: 0 20px;
         }
       }
 
       .login-container {
-        background: var(--Gray-100, #f8f9fa);
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 56px 96px;
-      }
-
-      .login-wrapper {
+        justify-content: end;
+        box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.17);
         display: flex;
         width: 100%;
         flex-wrap: wrap;
-        justify-content: end;
-        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.17);
       }
 
-      .welcome-container {
+      .hero-section {
+        position: relative;
+        display: flex;
+        min-width: 240px;
+        height: 100%;
+        flex: 1;
+        flex-basis: 80px;
+      }
+
+      .hero-image {
+        aspect-ratio: 0.94;
+        object-fit: contain;
+        object-position: center;
         width: 100%;
+        z-index: 0;
+        min-width: 240px;
+        flex: 1;
+        flex-basis: 0;
+      }
+
+      .hero-content {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        min-width: 240px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 442px;
+      }
+
+      .hero-title {
+        color: #fff;
+        letter-spacing: -0.8px;
+        font: 40px/1 Eczar, sans-serif;
+      }
+
+      .hero-text {
+        color: #fff;
         text-align: center;
-        padding: 0 4em;
+        margin-top: 12px;
+        font: 18px/27px Mulish, sans-serif;
       }
 
-      .welcome-header {
-        color: #4b5563;
-        font-size: 1.8rem;
-        line-height: 27px;
-      }
-
-      .welcome-title {
-        font-family: "Eczar", serif;
-        font-size: 4rem;
-        font-weight: 400;
-        color: #1477ba;
-      }
-
-      .welcome-description {
-        text-align: center;
-        color: #9ca3af;
-      }
-
-      .login-form-container {
+      .form-section {
         background-color: #fffefa;
         display: flex;
         min-width: 240px;
-        flex: 1;
-        flex-basis: 0%;
         flex-direction: column;
         justify-content: center;
+        flex: 1;
+        flex-basis: 0;
         margin: auto 0;
         padding: 32px 40px;
       }
 
-      .form-content {
+      .form-container {
         background-color: #fff;
         display: flex;
         width: 100%;
@@ -230,215 +229,186 @@
         padding: 0 24px;
       }
 
-      .form-group {
+      .form-header {
+        align-self: center;
         display: flex;
-        margin-top: 2.4em;
+        width: 442px;
+        max-width: 100%;
         flex-direction: column;
+        align-items: center;
+      }
+
+      .header-wrapper {
+        display: flex;
+        width: 221px;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .welcome-text {
+        color: #4b5563;
+        text-align: center;
+        font: 18px Mulish, sans-serif;
+      }
+
+      .main-title {
+        width: 100%;
+        min-height: 48px;
+        color: #1477ba;
+        letter-spacing: -0.8px;
+        font: 40px/1 Eczar, sans-serif;
+      }
+
+      .subtitle {
+        color: #9ca3af;
+        text-align: center;
+        margin-top: 16px;
+        font: 16px Mulish, sans-serif;
+      }
+
+      .signup-form {
+        display: flex;
+        margin-top: 24px;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .form-row {
+        display: flex;
+        width: 100%;
+        align-items: start;
+        gap: 16px;
+        justify-content: start;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .form-row:first-child {
+        margin-top: 0;
       }
 
       .input-group {
         display: flex;
-        width: 100%;
-        gap: 8px;
-        margin: 0 0 1em 0;
         flex-direction: column;
+        justify-content: start;
+        flex: 1;
+        flex-basis: 0;
       }
 
       .input-label {
-        color: var(--Text-gray, #475569);
+        color: #475569;
         font: 400 16px Mulish, sans-serif;
       }
 
-      .input-field {
-        border: 1px solid var(--Gray-400, #ced4da);
-        background: var(--Gray-White, #fff);
+      .input-wrapper {
         display: flex;
-        gap: 4px;
-        padding: 16px 16px;
+        margin-top: 4px;
+        width: 100%;
+        align-items: center;
       }
 
-      input {
-        width: 100%;
-        border: none !important;
-        display: flex;
+      .input-field {
         align-items: center;
-        justify-content: center;
+        border-radius: 4.8px;
+        border: 1px solid #ced4da;
+        background: #fff;
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        padding: 8px 16px;
+      }
+
+      .input-content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 4px;
+        overflow: hidden;
       }
 
       .input-icon {
-        background: var(--HitBox, rgba(255, 255, 255, 0));
-        width: 1.8em;
-        height: 1.8em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
         padding: 0 1px;
       }
 
+      .input-icon img {
+        width: 16px;
+        height: 16px;
+      }
+
       .input-placeholder {
-        color: var(--Gray-600, #6c757d);
+        color: #6c757d;
         font: 400 18px Mulish, sans-serif;
       }
 
-      .form-actions {
+      .submit-button {
         display: flex;
         margin-top: 24px;
         width: 100%;
         flex-direction: column;
-        font-family: Mulish, sans-serif;
-      }
-
-      .login-button {
-        width: 100%;
-        background-color: rgba(8, 145, 178, 1);
         color: #fff;
         text-align: center;
+        font: 400 18px Mulish, sans-serif;
+      }
+
+      .button {
+        width: 100%;
+        background-color: #0891b2;
         padding: 12px 0;
         border: none;
         cursor: pointer;
+        font-weight: 700;
       }
 
-      .form-footer {
-        display: flex;
-        margin-top: 24px;
-        width: 100%;
-        align-items: center;
-        font-size: 16px;
-        color: var(--Text-gray, #475569);
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
-
-      .remember-me {
-        display: flex;
-        min-width: 240px;
-        align-items: center;
-        gap: 8px;
-        flex: 1;
-      }
-
-      .checkbox {
-        width: 20px;
-        height: 20px;
-        border: 1px solid var(--Gray-600, #6c757d);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        background-color: #fff;
-      }
-
-      .signup-text {
+      .login-link {
         color: #4b5563;
         text-align: center;
         margin-top: 24px;
         font: 400 16px Mulish, sans-serif;
       }
 
-      .signup-link {
+      .login-link-text {
         font-weight: 700;
         text-decoration: underline;
-        color: rgba(220, 38, 38, 1);
+        color: #dc2626;
       }
 
-      .image-section {
-        position: relative;
-        display: flex;
-        min-width: 240px;
-        flex: 1;
-        flex-basis: 80px;
-        height: 100%;
-      }
-
-      .hero-image {
-        aspect-ratio: 1.16;
-        object-fit: contain;
-        width: 100%;
-        min-width: 240px;
-        flex: 1;
-      }
-
-      .image-overlay {
+      .visually-hidden {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        display: flex;
-        min-width: 240px;
-        flex-direction: column;
-        align-items: center;
-        width: 442px;
-      }
-
-      .overlay-title {
-        color: #fff;
-        letter-spacing: -0.8px;
-        font: 40px/1 Eczar, sans-serif;
-      }
-
-      .overlay-text {
-        color: var(--White, #fff);
-        text-align: center;
-        margin-top: 12px;
-        font: 18px/27px Mulish, sans-serif;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
       }
 
       @media (max-width: 991px) {
-        .login-container {
+        .login-container,
+        .hero-section,
+        .hero-image,
+        .hero-content,
+        .hero-text,
+        .form-section,
+        .form-container,
+        .form-header,
+        .subtitle,
+        .signup-form,
+        .form-row,
+        .submit-button,
+        .button {
           max-width: 100%;
+        }
+
+        .form-section,
+        .form-container {
           padding: 0 20px;
-        }
-
-        .login-wrapper {
-          max-width: 100%;
-        }
-
-        .login-form-container {
-          max-width: 100%;
-          padding: 0 20px;
-        }
-
-        .form-content {
-          max-width: 100%;
-          padding: 0 20px;
-        }
-
-        .subtitle {
-          max-width: 100%;
-        }
-
-        .form-group {
-          max-width: 100%;
-        }
-
-        .input-group {
-          max-width: 100%;
-        }
-
-        .input-label {
-          max-width: 100%;
-        }
-
-        .input-wrapper {
-          max-width: 100%;
-        }
-
-        .input-field {
-          max-width: 100%;
-        }
-
-        .login-button {
-          max-width: 100%;
-        }
-
-        .image-section {
-          max-width: 100%;
-        }
-
-        .hero-image {
-          max-width: 100%;
-        }
-
-        .image-overlay {
-          max-width: 100%;
-        }
-
-        .overlay-text {
-          max-width: 100%;
         }
       }
 
@@ -613,126 +583,217 @@
     </style>
   </head>
   <body style="margin: 0px">
-    <header>
-      <nav
-        class="container d-flex justify-content-between align-items-center py-3"
-        aria-label="Main navigation"
-      >
+    <!-- This only removes default margins in our renderer iframe, you may remove -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-content">
         <div class="brand">
           <img
             class="brand-logo"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
             alt="United Christ Logo"
-            width="40"
           />
-          <h4 class="brand-text mb-0">United Christ</h4>
+          <div class="brand-text">United Christ</div>
         </div>
+        <div class="nav-links">
+          <a href="/" class="nav-item nav-item-active" aria-current="page"
+            >Home</a
+          >
+          <a href="/blogs" class="nav-item">Blogs</a>
+          <a href="/prayers" class="nav-item">Prayers</a>
+        </div>
+      </div>
+      <img
+        class="search-icon"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+        alt="Search"
+      />
+      <button class="login-btn" type="button">Login</button>
+    </nav>
 
-        <div class="d-flex gap-4">
-          <div class="nav-links">
-            <a href="/" class="nav-item-active" aria-current="page">Home</a>
-            <a href="/blogs" class="nav-item">Blogs</a>
-            <a href="/prayers" class="nav-item">Prayers</a>
+    <div class="login-container">
+      <div class="hero-section">
+        <img
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/aa8c4f6aa592c8dbef1268d29e5ae8b98ecf4e5de301e49c71844c2f37c4dff1?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+          alt=""
+          class="hero-image"
+        />
+        <div class="hero-content">
+          <h1 class="hero-title">United Christ</h1>
+          <p class="hero-text">
+            Login to get in the moment updated on the things that interest you
+          </p>
+        </div>
+      </div>
+
+      <div class="form-section">
+        <form class="form-container">
+          <div class="form-header">
+            <div class="header-wrapper">
+              <p class="welcome-text">Welcome To</p>
+              <h2 class="main-title">United Christ</h2>
+            </div>
+            <p class="subtitle">
+              Login to get in the moment updated on the things that interest you
+            </p>
           </div>
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12"
-            alt="Search Icon"
-            width="20"
-          />
 
-          <button class="login-btn btn btn-primary" type="button">Login</button>
-        </div>
-      </nav>
-    </header>
+          <div class="signup-form">
+            <div class="form-row">
+              <div class="input-group">
+                <label for="name" class="input-label">Name</label>
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <span class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e75d3e40b186a77136d5cea4ef517facf8f30198bf42d39bf2d6a2978b27064a?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        type="text"
+                        id="name"
+                        class="input-placeholder"
+                        placeholder="example"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-    <!-- Main Content -->
-    <main class="login-container">
-      <section class="login-wrapper">
-        <!-- Login Form -->
-        <article class="login-form-container">
-          <div class="form-content">
-            <header class="welcome-container">
-              <p class="welcome-header">Welcome To</p>
-              <h1 class="welcome-title">United Christ</h1>
-              <p class="welcome-description">
-                Login to get in-the-moment updates on the things that interest
-                you.
-              </p>
-            </header>
+              <div class="input-group">
+                <label for="username" class="input-label">Username</label>
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <span class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/18873270244fc158944fceb978fa0d73e212c0a1e348ce5489feffb35163403e?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        type="text"
+                        id="username"
+                        class="input-placeholder"
+                        placeholder="example"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-            <form class="form-group">
+            <div class="form-row">
               <div class="input-group">
                 <label for="email" class="input-label">Email</label>
-                <div class="input-field">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/e802ed5785c346b6d67d69290d9f88457ee87b0b495f9641d3897b138479c276?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                    alt=""
-                    class="icon"
-                  />
-                  <input
-                    type="email"
-                    id="email"
-                    class="input-placeholder"
-                    placeholder="example"
-                    aria-label="Email input"
-                  />
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <span class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d9ab186dabd79480538b643ee225741d1c3924d64e36c52d4925aefc197ba4f3?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        type="email"
+                        id="email"
+                        class="input-placeholder"
+                        placeholder="example"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="input-group">
-                <label for="password" class="input-label">Password</label>
-                <div class="input-field">
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/51894cd451ac098f80c6da46d29113689fa197384a5c090f1bd4fdf63cc8adec?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                    alt=""
-                    class="icon"
-                  />
-                  <input
-                    type="password"
-                    id="password"
-                    class="input-placeholder"
-                    placeholder="********"
-                    aria-label="Password input"
-                  />
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" class="login-button">Login</button>
-                <div class="form-footer">
-                  <div class="remember-me">
-                    <input type="checkbox" id="remember" class="checkbox" />
-                    <label for="remember">Remember me</label>
+                <label for="phone" class="input-label">Phone</label>
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <span class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/535ea6f40a2a83ad2efefab9cf1403b065bb2c48e0d16e0a91ea6525ac7a58a6?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        type="tel"
+                        id="phone"
+                        class="input-placeholder"
+                        placeholder="00000000"
+                      />
+                    </div>
                   </div>
-                  <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
 
-          <div class="signup-text">
-            Don't have an account yet?
-            <a href="#" class="signup-link">Sign Up Now</a>
-          </div>
-        </article>
+            <div class="form-row">
+              <div class="input-group">
+                <label for="password" class="input-label">Password</label>
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <span class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/9404106df2f3fb99fe4be7b96b94b5a33d9e19f3eab5febd4a130172a8fc9529?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        type="password"
+                        id="password"
+                        class="input-placeholder"
+                        placeholder="********"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div class="image-section">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/9560707c30759d7b011694136fcde5e582c69b3a07473aaaffeb4a10ad8e58b7?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-            alt="United Christ welcome image"
-            class="hero-image"
-          />
-          <div class="image-overlay">
-            <div class="overlay-title">United Christ</div>
-            <div class="overlay-text">
-              Login to get in the moment updated on the things that interest you
+            <div class="form-row">
+              <div class="input-group">
+                <label for="confirm-password" class="input-label"
+                  >Confirm Password</label
+                >
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <span class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/d5bcd044c760d0141ba8758855eaa03908f1506409f87f1b5dbb41c977e717cd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                        />
+                      </span>
+                      <input
+                        type="password"
+                        id="confirm-password"
+                        class="input-placeholder"
+                        placeholder="********"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="submit-button">
+              <button type="submit" class="button">Login</button>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </form>
 
-    <div class="footer">
+        <p class="login-link">
+          Already have an account yet?
+          <a href="#" class="login-link-text">Sign In Now</a>
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
       <img
         loading="lazy"
         src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd8d3435fa1c6aa6fb586828e6fe1f25943ac25209f9872b2d8d0d847fc51d08?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
@@ -771,6 +832,7 @@
             />
           </div>
         </div>
+
         <div class="footer-column">
           <div class="footer-heading">
             <img
@@ -833,8 +895,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
