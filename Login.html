@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500"
+    />
+    <title>United in Christ</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* outline: 1px springgreen solid; */
+      }
+
+      .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+      .main-nav {
+        background-color: #fff;
+        display: flex;
+        min-height: 80px;
+        width: 100%;
+        align-items: center;
+        gap: 32px;
+        padding: 12px 100px;
+      }
+
+      .nav-content {
+        align-self: stretch;
+        display: flex;
+        min-width: 240px;
+        align-items: center;
+        gap: 40px 100px;
+        justify-content: space-between;
+        flex: 1;
+        flex-basis: 48px;
+        margin: auto 0;
+      }
+
+      .brand {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: rgb(20, 119, 186);
+        letter-spacing: -0.64px;
+        justify-content: center;
+        margin: auto 0;
+        font: 32px/1 Eczar, sans-serif;
+      }
+
+      .brand-logo {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 56px;
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .brand-text {
+        align-self: stretch;
+        width: 177px;
+        margin: auto 0;
+      }
+
+      .nav-links {
+        align-self: stretch;
+        display: flex;
+        min-width: 240px;
+        align-items: center;
+        gap: 40px 48px;
+        overflow: hidden;
+        color: rgb(8, 145, 178);
+        white-space: nowrap;
+        justify-content: center;
+        margin: auto 0;
+        font: 18px/1 Mulish, sans-serif;
+      }
+
+      .nav-item {
+        align-self: stretch;
+        gap: 4px;
+        margin: auto 0;
+      }
+
+      .nav-item-active {
+        font-weight: 700;
+      }
+
+      .search-icon {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 24px;
+        align-self: stretch;
+        margin: auto 0;
+      }
+
+      .login-btn {
+        align-self: stretch;
+        background-color: rgb(8, 145, 178);
+        color: #fff;
+        white-space: nowrap;
+        margin: auto 0;
+        padding: 12px 24px;
+        font: 500 18px/1 Mulish, sans-serif;
+        border: none;
+        cursor: pointer;
+      }
+
+      @media (max-width: 991px) {
+        .main-nav {
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .nav-content {
+          max-width: 100%;
+        }
+
+        .nav-links {
+          white-space: initial;
+        }
+
+        .nav-item {
+          white-space: initial;
+        }
+
+        .login-btn {
+          white-space: initial;
+          padding: 0 20px;
+        }
+      }
+
+      .login-container {
+        background: var(--Gray-100, #f8f9fa);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 56px 96px;
+      }
+
+      .login-wrapper {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: end;
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.17);
+      }
+
+      .login-form-container {
+        background-color: #fffefa;
+        display: flex;
+        min-width: 240px;
+        flex: 1;
+        flex-basis: 0%;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto 0;
+        padding: 32px 40px;
+      }
+
+      .form-content {
+        background-color: #fff;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        padding: 0 24px;
+      }
+
+      .header-content {
+        align-self: center;
+        display: flex;
+        width: 442px;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .title-wrapper {
+        display: flex;
+        width: 221px;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .welcome-text {
+        color: #4b5563;
+        text-align: center;
+        font: 18px Mulish, sans-serif;
+      }
+
+      .brand-title {
+        width: 100%;
+        min-height: 48px;
+        color: rgba(20, 119, 186, 1);
+        letter-spacing: -0.8px;
+        font: 40px/1 Eczar, sans-serif;
+      }
+
+      .subtitle {
+        color: #9ca3af;
+        text-align: center;
+        margin-top: 16px;
+        font: 16px Mulish, sans-serif;
+      }
+
+      .form-group {
+        display: flex;
+        margin-top: 24px;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .input-group {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .input-label {
+        color: var(--Text-gray, #475569);
+        font: 400 16px Mulish, sans-serif;
+      }
+
+      .input-wrapper {
+        display: flex;
+        margin-top: 4px;
+        width: 100%;
+        align-items: center;
+      }
+
+      input {
+        width: 100%;
+        padding: 16px 8px;
+        border: none !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .input-field {
+        align-items: center;
+        border-radius: 4.8px;
+        border: 1px solid var(--Gray-400, #ced4da);
+        background: var(--Gray-White, #fff);
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        padding: 8px 16px;
+      }
+
+      .input-content {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 4px;
+        overflow: hidden;
+      }
+
+      .input-icon {
+        justify-content: center;
+        align-items: center;
+        background: var(--HitBox, rgba(255, 255, 255, 0));
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        width: 18px;
+        height: 18px;
+        padding: 0 1px;
+      }
+
+      .input-placeholder {
+        color: var(--Gray-600, #6c757d);
+        font: 400 18px Mulish, sans-serif;
+      }
+
+      .form-actions {
+        display: flex;
+        margin-top: 24px;
+        width: 100%;
+        flex-direction: column;
+        font-family: Mulish, sans-serif;
+      }
+
+      .login-button {
+        width: 100%;
+        background-color: rgba(8, 145, 178, 1);
+        color: #fff;
+        text-align: center;
+        padding: 12px 0;
+        border: none;
+        cursor: pointer;
+      }
+
+      .form-footer {
+        display: flex;
+        margin-top: 24px;
+        width: 100%;
+        align-items: center;
+        font-size: 16px;
+        color: var(--Text-gray, #475569);
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .remember-me {
+        display: flex;
+        min-width: 240px;
+        align-items: center;
+        gap: 8px;
+        flex: 1;
+      }
+
+      .checkbox {
+        width: 20px;
+        height: 20px;
+        border: 1px solid var(--Gray-600, #6c757d);
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+      }
+
+      .signup-text {
+        color: #4b5563;
+        text-align: center;
+        margin-top: 24px;
+        font: 400 16px Mulish, sans-serif;
+      }
+
+      .signup-link {
+        font-weight: 700;
+        text-decoration: underline;
+        color: rgba(220, 38, 38, 1);
+      }
+
+      .image-section {
+        position: relative;
+        display: flex;
+        min-width: 240px;
+        flex: 1;
+        flex-basis: 80px;
+        height: 100%;
+      }
+
+      .hero-image {
+        aspect-ratio: 1.16;
+        object-fit: contain;
+        width: 100%;
+        min-width: 240px;
+        flex: 1;
+      }
+
+      .image-overlay {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        min-width: 240px;
+        flex-direction: column;
+        align-items: center;
+        width: 442px;
+      }
+
+      .overlay-title {
+        color: #fff;
+        letter-spacing: -0.8px;
+        font: 40px/1 Eczar, sans-serif;
+      }
+
+      .overlay-text {
+        color: var(--White, #fff);
+        text-align: center;
+        margin-top: 12px;
+        font: 18px/27px Mulish, sans-serif;
+      }
+
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+
+      @media (max-width: 991px) {
+        .login-container {
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .login-wrapper {
+          max-width: 100%;
+        }
+
+        .login-form-container {
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .form-content {
+          max-width: 100%;
+          padding: 0 20px;
+        }
+
+        .subtitle {
+          max-width: 100%;
+        }
+
+        .form-group {
+          max-width: 100%;
+        }
+
+        .input-group {
+          max-width: 100%;
+        }
+
+        .input-label {
+          max-width: 100%;
+        }
+
+        .input-wrapper {
+          max-width: 100%;
+        }
+
+        .input-field {
+          max-width: 100%;
+        }
+
+        .login-button {
+          max-width: 100%;
+        }
+
+        .image-section {
+          max-width: 100%;
+        }
+
+        .hero-image {
+          max-width: 100%;
+        }
+
+        .image-overlay {
+          max-width: 100%;
+        }
+
+        .overlay-text {
+          max-width: 100%;
+        }
+      }
+
+      .footer {
+        background-color: rgba(3, 19, 31, 1);
+        position: relative;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 48px 100px;
+        overflow: hidden;
+      }
+      .footer-background {
+        aspect-ratio: 5.35;
+        object-fit: contain;
+        object-position: center;
+        width: 2038px;
+        position: absolute;
+        z-index: 0;
+        left: -339px;
+        top: -2px;
+        height: 382px;
+      }
+      .footer-content {
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+        gap: 40px 64px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 48px 0;
+      }
+      .brand-container {
+        display: flex;
+        flex-direction: column;
+      }
+      .brand-header {
+        display: flex;
+        height: 32px;
+        align-items: center;
+        gap: 4px;
+        color: #fff;
+        letter-spacing: 0.64px;
+        font: 400 32px/1 Great Vibes, sans-serif;
+      }
+      .brand-logo {
+        aspect-ratio: 1;
+        width: 48px;
+        margin: auto 0;
+      }
+      .brand-name {
+        width: 188px;
+        margin: auto 0;
+      }
+      .social-links {
+        display: flex;
+        margin-top: 12px;
+        gap: 12px;
+      }
+      .social-icon {
+        aspect-ratio: 1;
+        width: 24px;
+      }
+      .footer-column {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        width: 200px;
+      }
+      .footer-heading {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        text-transform: capitalize;
+        letter-spacing: -0.24px;
+        font: 24px/1 Domine, sans-serif;
+      }
+      .footer-icon {
+        aspect-ratio: 0.63;
+        width: 10px;
+        margin: auto 0;
+      }
+      .footer-links {
+        display: flex;
+        margin-top: 8px;
+        flex-direction: column;
+        color: #a6a6b0;
+        padding: 0 16px;
+        font: 18px/32px Mulish, sans-serif;
+      }
+      .footer-link {
+        margin-top: 8px;
+      }
+      .newsletter-section {
+        display: flex;
+        min-width: 240px;
+        flex-direction: column;
+        width: 400px;
+      }
+      .newsletter-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        text-transform: capitalize;
+        letter-spacing: -0.24px;
+        font: 24px/1 Domine, sans-serif;
+      }
+      .newsletter-content {
+        display: flex;
+        margin-top: 16px;
+        flex-direction: column;
+        font-family: Mulish, sans-serif;
+        padding: 0 17px;
+      }
+      .newsletter-description {
+        color: #a6a6b0;
+        font-size: 18px;
+        line-height: 32px;
+      }
+      .newsletter-form {
+        display: flex;
+        margin-top: 16px;
+        gap: 12px;
+      }
+      .email-input {
+        flex: 1;
+        background-color: #fff;
+        min-width: 240px;
+        font-size: 14px;
+        color: #a6a6b0;
+        padding: 8px 12px;
+        border: 2px solid transparent;
+      }
+      .subscribe-button {
+        background-color: #1477ba;
+        color: #fff;
+        font-size: 15px;
+        padding: 8px 16px;
+        border: 2px solid #1477ba;
+        cursor: pointer;
+      }
+      .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+      }
+      @media (max-width: 991px) {
+        .footer {
+          padding: 0 20px;
+        }
+        .footer-content {
+          max-width: 100%;
+        }
+        .brand-header {
+          white-space: normal;
+        }
+        .footer-links {
+          white-space: normal;
+        }
+        .subscribe-button {
+          white-space: normal;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0px">
+    <!-- This only removes default margins in our renderer iframe, you may remove -->
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-content">
+        <div class="brand">
+          <img
+            class="brand-logo"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+            alt="United Christ Logo"
+          />
+          <div class="brand-text">United Christ</div>
+        </div>
+        <div class="nav-links">
+          <a href="/" class="nav-item nav-item-active" aria-current="page"
+            >Home</a
+          >
+          <a href="/blogs" class="nav-item">Blogs</a>
+          <a href="/prayers" class="nav-item">Prayers</a>
+        </div>
+      </div>
+      <img
+        class="search-icon"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+        alt="Search"
+      />
+      <button class="login-btn" type="button">Login</button>
+    </nav>
+
+    <div class="login-container">
+      <div class="login-wrapper">
+        <div class="login-form-container">
+          <div class="form-content">
+            <div class="header-content">
+              <div class="title-wrapper">
+                <div class="welcome-text">Welcome To</div>
+                <div class="brand-title">United Christ</div>
+              </div>
+              <div class="subtitle">
+                Login to get in the moment updated on the things that interest
+                you
+              </div>
+            </div>
+
+            <form class="form-group">
+              <div class="input-group">
+                <label for="email" class="input-label">Email</label>
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <div class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/e802ed5785c346b6d67d69290d9f88457ee87b0b495f9641d3897b138479c276?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                      <input
+                        type="email"
+                        id="email"
+                        class="input-placeholder"
+                        placeholder="example"
+                        aria-label="Email input"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="input-group w- mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Username"
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                />
+              </div>
+
+              <div class="input-group">
+                <label for="password" class="input-label">Password</label>
+                <div class="input-wrapper">
+                  <div class="input-field">
+                    <div class="input-content">
+                      <div class="input-icon">
+                        <img
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/51894cd451ac098f80c6da46d29113689fa197384a5c090f1bd4fdf63cc8adec?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          alt=""
+                          class="icon"
+                        />
+                      </div>
+                      <input
+                        type="password"
+                        id="password"
+                        class="input-placeholder"
+                        placeholder="********"
+                        aria-label="Password input"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="login-button">Login</button>
+                <div class="form-footer">
+                  <div class="remember-me">
+                    <input type="checkbox" id="remember" class="checkbox" />
+                    <label for="remember">Remember me</label>
+                  </div>
+                  <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="signup-text">
+            Don't have an account yet?
+            <a href="#" class="signup-link">Sign Up Now</a>
+          </div>
+        </div>
+
+        <div class="image-section">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/9560707c30759d7b011694136fcde5e582c69b3a07473aaaffeb4a10ad8e58b7?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+            alt="United Christ welcome image"
+            class="hero-image"
+          />
+          <div class="image-overlay">
+            <div class="overlay-title">United Christ</div>
+            <div class="overlay-text">
+              Login to get in the moment updated on the things that interest you
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd8d3435fa1c6aa6fb586828e6fe1f25943ac25209f9872b2d8d0d847fc51d08?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+        class="footer-background"
+        alt=""
+      />
+      <div class="footer-content">
+        <div class="brand-container">
+          <div class="brand-header">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7df9afbc1a3f9c43d0ba0587294e26fea8f4accca72448a2441a8e9b8d13a83c?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="brand-logo"
+              alt="United in Christ Logo"
+            />
+            <div class="brand-name">UnitedInChrist</div>
+          </div>
+          <div class="social-links">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8aab81e4d6e9bb38c35b156c51db8fa859072a9916069a4161285a9fa35121df?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="social-icon"
+              alt="Facebook"
+            />
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/21819bfd59e04e33f7392dffae15e3b697d7ec9e10e240818c53b3546ca4e511?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="social-icon"
+              alt="Twitter"
+            />
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/451631d971eed5ff9b04c63d0fcebf04431c8ef58608370608d7be810ca08573?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="social-icon"
+              alt="Instagram"
+            />
+          </div>
+        </div>
+        <div class="footer-column">
+          <div class="footer-heading">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/10da3ed112e5af0c17348f4ffc3056a75508cfead71843004676a4bad2d54a86?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="footer-icon"
+              alt=""
+            />
+            <div>About Us</div>
+          </div>
+          <div class="footer-links">
+            <div>Our Mission</div>
+            <div class="footer-link">Our Team</div>
+            <div class="footer-link">Contact Us</div>
+          </div>
+        </div>
+        <div class="footer-column">
+          <div class="footer-heading">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e347d6ed7478ae98d52c6002984e16a2985683ab21f61f9670547e5a7616e34?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="footer-icon"
+              alt=""
+            />
+            <div>Get Involved</div>
+          </div>
+          <div class="footer-links">
+            <div>Volunteer</div>
+            <div class="footer-link">Events</div>
+            <div class="footer-link">Donate</div>
+          </div>
+        </div>
+        <div class="newsletter-section">
+          <div class="newsletter-header">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/24efe50eed6ecda0c6bb6a0f75ac8bca22f0ee35df12ffbd51f5329423c6e56f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="footer-icon"
+              alt=""
+            />
+            <div>United in Christ Newsletter</div>
+          </div>
+          <div class="newsletter-content">
+            <div class="newsletter-description">
+              Join our newsletter for updates and spiritual insights.
+            </div>
+            <form class="newsletter-form">
+              <label for="emailInput" class="visually-hidden"
+                >Email address</label
+              >
+              <input
+                type="email"
+                id="emailInput"
+                class="email-input"
+                placeholder="Email address"
+                aria-label="Email address"
+              />
+              <button type="submit" class="subscribe-button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
