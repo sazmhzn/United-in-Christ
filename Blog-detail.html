@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@500"
+    />
+    <title>United in Christ</title>
+    <link rel="stylesheet" href="index.css " />
+    <link rel="stylesheet" href="Header.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Mulish", sans-serif;
+        font-size: 1.6rem;
+        min-height: 100vh;
+        background-color: #f9fafb;
+      }
+
+      .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+      .hero-image {
+        position: absolute;
+        top: -21%; /* Moves the image up to create the top fade effect */
+        left: 0;
+        width: 100%;
+        height: 120%; /* Extends beyond 100% to ensure full coverage */
+        object-fit: cover;
+        object-position: center;
+        z-index: -1; /* Puts the image behind the section content */
+      }
+
+      .breadcrumb {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        font: 400 18px Mulish, sans-serif;
+      }
+
+      .breadcrumb-link {
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--Text-gray, rgba(206, 212, 218, 1));
+      }
+
+      .breadcrumb-current {
+        font-size: 16px;
+        line-height: 20px;
+        color: var(--Text-black, rgba(5, 29, 46, 1));
+      }
+
+      .teachings-title {
+        color: var(--Text-black, #051d2e);
+        margin: 32px 0 0;
+        /* font: 700 48px Domine, sans-serif; */
+        font-size: 4.8rem;
+      }
+
+      .blog-description {
+        color: var(--Text-black, #051d2e);
+        margin: 32px 0 0;
+        font: 400 18px Mulish, sans-serif;
+      }
+
+      .blog-image {
+        aspect-ratio: 1.63;
+        object-fit: contain;
+        object-position: center;
+        width: 100%;
+        align-self: stretch;
+        min-width: 240px;
+        flex: 1;
+        flex-basis: 0%;
+        margin: auto 0;
+      }
+
+      .byline-container {
+        background-color: #fff;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .metadata-wrapper {
+        align-self: stretch;
+        display: flex;
+        min-width: 240px;
+        min-height: 27px;
+        align-items: center;
+        gap: 24px;
+        color: var(--Text-black, #051d2e);
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        flex: 1;
+        flex-basis: 0%;
+        margin: 0;
+      }
+
+      .date-wrapper {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      .icon {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 16px;
+        align-self: stretch;
+        margin: 0;
+      }
+
+      .date-text {
+        text-overflow: ellipsis;
+        align-self: stretch;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .author-wrapper {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 18px;
+        line-height: 27px;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      .author-text {
+        text-overflow: ellipsis;
+        align-self: stretch;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .author-prefix {
+        color: #ced4da;
+      }
+
+      .author-name {
+        font-style: italic;
+        color: #051d2e;
+      }
+
+      .favorite-wrapper {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+        color: var(--Text-gray, #475569);
+        white-space: nowrap;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      .favorite-icon {
+        aspect-ratio: 1;
+        object-fit: contain;
+        object-position: center;
+        width: 20px;
+        align-self: stretch;
+        margin: 0;
+      }
+
+      .favorite-text {
+        text-overflow: ellipsis;
+        align-self: stretch;
+        margin: 0;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .article-content {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: start;
+        padding: 48px 0;
+      }
+
+      .article-title {
+        color: var(--Text-black, #051d2e);
+      }
+
+      .article-text {
+        color: var(--Text-gray, #475569);
+        text-align: justify;
+        margin-top: 24px;
+        font: 400 18px/27px Mulish, sans-serif;
+      }
+
+      @media (max-width: 991px) {
+        .article-content,
+        .article-title,
+        .article-text {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .byline-container {
+          max-width: 100%;
+        }
+
+        .metadata-wrapper {
+          max-width: 100%;
+        }
+
+        .favorite-wrapper {
+          white-space: initial;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .breadcrumb {
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0px">
+    <header>
+      <nav class="navbar navbar-expand-md" aria-label="navbar">
+        <div
+          class="container d-flex align-items-center justify-content-between"
+        >
+          <a class="navbar-brand" href="#">
+            <div class="brand">
+              <img
+                class="brand-logo"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f"
+                alt="United Christ Logo"
+                width="40"
+              />
+              <h4 class="brand-text mb-0">United Christ</h4>
+            </div></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarsExample04"
+            aria-controls="navbarsExample04"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample04">
+            <ul class="navbar-nav ms-auto mx-4 mb-2 mb-md-0">
+              <li class="nav-item p-4">
+                <a
+                  class="nav-link nav-item-active active text-primary fw-bold"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item p-4">
+                <a class="nav-link" href="/Blog.html">Blogs</a>
+              </li>
+              <li class="nav-item p-4">
+                <a class="nav-link">Prayers</a>
+              </li>
+            </ul>
+
+            <div class="d-flex mx-2 p-4 gap-4">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12"
+                alt="Search Icon"
+                width="20"
+              />
+
+              <!-- <button class="login-btn" type="button">Login</button> -->
+              <button type="submit" class="login-btn">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <section class="bg-white p-0 hero position-relative">
+        <div class="container">
+          <div class="flex row justify-content-between m-0">
+            <!-- Left section (Blog Image, Heading, Tags) -->
+            <div class="col-md-7 px-4">
+              <div class="blog-header py-4">
+                <nav aria-label="Breadcrumb">
+                  <div class="breadcrumb">
+                    <a href="/index.html" class="breadcrumb-link">Home</a>
+                    <span class="breadcrumb-link">&gt;</span>
+                    <a href="/Blog.html" class="breadcrumb-link">Blogs</a>
+                    <span class="breadcrumb-link">&gt;</span>
+                    <span class="breadcrumb-current">Blog name</span>
+                  </div>
+                </nav>
+
+                <div class="badge-container d-flex gap-4">
+                  <div class="d-flex gap-0 mt-5 p-0 badge">
+                    <span class="category-icon-wrapper">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                        class="category-icon"
+                        alt="Category icon"
+                      />
+                    </span>
+                    <span class="category-text">Family</span>
+                  </div>
+                  <div class="d-flex gap-0 mt-5 p-0 badge">
+                    <span class="category-icon-wrapper">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                        class="category-icon"
+                        alt="Category icon"
+                      />
+                    </span>
+                    <span class="category-text">Family</span>
+                  </div>
+                  <div class="d-flex gap-0 mt-5 p-0 badge">
+                    <span class="category-icon-wrapper">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                        class="category-icon"
+                        alt="Category icon"
+                      />
+                    </span>
+                    <span class="category-text">Family</span>
+                  </div>
+                </div>
+
+                <h1 class="teachings-title fw-700 my-4">
+                  The Teachings of Jesus: Insights and Reflections
+                </h1>
+                <p class="blog-description">
+                  Examining the profound lessons and future implications of
+                  Jesus Christ's teachings.
+                </p>
+              </div>
+
+              <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/TEMP/156132157f1b9f7da96a3c5fad2936fdcd97c912a7d544e85b0e137451d83a4b?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                class="my-4 blog-image"
+                alt="Featured  content image"
+                tabindex="0"
+              />
+
+              <div class="byline-container bg-transparent">
+                <div class="metadata-wrapper">
+                  <div class="date-wrapper">
+                    <img
+                      class="icon"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/7b59017f0138eaefd52880aa18847aaa2cf9154bbfa2006ef7e69d5b3ab56ae2?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <div class="author-name">November 1, 2023</div>
+                  </div>
+                  <div class="author-wrapper">
+                    <img
+                      class="icon"
+                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/f98eeba10bfb5077c565aadda866c204084bd81efa96a8d0cf65cba57828f7a2?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                      alt=""
+                      loading="lazy"
+                    />
+                    <div class="author-text">
+                      <span class="author-prefix">By</span>
+                      <span class="author-name">Gabriel Lightbearer</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="favorite-wrapper">
+                  <img
+                    class="favorite-icon"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/0602e2846aeea0e21ea7bc84858f0636522a769e2e91a2399bf6da71d9a2e986?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                    alt=""
+                    loading="lazy"
+                  />
+                  <div class="favorite-text">Favourite</div>
+                </div>
+              </div>
+
+              <div class="article-content">
+                <h3 class="heading-primary">Overview</h3>
+                <p class="article-text">
+                  The teachings of Jesus Christ continue to inspire millions
+                  around the world. In this article, we will explore the core
+                  messages of love, compassion, and forgiveness that define His
+                  legacy.
+                  <br />
+                  <br />
+                  The City of Melbourne's Relationship Declaration Register, a
+                  first of its kind in Victoria, was established by Council on
+                  27 March 2007. It provided civic recognition of all
+                  relationships including those from the gay, lesbian, bisexual,
+                  transgender and intersex communities.
+                  <br />
+                  More than 1500 couples have declared their relationships and
+                  had them recorded in the Register in the last decade.
+                  <br />
+                  In response to the amendment to the Commonwealth Marriage Act
+                  1961 in December 2017 achieving marriage equality, on 3 April
+                  2017, Council's Future Melbourne Committee resolved to cease
+                  receiving new applications on the register.
+                  <br />
+                  <br />
+                  Couples who are already recorded on the register will continue
+                  to have their personal information securely stored and if
+                  their relationship ends, this will be managed at their This
+                  would also apply in a situation where a young person was in an
+                  accident and his parents were caring for him. If he had lost
+                  capacity in the accident, he couldn't redo his Will to leave
+                  anything to his parents. His parents could apply for a court
+                  ordered request. Any Victorian couple wishing to register
+                  their relationship
+                </p>
+              </div>
+            </div>
+
+            <!-- Right section (Related Blogs, Category) -->
+            <div class="col-md-4 p-4">
+              <div class="article-carousel">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/096bf12f9121ba9ba5074a8a7bbf7d934201d8cadd489d8660bef778cb7273b8?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                  alt=""
+                  class="divider"
+                />
+                <h2 class="heading-secondary p-0 m-0">Category</h2>
+                <div class="badge-container">
+                  <div class="d-flex gap-0 mt-4 p-0 badge">
+                    <span class="category-icon-wrapper">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                        class="category-icon"
+                        alt="Category icon"
+                      />
+                    </span>
+                    <span class="category-text">Family</span>
+                  </div>
+                  <div class="d-flex gap-0 mt-5 p-0 badge">
+                    <span class="category-icon-wrapper">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                        class="category-icon"
+                        alt="Category icon"
+                      />
+                    </span>
+                    <span class="category-text">Family</span>
+                  </div>
+                  <div class="d-flex gap-0 mt-5 p-0 badge">
+                    <span class="category-icon-wrapper">
+                      <img
+                        loading="lazy"
+                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                        class="category-icon"
+                        alt="Category icon"
+                      />
+                    </span>
+                    <span class="category-text">Family</span>
+                  </div>
+                </div>
+                <div class="w-100"></div>
+
+                <h2 class="heading-secondary p-0 m-0 py-4">Recent Posts</h2>
+                <div class="article-list">
+                  <article class="d-flex mb-4 align-items-start p-0">
+                    <header class="col-3 p-0 m-0">
+                      <div class="">
+                        <img
+                          class="card-img-top img-fluid"
+                          src="/images/image2.png"
+                          alt="Title"
+                          style="aspect-ratio: 1 / 1; object-fit: cover"
+                        />
+                      </div>
+                    </header>
+                    <div class="col-9 px-3">
+                      <div class="align-items-start gap-2 border-0">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8db707afbee08a9e7101d4b1501e161eedc74a58f4ab98cb426fee4b902f8447?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          class="img-fluid"
+                          alt="Category Icon"
+                          style="width: 16px; height: 16px"
+                        />
+                        <span class="text-danger fw-medium">Family</span>
+                        <h1 class="mt-2 fs-3 text-dark fw-bold">
+                          The Power of Faith in Daily Life
+                        </h1>
+
+                        <div
+                          class="d-flex align-items-center gap-2 mt-2 flex-wrap"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <img
+                              loading="lazy"
+                              src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                              class="rounded-circle"
+                              alt="Profile picture of Jane Smith"
+                              style="width: 24px; height: 24px"
+                            />
+                            <span class="text-muted">
+                              From:
+                              <span class="fst-italic text-primary"
+                                >Jane Smith</span
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="d-flex mb-4 align-items-start p-0">
+                    <header class="col-3 p-0 m-0">
+                      <div class="">
+                        <img
+                          class="card-img-top img-fluid"
+                          src="/images/image2.png"
+                          alt="Title"
+                          style="aspect-ratio: 1 / 1; object-fit: cover"
+                        />
+                      </div>
+                    </header>
+                    <div class="col-9 px-3">
+                      <div class="align-items-start gap-2 border-0">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8db707afbee08a9e7101d4b1501e161eedc74a58f4ab98cb426fee4b902f8447?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          class="img-fluid"
+                          alt="Category Icon"
+                          style="width: 16px; height: 16px"
+                        />
+                        <span class="text-danger fw-medium">Family</span>
+                        <h1 class="mt-2 fs-3 text-dark fw-bold">
+                          The Power of Faith in Daily Life
+                        </h1>
+
+                        <div
+                          class="d-flex align-items-center gap-2 mt-2 flex-wrap"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <img
+                              loading="lazy"
+                              src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                              class="rounded-circle"
+                              alt="Profile picture of Jane Smith"
+                              style="width: 24px; height: 24px"
+                            />
+                            <span class="text-muted">
+                              From:
+                              <span class="fst-italic text-primary"
+                                >Jane Smith</span
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                  <article class="d-flex mb-4 align-items-start p-0">
+                    <header class="col-3 p-0 m-0">
+                      <div class="">
+                        <img
+                          class="card-img-top img-fluid"
+                          src="/images/image2.png"
+                          alt="Title"
+                          style="aspect-ratio: 1 / 1; object-fit: cover"
+                        />
+                      </div>
+                    </header>
+                    <div class="col-9 px-3">
+                      <div class="align-items-start gap-2 border-0">
+                        <img
+                          loading="lazy"
+                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8db707afbee08a9e7101d4b1501e161eedc74a58f4ab98cb426fee4b902f8447?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                          class="img-fluid"
+                          alt="Category Icon"
+                          style="width: 16px; height: 16px"
+                        />
+                        <span class="text-danger fw-medium">Family</span>
+                        <h1 class="mt-2 fs-3 text-dark fw-bold">
+                          The Power of Faith in Daily Life
+                        </h1>
+
+                        <div
+                          class="d-flex align-items-center gap-2 mt-2 flex-wrap"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <img
+                              loading="lazy"
+                              src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                              class="rounded-circle"
+                              alt="Profile picture of Jane Smith"
+                              style="width: 24px; height: 24px"
+                            />
+                            <span class="text-muted">
+                              From:
+                              <span class="fst-italic text-primary"
+                                >Jane Smith</span
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img
+        loading="lazy"
+        src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd8d3435fa1c6aa6fb586828e6fe1f25943ac25209f9872b2d8d0d847fc51d08?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+        class="footer-background"
+        alt=""
+      />
+      <div class="footer-content">
+        <div class="brand-container">
+          <div class="brand-header">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7df9afbc1a3f9c43d0ba0587294e26fea8f4accca72448a2441a8e9b8d13a83c?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="brand-logo"
+              alt="United in Christ Logo"
+            />
+            <div class="brand-name">UnitedInChrist</div>
+          </div>
+        </div>
+        <div class="footer-column">
+          <div class="footer-heading">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/10da3ed112e5af0c17348f4ffc3056a75508cfead71843004676a4bad2d54a86?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="footer-icon"
+              alt=""
+            />
+            <div>About Us</div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-link">Our Mission</div>
+            <div class="footer-link">Our Team</div>
+            <div class="footer-link">Contact Us</div>
+          </div>
+        </div>
+        <div class="footer-column">
+          <div class="footer-heading">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e347d6ed7478ae98d52c6002984e16a2985683ab21f61f9670547e5a7616e34?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="footer-icon"
+              alt=""
+            />
+            <div class="">Get Involved</div>
+          </div>
+          <div class="footer-links">
+            <div class="footer-link">Volunteer</div>
+            <div class="footer-link">Events</div>
+            <div class="footer-link">Donate</div>
+          </div>
+        </div>
+        <div class="newsletter-section">
+          <div class="newsletter-header">
+            <img
+              loading="lazy"
+              src="https://cdn.builder.io/api/v1/image/assets/TEMP/24efe50eed6ecda0c6bb6a0f75ac8bca22f0ee35df12ffbd51f5329423c6e56f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+              class="footer-icon"
+              alt=""
+            />
+            <div>United in Christ Newsletter</div>
+          </div>
+          <div class="newsletter-content">
+            <div class="newsletter-description">
+              Join our newsletter for updates and spiritual insights.
+            </div>
+            <form class="newsletter-form">
+              <label for="emailInput" class="visually-hidden"
+                >Email address</label
+              >
+              <input
+                type="email"
+                id="emailInput"
+                class="email-input"
+                placeholder="Email address"
+                aria-label="Email address"
+              />
+              <button type="submit" class="subscribe-button">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
