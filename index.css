@@ -1137,13 +1137,16 @@ input:focus-visible {
 }
 
 .blog-cards {
+  width: 100%;
+  margin-top: 4em;
   overflow-x: auto;
   z-index: 0;
-  display: flex;
-  margin-top: 4em;
-  width: 100%;
-  align-items: center;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* display: flex;
+  align-items: center; */
+  /* gap: 24px; */
   justify-content: start;
 }
 .blog-card {
@@ -1155,7 +1158,9 @@ input:focus-visible {
   flex-direction: column;
   overflow: hidden;
   align-items: center;
-  width: 389px;
+  width: 100%;
+
+  /* width: 389px; */
   margin: auto 0;
 }
 .card-image {
@@ -1183,7 +1188,7 @@ input:focus-visible {
 .date-badge {
   position: absolute;
   right: 4%;
-  top: 90%;
+  top: 80%;
   width: 20%;
   background-color: #fff;
   box-shadow: 0 4px 5px rgba(79, 79, 79, 0.12);
@@ -1218,9 +1223,9 @@ input:focus-visible {
 .card-content {
   display: flex;
   width: 100%;
-  max-width: 389px;
+  /* max-width: 389px; */
   flex-direction: column;
-  padding: 24px;
+  /* padding: 24px; */
 }
 
 .card-title {
