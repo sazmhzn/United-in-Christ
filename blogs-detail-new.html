@@ -28,6 +28,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
     />
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="icon"
+      href="/assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+    />
     <!-- <link rel="stylesheet" href="index.css" /> -->
     <style>
       :root {
@@ -92,6 +97,10 @@
         font-family: "Great Vibes", cursive;
         font-size: 32px;
         letter-spacing: 0.64px;
+        color: white;
+      }
+
+      footer h3 {
         color: white;
       }
 
@@ -247,227 +256,20 @@
           padding: 48px 20px;
         }
       }
-
-      /* Header Styles */
-      .main-header {
-        width: 100%;
-        height: 80px;
-        background-color: #ffffff;
-        position: relative;
-        padding: 32px 100px;
-      }
-
-      /* Background Image */
-      .header-background {
-        position: absolute;
-        bottom: 0;
-        left: -96px;
-        right: -96px;
-        z-index: 1;
-        overflow: hidden;
-      }
-
-      .background-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* Header Content */
-      .header-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-      }
-
-      /* Brand Section */
-      .brand-container {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        width: 237px;
-      }
-
-      .brand-logo {
-        width: 56px;
-        height: 56px;
-        object-fit: cover;
-      }
-
-      .brand-name {
-        font-family: "Eczar", serif;
-        font-size: 32px;
-        font-weight: 400;
-        line-height: 24px;
-        color: #1477ba;
-        letter-spacing: -0.64px;
-        white-space: nowrap;
-      }
-
-      /* Navigation */
-      .nav-links {
-        display: flex;
-        gap: 48px;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .nav-link {
-        font-family: "Mulish", sans-serif;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 20px;
-        color: #0891b2;
-        text-decoration: none;
-        white-space: nowrap;
-      }
-
-      .nav-link.active {
-        font-weight: 700;
-        text-decoration: underline;
-      }
-
-      .nav-link:hover {
-        color: #067591;
-      }
-
-      /* Header Actions */
-      .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 32px;
-      }
-
-      .search-icon {
-        width: 24px;
-        height: 24px;
-        cursor: pointer;
-      }
-
-      .login-btn {
-        display: flex;
-        padding: 12px 24px;
-        justify-content: center;
-        align-items: center;
-        background-color: #0891b2;
-        border: none;
-        color: white;
-        font-family: "Mulish", sans-serif;
-        font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: background-color 0.3s;
-      }
-
-      .login-btn:hover {
-        background-color: #067591;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 1200px) {
-        .main-header {
-          padding: 32px 50px;
-        }
-      }
-
-      @media (max-width: 992px) {
-        .brand-name {
-          font-size: 28px;
-        }
-
-        .nav-links {
-          gap: 24px;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .main-header {
-          padding: 32px 20px;
-          height: auto;
-        }
-
-        .header-content {
-          flex-wrap: wrap;
-          gap: 20px;
-        }
-
-        .brand-container {
-          width: auto;
-        }
-
-        .nav-links {
-          order: 3;
-          width: 100%;
-          justify-content: space-between;
-          padding-top: 20px;
-        }
-
-        .header-actions {
-          gap: 16px;
-        }
-
-        .login-btn {
-          padding: 8px 16px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .brand-name {
-          font-size: 24px;
-        }
-
-        .nav-link {
-          font-size: 16px;
-        }
-
-        .login-btn {
-          font-size: 16px;
-        }
-      }
-
-      /* Mobile Navigation Toggle */
-      .mobile-menu-toggle {
-        display: none;
-      }
-
-      @media (max-width: 768px) {
-        .mobile-menu-toggle {
-          display: block;
-          background: none;
-          border: none;
-          cursor: pointer;
-          padding: 5px;
-        }
-      }
     </style>
   </head>
   <body>
     <div
       style="
         display: flex;
-        /* width: 1440px; */
         flex-direction: column;
         align-items: flex-start;
         flex-wrap: nowrap;
         background-color: #fefef9;
-        position: relative;
-        overflow: hidden;
-        margin: 0 auto;
       "
-      class="main-container"
     >
       <header class="main-header">
-        <div class="header-background">
-          <img
-            src="./assets/images/4129d126-4807-413c-ae85-715bc36e6253.png"
-            alt="header background"
-            class="background-image"
-          />
-        </div>
-
-        <div class="header-content">
+        <div class="header-content row">
           <!-- Logo and Brand Name -->
           <div class="brand-container">
             <img
@@ -492,52 +294,14 @@
               alt="Search"
               class="search-icon"
             />
-            <button class="login-btn">Login</button>
+            <button class="login-btn btn">Login</button>
           </div>
         </div>
       </header>
 
-      <div
-        style="
-          display: flex;
-          min-width: 0;
-          padding: 0 0 48px 0;
-          align-items: flex-start;
-          align-self: stretch;
-          flex-shrink: 0;
-          flex-wrap: nowrap;
-          position: relative;
-          z-index: 16;
-        "
-      >
-        <div
-          style="
-            display: flex;
-            padding: 0 100px 0 100px;
-            gap: 32px;
-            justify-content: center;
-            align-items: flex-start;
-            flex-grow: 1;
-            flex-shrink: 0;
-            flex-basis: 0;
-            flex-wrap: nowrap;
-            position: relative;
-            z-index: 17;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              flex-grow: 1;
-              flex-shrink: 0;
-              flex-basis: 0;
-              flex-wrap: nowrap;
-              position: relative;
-              z-index: 18;
-            "
-          >
+      <main>
+        <div class="main-container">
+          <div>
             <div
               style="
                 display: flex;
@@ -565,323 +329,42 @@
                   z-index: 20;
                 "
               >
-                <div
-                  style="
-                    width: 706px;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    font-family: Mulish, var(--default-font-family);
-                    font-size: 18px;
-                    font-weight: 400;
-                    line-height: 27px;
-                    position: relative;
-                    text-align: left;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    z-index: 21;
-                  "
-                >
-                  <span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 27px;
-                      color: #ced4da;
-                      position: relative;
-                      text-align: left;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                    >Home > Blogs ></span
-                  ><span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 18px;
-                      font-weight: 400;
-                      line-height: 27px;
-                      color: #475569;
-                      position: relative;
-                      text-align: left;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                  >
-                  </span
-                  ><span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 27px;
-                      color: #051d2e;
-                      position: relative;
-                      text-align: left;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
+                <nav class="breadcrumb">
+                  <a class="breadcrumb-item" href="#">Home > </a>
+                  <a class="breadcrumb-item" href="#">Blogs ></a>
+                  <span class="breadcrumb-item active" aria-current="page"
                     >Blog name</span
                   >
+                </nav>
+
+                <div class="badge-container">
+                  <span class="badge">
+                    <img
+                      src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
+                      alt=""
+                    />
+                    Family</span
+                  >
+                  <span class="badge">
+                    <img
+                      src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
+                      alt=""
+                    />
+                    Family</span
+                  >
+                  <span class="badge">
+                    <img
+                      src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
+                      alt=""
+                    />
+                    Family</span
+                  >
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    gap: 16px;
-                    align-items: center;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    flex-wrap: nowrap;
-                    position: relative;
-                    z-index: 22;
-                  "
-                >
-                  <div
-                    style="
-                      display: flex;
-                      width: 79px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 23;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 24;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 25;
-                        "
-                      ></div>
-                    </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 43px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 26;
-                      "
-                      >Family</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      width: 89px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 27;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 28;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/00495ae9-365b-4c7e-be66-006f395b2c00.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 29;
-                        "
-                      ></div>
-                    </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 53px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 30;
-                      "
-                      >Religion</span
-                    >
-                  </div>
-                  <div
-                    style="
-                      display: flex;
-                      width: 79px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 31;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 32;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/4a0e2748-9aaa-4b4a-af93-260331217c77.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 33;
-                        "
-                      ></div>
-                    </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 43px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 34;
-                      "
-                      >Family</span
-                    >
-                  </div>
-                </div>
-                <span
-                  style="
-                    display: flex;
-                    width: 706px;
-                    height: 110px;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    font-family: Domine, var(--default-font-family);
-                    font-size: 48px;
-                    font-weight: 700;
-                    line-height: 54.72px;
-                    color: #051d2e;
-                    position: relative;
-                    text-align: left;
-                    z-index: 35;
-                  "
-                  >The Teachings of Jesus: Insights and Reflections</span
-                ><span
-                  style="
-                    height: 27px;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    flex-basis: auto;
-                    font-family: Mulish, var(--default-font-family);
-                    font-size: 18px;
-                    font-weight: 400;
-                    line-height: 27px;
-                    color: #051d2e;
-                    position: relative;
-                    text-align: left;
-                    white-space: nowrap;
-                    z-index: 36;
-                  "
-                  >Examining the profound lessons and future implications of
-                  Jesus Christ's teachings.</span
-                >
+                <h1>The Teachings of Jesus: Insights and Reflections</h1>
+                <p>
+                  Examining the profound lessons and future implications of
+                  Jesus Christ's teachings.
+                </p>
               </div>
             </div>
             <div
@@ -900,7 +383,7 @@
                 z-index: 37;
               "
             >
-              <div
+              <img
                 style="
                   height: 432px;
                   flex-grow: 1;
@@ -913,7 +396,9 @@
                   position: relative;
                   z-index: 38;
                 "
-              ></div>
+                src="./assets/images/43d4ad54b3a93e3451347af8e51e046d00233c4b.png"
+                alt=""
+              />
             </div>
             <div
               style="
@@ -956,122 +441,24 @@
                     z-index: 41;
                   "
                 >
-                  <div
-                    style="
-                      display: flex;
-                      width: 161px;
-                      gap: 8px;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 42;
-                    "
-                  >
-                    <div
-                      style="
-                        width: 16px;
-                        height: 16px;
-                        flex-shrink: 0;
-                        background-position: center;
-                        background-image: url(./assets/images/05d56e52-dfc3-45a0-a060-2c29b286836b.png);
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 43;
-                      "
-                    ></div>
-                    <span
-                      style="
-                        height: 20px;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 16px;
-                        font-weight: 400;
-                        line-height: 20px;
-                        color: #051d2e;
-                        position: relative;
-                        text-align: left;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 44;
-                      "
-                      >November 1, 2023</span
-                    >
+                  <div class="badge-container">
+                    <div class="badge">
+                      <img
+                        src="./assets/images/05d56e52-dfc3-45a0-a060-2c29b286836b.png"
+                        alt=""
+                      />
+                      <p class="">November 1, 2023</p>
+                    </div>
                   </div>
-                  <div
-                    style="
-                      display: flex;
-                      width: 211px;
-                      gap: 8px;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 45;
-                    "
-                  >
-                    <div
-                      style="
-                        width: 16px;
-                        height: 16px;
-                        flex-shrink: 0;
-                        background-position: center;
-                        background-image: url(./assets/images/a8036471-9693-4574-a548-081090910617.png);
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 46;
-                      "
-                    ></div>
-                    <div
-                      style="
-                        width: 187px;
-                        flex-shrink: 0;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 18px;
-                        font-weight: 400;
-                        line-height: 27px;
-                        position: relative;
-                        text-align: left;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 47;
-                      "
-                    >
-                      <span
-                        style="
-                          font-family: Mulish, var(--default-font-family);
-                          font-size: 18px;
-                          font-weight: 400;
-                          line-height: 27px;
-                          color: #ced4da;
-                          position: relative;
-                          text-align: left;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                        "
-                        >By</span
-                      ><span
-                        style="
-                          font-family: Mulish, var(--default-font-family);
-                          font-size: 18px;
-                          font-weight: 400;
-                          line-height: 27px;
-                          color: #051d2e;
-                          position: relative;
-                          text-align: left;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                        "
-                      >
-                        Gabriel Lightbearer</span
-                      >
+
+                  <div class="badge-container">
+                    <div class="badge">
+                      <img
+                        src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
+                        alt=""
+                      />
+                      <span>By</span>
+                      <p class="">Gabriel Lightbearer</p>
                     </div>
                   </div>
                 </div>
@@ -1087,39 +474,15 @@
                     z-index: 48;
                   "
                 >
-                  <div
-                    style="
-                      width: 20px;
-                      height: 20px;
-                      flex-shrink: 0;
-                      background-position: center;
-                      background-image: url(./assets/images/87d93cc6-4e79-4816-a748-46cce8797971.png);
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      position: relative;
-                      overflow: hidden;
-                      z-index: 49;
-                    "
-                  ></div>
-                  <span
-                    style="
-                      height: 20px;
-                      flex-shrink: 0;
-                      flex-basis: auto;
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 20px;
-                      color: #475569;
-                      position: relative;
-                      text-align: left;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                      white-space: nowrap;
-                      z-index: 50;
-                    "
-                    >Favourite</span
-                  >
+                  <div class="badge-container">
+                    <div class="badge">
+                      <img
+                        src="/assets/images/87d93cc6-4e79-4816-a748-46cce8797971.png"
+                        alt=""
+                      />
+                      <p>Favourite</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1129,7 +492,7 @@
                 padding: 48px 0 48px 0;
                 flex-direction: column;
                 gap: 24px;
-                align-items: center;
+                align-items: start;
                 align-self: stretch;
                 flex-shrink: 0;
                 flex-wrap: nowrap;
@@ -1138,41 +501,13 @@
                 z-index: 51;
               "
             >
-              <span
-                style="
-                  height: 36px;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-basis: auto;
-                  font-family: Domine, var(--default-font-family);
-                  font-size: 32px;
-                  font-weight: 700;
-                  line-height: 36px;
-                  color: #051d2e;
-                  position: relative;
-                  text-align: left;
-                  white-space: nowrap;
-                  z-index: 52;
-                "
-                >Overview</span
-              ><span
-                style="
-                  display: flex;
-                  width: 706px;
-                  height: 540px;
-                  align-items: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  font-family: Mulish, var(--default-font-family);
-                  font-size: 18px;
-                  font-weight: 400;
-                  line-height: 27px;
-                  color: #475569;
-                  position: relative;
-                  text-align: justified;
-                  z-index: 53;
-                "
-                >The teachings of Jesus Christ continue to inspire millions
+              <h3
+                style="line-height: 36px; position: relative; text-align: left"
+              >
+                Overview
+              </h3>
+              <p style="width: 706px; color: #475569; text-align: justified">
+                The teachings of Jesus Christ continue to inspire millions
                 around the world. In this article, we will explore the core
                 messages of love, compassion, and forgiveness that define His
                 legacy.<br /><br />The City of Melbourne’s Relationship
@@ -1193,8 +528,8 @@
                 caring for him. If he had lost capacity in the accident, he
                 couldn’t redo his Will to leave anything to his parents. His
                 parents could apply for a court ordered request. Any Victorian
-                couple wishing to register their relationship</span
-              >
+                couple wishing to register their relationship
+              </p>
             </div>
             <div
               style="
@@ -1223,77 +558,58 @@
                   z-index: 55;
                 "
               ></div>
-              <span
-                style="
-                  height: 32px;
-                  flex-shrink: 0;
-                  flex-basis: auto;
-                  font-family: Domine, var(--default-font-family);
-                  font-size: 24px;
-                  font-weight: 700;
-                  line-height: 32px;
-                  color: #000000;
-                  position: relative;
-                  text-align: left;
-                  white-space: nowrap;
-                  z-index: 56;
-                "
-                >Related Teachings</span
-              >
-              <div
-                style="
-                  display: flex;
-                  gap: 24px;
-                  align-items: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-wrap: wrap;
-                  position: relative;
-                  z-index: 57;
-                "
-              >
+              <h4 style="text-align: left">Related Teachings</h4>
+              <div class="blog-cards row">
                 <div
+                  class="blog-cards"
                   style="
                     display: flex;
-                    width: 271.605px;
-                    max-width: 626.085px;
-                    flex-direction: column;
+                    gap: 24px;
                     align-items: flex-start;
-                    flex-wrap: nowrap;
-                    background-color: #ffffff;
-                    border-radius: 3.478px;
-                    border: 0.87px solid rgba(0, 0, 0, 0.17);
-                    position: relative;
-                    overflow: hidden;
-                    box-shadow: 0 0.75px 3.631px 0 rgba(89, 108, 148, 0.04);
-                    z-index: 58;
+                    align-self: stretch;
+                    flex-shrink: 0;
+                    flex-wrap: wrap;
                   "
                 >
                   <div
-                    style="
-                      display: flex;
-                      min-width: 0;
-                      flex-direction: column;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 59;
-                    "
+                    class="blog-card"
+                    style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
                   >
                     <div
                       style="
                         display: flex;
+                        min-width: 0;
                         flex-direction: column;
                         align-items: flex-start;
                         align-self: stretch;
                         flex-shrink: 0;
                         flex-wrap: nowrap;
                         position: relative;
-                        z-index: 60;
+                        z-index: 59;
                       "
                     >
+                      <div
+                        style="
+                          display: flex;
+                          flex-direction: column;
+                          align-items: flex-start;
+
+                          position: relative;
+                          z-index: 60;
+                        "
+                      >
+                        <img
+                          class="card-image"
+                          src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                          alt=""
+                        />
+
+                        <div class="date-badge">
+                          <h3 style="letter-spacing: -0.28px">04</h3>
+                          <p style="text-align: left">June</p>
+                          <p style="text-align: left">2024</p>
+                        </div>
+                      </div>
                       <div
                         style="
                           display: flex;
@@ -1303,648 +619,152 @@
                           flex-shrink: 0;
                           flex-wrap: nowrap;
                           position: relative;
-                          overflow: hidden;
-                          z-index: 61;
+                          z-index: 69;
                         "
                       >
                         <div
                           style="
                             display: flex;
-                            height: 179.909px;
-                            flex-direction: column;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-position: center;
-                            background-image: url(./assets/images/fd7a5746-ff8d-46d3-a737-c0a0f8bd4d27.png);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            position: relative;
-                            z-index: 62;
-                          "
-                        ></div>
-                        <div
-                          style="
-                            flex-shrink: 0;
-                            background-position: center;
-                            background-image: url(./assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            position: absolute;
-                            top: 0;
-                            bottom: -0.13px;
-                            left: 0;
-                            right: -0.26px;
-                            z-index: 63;
-                          "
-                        ></div>
-                      </div>
-                      <div
-                        style="
-                          display: flex;
-                          width: 0px;
-                          height: 0px;
-                          align-items: center;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-position: center;
-                          background-image: url(./assets/images/7aaf60f3-36ea-4bb7-9fe7-fe3d398c94f4.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 64;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          display: flex;
-                          width: 53.043px;
-                          height: 63.826px;
-                          padding: 6.956px 6.956px 6.956px 6.956px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          justify-content: center;
-                          align-items: center;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: #f8fafc;
-                          position: absolute;
-                          bottom: -31.437px;
-                          right: 13.649px;
-                          box-shadow: 0 3.478px 4.348px 0 rgba(79, 79, 79, 0.12);
-                          z-index: 65;
-                        "
-                      >
-                        <span
-                          style="
-                            height: 20px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Domine, var(--default-font-family);
-                            font-size: 27.825986862182617px;
-                            font-weight: 700;
-                            line-height: 20px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.28px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 66;
-                          "
-                          >04</span
-                        ><span
-                          style="
-                            height: 8px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Outfit, var(--default-font-family);
-                            font-size: 11.851808547973633px;
-                            font-weight: 400;
-                            line-height: 8px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.12px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 67;
-                          "
-                          >June</span
-                        ><span
-                          style="
-                            height: 8px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Outfit, var(--default-font-family);
-                            font-size: 11.851808547973633px;
-                            font-weight: 400;
-                            line-height: 8px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.12px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 68;
-                          "
-                          >2024</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 69;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          padding: 13.913px 13.913px 13.913px 13.913px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: rgba(255, 255, 255, 0);
-                          position: relative;
-                          z-index: 70;
-                        "
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 3.478px 0;
-                            justify-content: space-between;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            border-top: 0.43px dashed rgba(71, 85, 105, 0.5);
-                            position: relative;
-                            z-index: 71;
-                          "
-                        >
-                          <div
-                            style="
-                              display: flex;
-                              width: 105.869px;
-                              gap: 6.956px;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 72;
-                            "
-                          >
-                            <div
-                              style="
-                                display: flex;
-                                width: 41.174px;
-                                padding: 3.478px 0 3.478px 0;
-                                gap: 1.739px;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
-                                border: 1.304px solid rgba(0, 0, 0, 0);
-                                position: relative;
-                                z-index: 73;
-                              "
-                            >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 10.435px;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  background-color: rgba(255, 255, 255, 0);
-                                  opacity: 0.6;
-                                  position: relative;
-                                  overflow: hidden;
-                                  z-index: 74;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 10.435px;
-                                    height: 10.435px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    z-index: 75;
-                                  "
-                                ></div>
-                              </div>
-                              <span
-                                style="
-                                  height: 16px;
-                                  flex-shrink: 0;
-                                  flex-basis: auto;
-                                  font-family: Mulish,
-                                    var(--default-font-family);
-                                  font-size: 10.434744834899902px;
-                                  font-weight: 300;
-                                  line-height: 16px;
-                                  color: #475569;
-                                  position: relative;
-                                  text-align: left;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  white-space: nowrap;
-                                  z-index: 76;
-                                "
-                                >Categ</span
-                              >
-                            </div>
-                            <div
-                              style="
-                                width: 2.609px;
-                                height: 2.609px;
-                                flex-shrink: 0;
-                                background-color: rgba(71, 85, 105, 0.4);
-                                border-radius: 6.956px;
-                                position: relative;
-                                z-index: 77;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                display: flex;
-                                width: 48.174px;
-                                padding: 3.478px 0 3.478px 0;
-                                gap: 1.739px;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
-                                border: 1.304px solid rgba(0, 0, 0, 0);
-                                position: relative;
-                                z-index: 78;
-                              "
-                            >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 10.435px;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  background-color: rgba(255, 255, 255, 0);
-                                  opacity: 0.6;
-                                  position: relative;
-                                  overflow: hidden;
-                                  z-index: 79;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 10.435px;
-                                    height: 10.435px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/78eb58ac-8941-4151-b88b-445a347deffa.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 80;
-                                  "
-                                ></div>
-                              </div>
-                              <span
-                                style="
-                                  height: 16px;
-                                  flex-shrink: 0;
-                                  flex-basis: auto;
-                                  font-family: Mulish,
-                                    var(--default-font-family);
-                                  font-size: 10.434744834899902px;
-                                  font-weight: 300;
-                                  line-height: 16px;
-                                  color: #475569;
-                                  position: relative;
-                                  text-align: left;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  white-space: nowrap;
-                                  z-index: 81;
-                                "
-                                >Partner</span
-                              >
-                            </div>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
-                              width: 55.869px;
-                              padding: 3.478px 3.478px 3.478px 3.478px;
-                              gap: 3.478px;
-                              justify-content: center;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              opacity: 0.8;
-                              border: 1.304px solid rgba(0, 0, 0, 0);
-                              position: relative;
-                              z-index: 82;
-                            "
-                          >
-                            <div
-                              style="
-                                display: flex;
-                                width: 10.435px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
-                                position: relative;
-                                overflow: hidden;
-                                z-index: 83;
-                              "
-                            >
-                              <div
-                                style="
-                                  width: 10.435px;
-                                  height: 10.435px;
-                                  flex-shrink: 0;
-                                  background-position: center;
-                                  background-image: url(./assets/images/a9b4a835-76d0-4b0e-b654-18f178b830f9.png);
-                                  background-size: cover;
-                                  background-repeat: no-repeat;
-                                  position: relative;
-                                  z-index: 84;
-                                "
-                              ></div>
-                            </div>
-                            <span
-                              style="
-                                display: flex;
-                                width: 35px;
-                                height: 13px;
-                                justify-content: center;
-                                align-items: flex-start;
-                                flex-shrink: 0;
-                                flex-basis: auto;
-                                font-family: Mulish, var(--default-font-family);
-                                font-size: 10.434744834899902px;
-                                font-weight: 500;
-                                line-height: 13px;
-                                color: rgba(220, 38, 38, 0.9);
-                                position: relative;
-                                text-align: center;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                white-space: nowrap;
-                                z-index: 85;
-                              "
-                              >Private</span
-                            >
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 6.956px 0;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-color: rgba(255, 255, 255, 0);
-                            position: relative;
-                            overflow: hidden;
-                            z-index: 86;
-                          "
-                        >
-                          <span
-                            style="
-                              display: flex;
-                              width: 242.04px;
-                              height: 56px;
-                              justify-content: flex-start;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              font-family: Domine, var(--default-font-family);
-                              font-size: 24px;
-                              font-weight: 700;
-                              line-height: 32px;
-                              color: #051d2e;
-                              position: relative;
-                              text-align: left;
-                              z-index: 87;
-                            "
-                            >The Power of Faith in Daily Life</span
-                          >
-                        </div>
-                        <div
-                          style="
-                            display: flex;
+                            padding: 13.913px 13.913px 13.913px 13.913px;
                             flex-direction: column;
                             gap: 6.956px;
                             align-items: flex-start;
                             align-self: stretch;
                             flex-shrink: 0;
                             flex-wrap: nowrap;
+                            background-color: rgba(255, 255, 255, 0);
                             position: relative;
-                            z-index: 88;
+                            z-index: 70;
                           "
                         >
                           <div
                             style="
                               display: flex;
-                              padding: 6.956px 0 6.956px 0;
-                              flex-direction: column;
-                              gap: 6.956px;
-                              align-items: flex-start;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              background-color: #ffffff;
-                              position: relative;
-                              z-index: 89;
-                            "
-                          >
-                            <div
-                              style="
-                                height: 0.87px;
-                                align-self: stretch;
-                                flex-shrink: 0;
-                                background-color: rgba(220, 38, 38, 0.4);
-                                position: relative;
-                                z-index: 90;
-                              "
-                            ></div>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
+                              padding: 0 0 3.478px 0;
                               justify-content: space-between;
                               align-items: center;
                               align-self: stretch;
                               flex-shrink: 0;
                               flex-wrap: nowrap;
                               position: relative;
-                              z-index: 91;
+                              z-index: 71;
                             "
                           >
                             <div
                               style="
                                 display: flex;
-                                width: 116.869px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: flex-start;
+                                width: 105.869px;
+                                gap: 6.956px;
+                                align-items: center;
                                 flex-shrink: 0;
                                 flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
                                 position: relative;
-                                overflow: hidden;
-                                z-index: 92;
+                                z-index: 72;
                               "
                             >
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png"
+                                    alt=""
+                                  />
+                                  <span> Categ </span>
+                                </div>
+                              </div>
+
                               <div
                                 style="
-                                  display: flex;
-                                  width: 116.869px;
-                                  gap: 6.956px;
-                                  align-items: center;
+                                  width: 2.609px;
+                                  height: 2.609px;
                                   flex-shrink: 0;
-                                  flex-wrap: nowrap;
+                                  background-color: rgba(71, 85, 105, 0.4);
+                                  border-radius: 6.956px;
                                   position: relative;
-                                  z-index: 93;
+                                  z-index: 77;
                                 "
-                              >
-                                <div
-                                  style="
-                                    width: 13.913px;
-                                    height: 13.913px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/5a1e6a02-d21e-453b-8063-90199f84e433.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 94;
-                                  "
-                                ></div>
-                                <div
-                                  style="
-                                    width: 96px;
-                                    flex-shrink: 0;
-                                    font-family: Mulish,
-                                      var(--default-font-family);
-                                    font-size: 12.173869132995605px;
-                                    font-weight: 400;
-                                    line-height: 18px;
-                                    position: relative;
-                                    text-align: left;
-                                    text-overflow: initial;
-                                    white-space: nowrap;
-                                    z-index: 95;
-                                  "
-                                >
-                                  <span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: #6c757d;
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                    >From:</span
-                                  ><span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: rgba(220, 38, 38, 0.8);
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                  >
-                                  </span
-                                  ><span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: #051d2e;
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                    >Jane Smith</span
-                                  >
+                              ></div>
+
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
+                                    alt=""
+                                  />
+                                  <span> Family </span>
                                 </div>
                               </div>
                             </div>
+                          </div>
+                          <div
+                            style="
+                              display: flex;
+                              padding: 0 0 6 0;
+                              flex-direction: column;
+                              justify-content: center;
+                              align-items: flex-start;
+                              align-self: stretch;
+                            "
+                          >
+                            <h4
+                              class="card-title"
+                              style="line-height: 32px; text-align: left"
+                            >
+                              The Power of Faith in Daily Life
+                            </h4>
+                          </div>
+
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: column;
+                              align-items: flex-start;
+                              align-self: stretch;
+                              flex-shrink: 0;
+                            "
+                          >
                             <div
                               style="
+                                height: 0.87px;
+                                margin: 6px 0;
+                                align-self: stretch;
+                                background-color: rgba(220, 38, 38, 0.4);
+                              "
+                            ></div>
+
+                            <div
+                              class="row"
+                              style="
                                 display: flex;
-                                width: 73.869px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: flex-start;
+                                justify-content: space-between;
+                                align-items: center;
+                                align-self: stretch;
                                 flex-shrink: 0;
                                 flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
                                 position: relative;
-                                overflow: hidden;
-                                z-index: 96;
+                                z-index: 91;
                               "
                             >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 73.869px;
-                                  gap: 6.956px;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  position: relative;
-                                  z-index: 97;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 13.913px;
-                                    height: 13.913px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 98;
-                                  "
-                                ></div>
-                                <span
-                                  style="
-                                    height: 18px;
-                                    flex-shrink: 0;
-                                    flex-basis: auto;
-                                    font-family: Mulish,
-                                      var(--default-font-family);
-                                    font-size: 12.173869132995605px;
-                                    font-weight: 400;
-                                    line-height: 18px;
-                                    color: #6c757d;
-                                    position: relative;
-                                    text-align: left;
-                                    white-space: nowrap;
-                                    z-index: 99;
-                                  "
-                                  >Favourite</span
-                                >
+                              <!-- By -->
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
+                                    alt=""
+                                  />
+                                  <span>By</span>
+                                  <p class="">G. Lightbearer</p>
+                                </div>
+                              </div>
+
+                              <!-- Fav -->
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
+                                    alt=""
+                                  />
+                                  <span>Favourite</span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -1952,49 +772,46 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    width: 271.605px;
-                    max-width: 626.085px;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    flex-wrap: nowrap;
-                    background-color: #ffffff;
-                    border-radius: 3.478px;
-                    border: 0.87px solid rgba(0, 0, 0, 0.17);
-                    position: relative;
-                    overflow: hidden;
-                    box-shadow: 0 0.75px 3.631px 0 rgba(89, 108, 148, 0.04);
-                    z-index: 142;
-                  "
-                >
+
                   <div
-                    style="
-                      display: flex;
-                      min-width: 0;
-                      flex-direction: column;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 143;
-                    "
+                    class="blog-card"
+                    style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
                   >
                     <div
                       style="
                         display: flex;
+                        min-width: 0;
                         flex-direction: column;
                         align-items: flex-start;
                         align-self: stretch;
                         flex-shrink: 0;
                         flex-wrap: nowrap;
                         position: relative;
-                        z-index: 144;
+                        z-index: 59;
                       "
                     >
+                      <div
+                        style="
+                          display: flex;
+                          flex-direction: column;
+                          align-items: flex-start;
+
+                          position: relative;
+                          z-index: 60;
+                        "
+                      >
+                        <img
+                          class="card-image"
+                          src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                          alt=""
+                        />
+
+                        <div class="date-badge">
+                          <h3 style="letter-spacing: -0.28px">04</h3>
+                          <p style="text-align: left">June</p>
+                          <p style="text-align: left">2024</p>
+                        </div>
+                      </div>
                       <div
                         style="
                           display: flex;
@@ -2004,648 +821,152 @@
                           flex-shrink: 0;
                           flex-wrap: nowrap;
                           position: relative;
-                          overflow: hidden;
-                          z-index: 145;
+                          z-index: 69;
                         "
                       >
                         <div
                           style="
                             display: flex;
-                            height: 179.909px;
-                            flex-direction: column;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-position: center;
-                            background-image: url(./assets/images/2d8e1910-5cf3-4286-8627-88817596c026.png);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            position: relative;
-                            z-index: 146;
-                          "
-                        ></div>
-                        <div
-                          style="
-                            flex-shrink: 0;
-                            background-position: center;
-                            background-image: url(./assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            position: absolute;
-                            top: 0;
-                            bottom: -0.13px;
-                            left: 0;
-                            right: -0.26px;
-                            z-index: 147;
-                          "
-                        ></div>
-                      </div>
-                      <div
-                        style="
-                          display: flex;
-                          width: 0px;
-                          height: 0px;
-                          align-items: center;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-position: center;
-                          background-image: url(./assets/images/2f8d1fc6-9ab8-4316-bf50-aa81f9a3c19f.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 148;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          display: flex;
-                          width: 53.043px;
-                          height: 63.826px;
-                          padding: 6.956px 6.956px 6.956px 6.956px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          justify-content: center;
-                          align-items: center;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: #f8fafc;
-                          position: absolute;
-                          bottom: -31.437px;
-                          right: 13.649px;
-                          box-shadow: 0 3.478px 4.348px 0 rgba(79, 79, 79, 0.12);
-                          z-index: 149;
-                        "
-                      >
-                        <span
-                          style="
-                            height: 20px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Domine, var(--default-font-family);
-                            font-size: 27.825986862182617px;
-                            font-weight: 700;
-                            line-height: 20px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.28px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 150;
-                          "
-                          >04</span
-                        ><span
-                          style="
-                            height: 8px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Outfit, var(--default-font-family);
-                            font-size: 11.851808547973633px;
-                            font-weight: 400;
-                            line-height: 8px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.12px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 151;
-                          "
-                          >June</span
-                        ><span
-                          style="
-                            height: 8px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Outfit, var(--default-font-family);
-                            font-size: 11.851808547973633px;
-                            font-weight: 400;
-                            line-height: 8px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.12px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 152;
-                          "
-                          >2024</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 153;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          padding: 13.913px 13.913px 13.913px 13.913px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: rgba(255, 255, 255, 0);
-                          position: relative;
-                          z-index: 154;
-                        "
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 3.478px 0;
-                            justify-content: space-between;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            border-top: 0.43px dashed rgba(71, 85, 105, 0.5);
-                            position: relative;
-                            z-index: 155;
-                          "
-                        >
-                          <div
-                            style="
-                              display: flex;
-                              width: 105.869px;
-                              gap: 6.956px;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 156;
-                            "
-                          >
-                            <div
-                              style="
-                                display: flex;
-                                width: 41.174px;
-                                padding: 3.478px 0 3.478px 0;
-                                gap: 1.739px;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
-                                border: 1.304px solid rgba(0, 0, 0, 0);
-                                position: relative;
-                                z-index: 157;
-                              "
-                            >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 10.435px;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  background-color: rgba(255, 255, 255, 0);
-                                  opacity: 0.6;
-                                  position: relative;
-                                  overflow: hidden;
-                                  z-index: 158;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 10.435px;
-                                    height: 10.435px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/079157de-e00b-4fdf-8a32-da181161b555.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    z-index: 159;
-                                  "
-                                ></div>
-                              </div>
-                              <span
-                                style="
-                                  height: 16px;
-                                  flex-shrink: 0;
-                                  flex-basis: auto;
-                                  font-family: Mulish,
-                                    var(--default-font-family);
-                                  font-size: 10.434744834899902px;
-                                  font-weight: 300;
-                                  line-height: 16px;
-                                  color: #475569;
-                                  position: relative;
-                                  text-align: left;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  white-space: nowrap;
-                                  z-index: 160;
-                                "
-                                >Categ</span
-                              >
-                            </div>
-                            <div
-                              style="
-                                width: 2.609px;
-                                height: 2.609px;
-                                flex-shrink: 0;
-                                background-color: rgba(71, 85, 105, 0.4);
-                                border-radius: 6.956px;
-                                position: relative;
-                                z-index: 161;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                display: flex;
-                                width: 48.174px;
-                                padding: 3.478px 0 3.478px 0;
-                                gap: 1.739px;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
-                                border: 1.304px solid rgba(0, 0, 0, 0);
-                                position: relative;
-                                z-index: 162;
-                              "
-                            >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 10.435px;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  background-color: rgba(255, 255, 255, 0);
-                                  opacity: 0.6;
-                                  position: relative;
-                                  overflow: hidden;
-                                  z-index: 163;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 10.435px;
-                                    height: 10.435px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/767a3eed-df44-42e0-8f8b-599a2628588e.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 164;
-                                  "
-                                ></div>
-                              </div>
-                              <span
-                                style="
-                                  height: 16px;
-                                  flex-shrink: 0;
-                                  flex-basis: auto;
-                                  font-family: Mulish,
-                                    var(--default-font-family);
-                                  font-size: 10.434744834899902px;
-                                  font-weight: 300;
-                                  line-height: 16px;
-                                  color: #475569;
-                                  position: relative;
-                                  text-align: left;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  white-space: nowrap;
-                                  z-index: 165;
-                                "
-                                >Partner</span
-                              >
-                            </div>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
-                              width: 55.869px;
-                              padding: 3.478px 3.478px 3.478px 3.478px;
-                              gap: 3.478px;
-                              justify-content: center;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              opacity: 0.8;
-                              border: 1.304px solid rgba(0, 0, 0, 0);
-                              position: relative;
-                              z-index: 166;
-                            "
-                          >
-                            <div
-                              style="
-                                display: flex;
-                                width: 10.435px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
-                                position: relative;
-                                overflow: hidden;
-                                z-index: 167;
-                              "
-                            >
-                              <div
-                                style="
-                                  width: 10.435px;
-                                  height: 10.435px;
-                                  flex-shrink: 0;
-                                  background-position: center;
-                                  background-image: url(./assets/images/6186f089-591b-4820-af6e-ef32598c776c.png);
-                                  background-size: cover;
-                                  background-repeat: no-repeat;
-                                  position: relative;
-                                  z-index: 168;
-                                "
-                              ></div>
-                            </div>
-                            <span
-                              style="
-                                display: flex;
-                                width: 35px;
-                                height: 13px;
-                                justify-content: center;
-                                align-items: flex-start;
-                                flex-shrink: 0;
-                                flex-basis: auto;
-                                font-family: Mulish, var(--default-font-family);
-                                font-size: 10.434744834899902px;
-                                font-weight: 500;
-                                line-height: 13px;
-                                color: rgba(220, 38, 38, 0.9);
-                                position: relative;
-                                text-align: center;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                white-space: nowrap;
-                                z-index: 169;
-                              "
-                              >Private</span
-                            >
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 6.956px 0;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-color: rgba(255, 255, 255, 0);
-                            position: relative;
-                            overflow: hidden;
-                            z-index: 170;
-                          "
-                        >
-                          <span
-                            style="
-                              display: flex;
-                              width: 242.04px;
-                              height: 56px;
-                              justify-content: flex-start;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              font-family: Domine, var(--default-font-family);
-                              font-size: 24px;
-                              font-weight: 700;
-                              line-height: 32px;
-                              color: #051d2e;
-                              position: relative;
-                              text-align: left;
-                              z-index: 171;
-                            "
-                            >The Power of Faith in Daily Life</span
-                          >
-                        </div>
-                        <div
-                          style="
-                            display: flex;
+                            padding: 13.913px 13.913px 13.913px 13.913px;
                             flex-direction: column;
                             gap: 6.956px;
                             align-items: flex-start;
                             align-self: stretch;
                             flex-shrink: 0;
                             flex-wrap: nowrap;
+                            background-color: rgba(255, 255, 255, 0);
                             position: relative;
-                            z-index: 172;
+                            z-index: 70;
                           "
                         >
                           <div
                             style="
                               display: flex;
-                              padding: 6.956px 0 6.956px 0;
-                              flex-direction: column;
-                              gap: 6.956px;
-                              align-items: flex-start;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              background-color: #ffffff;
-                              position: relative;
-                              z-index: 173;
-                            "
-                          >
-                            <div
-                              style="
-                                height: 0.87px;
-                                align-self: stretch;
-                                flex-shrink: 0;
-                                background-color: rgba(220, 38, 38, 0.4);
-                                position: relative;
-                                z-index: 174;
-                              "
-                            ></div>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
+                              padding: 0 0 3.478px 0;
                               justify-content: space-between;
                               align-items: center;
                               align-self: stretch;
                               flex-shrink: 0;
                               flex-wrap: nowrap;
                               position: relative;
-                              z-index: 175;
+                              z-index: 71;
                             "
                           >
                             <div
                               style="
                                 display: flex;
-                                width: 116.869px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: flex-start;
+                                width: 105.869px;
+                                gap: 6.956px;
+                                align-items: center;
                                 flex-shrink: 0;
                                 flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
                                 position: relative;
-                                overflow: hidden;
-                                z-index: 176;
+                                z-index: 72;
                               "
                             >
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png"
+                                    alt=""
+                                  />
+                                  <span> Categ </span>
+                                </div>
+                              </div>
+
                               <div
                                 style="
-                                  display: flex;
-                                  width: 116.869px;
-                                  gap: 6.956px;
-                                  align-items: center;
+                                  width: 2.609px;
+                                  height: 2.609px;
                                   flex-shrink: 0;
-                                  flex-wrap: nowrap;
+                                  background-color: rgba(71, 85, 105, 0.4);
+                                  border-radius: 6.956px;
                                   position: relative;
-                                  z-index: 177;
+                                  z-index: 77;
                                 "
-                              >
-                                <div
-                                  style="
-                                    width: 13.913px;
-                                    height: 13.913px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/65bd3c6e-f0ac-42af-a1fd-55ba43cb8a51.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 178;
-                                  "
-                                ></div>
-                                <div
-                                  style="
-                                    width: 96px;
-                                    flex-shrink: 0;
-                                    font-family: Mulish,
-                                      var(--default-font-family);
-                                    font-size: 12.173869132995605px;
-                                    font-weight: 400;
-                                    line-height: 18px;
-                                    position: relative;
-                                    text-align: left;
-                                    text-overflow: initial;
-                                    white-space: nowrap;
-                                    z-index: 179;
-                                  "
-                                >
-                                  <span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: #6c757d;
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                    >From:</span
-                                  ><span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: rgba(220, 38, 38, 0.8);
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                  >
-                                  </span
-                                  ><span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: #051d2e;
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                    >Jane Smith</span
-                                  >
+                              ></div>
+
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
+                                    alt=""
+                                  />
+                                  <span> Family </span>
                                 </div>
                               </div>
                             </div>
+                          </div>
+                          <div
+                            style="
+                              display: flex;
+                              padding: 0 0 6 0;
+                              flex-direction: column;
+                              justify-content: center;
+                              align-items: flex-start;
+                              align-self: stretch;
+                            "
+                          >
+                            <h4
+                              class="card-title"
+                              style="line-height: 32px; text-align: left"
+                            >
+                              The Power of Faith in Daily Life
+                            </h4>
+                          </div>
+
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: column;
+                              align-items: flex-start;
+                              align-self: stretch;
+                              flex-shrink: 0;
+                            "
+                          >
                             <div
                               style="
+                                height: 0.87px;
+                                margin: 6px 0;
+                                align-self: stretch;
+                                background-color: rgba(220, 38, 38, 0.4);
+                              "
+                            ></div>
+
+                            <div
+                              class="row"
+                              style="
                                 display: flex;
-                                width: 73.869px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: flex-start;
+                                justify-content: space-between;
+                                align-items: center;
+                                align-self: stretch;
                                 flex-shrink: 0;
                                 flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
                                 position: relative;
-                                overflow: hidden;
-                                z-index: 180;
+                                z-index: 91;
                               "
                             >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 73.869px;
-                                  gap: 6.956px;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  position: relative;
-                                  z-index: 181;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 13.913px;
-                                    height: 13.913px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/18f31776-1215-483e-818c-f032b4a36b92.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 182;
-                                  "
-                                ></div>
-                                <span
-                                  style="
-                                    height: 18px;
-                                    flex-shrink: 0;
-                                    flex-basis: auto;
-                                    font-family: Mulish,
-                                      var(--default-font-family);
-                                    font-size: 12.173869132995605px;
-                                    font-weight: 400;
-                                    line-height: 18px;
-                                    color: #6c757d;
-                                    position: relative;
-                                    text-align: left;
-                                    white-space: nowrap;
-                                    z-index: 183;
-                                  "
-                                  >Favourite</span
-                                >
+                              <!-- By -->
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
+                                    alt=""
+                                  />
+                                  <span>By</span>
+                                  <p class="">G. Lightbearer</p>
+                                </div>
+                              </div>
+
+                              <!-- Fav -->
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
+                                    alt=""
+                                  />
+                                  <span>Favourite</span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -2653,49 +974,46 @@
                       </div>
                     </div>
                   </div>
-                </div>
-                <div
-                  style="
-                    display: flex;
-                    width: 271.605px;
-                    max-width: 626.085px;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    flex-wrap: nowrap;
-                    background-color: #ffffff;
-                    border-radius: 3.478px;
-                    border: 0.87px solid rgba(0, 0, 0, 0.17);
-                    position: relative;
-                    overflow: hidden;
-                    box-shadow: 0 0.75px 3.631px 0 rgba(89, 108, 148, 0.04);
-                    z-index: 100;
-                  "
-                >
+
                   <div
-                    style="
-                      display: flex;
-                      min-width: 0;
-                      flex-direction: column;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 101;
-                    "
+                    class="blog-card"
+                    style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
                   >
                     <div
                       style="
                         display: flex;
+                        min-width: 0;
                         flex-direction: column;
                         align-items: flex-start;
                         align-self: stretch;
                         flex-shrink: 0;
                         flex-wrap: nowrap;
                         position: relative;
-                        z-index: 102;
+                        z-index: 59;
                       "
                     >
+                      <div
+                        style="
+                          display: flex;
+                          flex-direction: column;
+                          align-items: flex-start;
+
+                          position: relative;
+                          z-index: 60;
+                        "
+                      >
+                        <img
+                          class="card-image"
+                          src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                          alt=""
+                        />
+
+                        <div class="date-badge">
+                          <h3 style="letter-spacing: -0.28px">04</h3>
+                          <p style="text-align: left">June</p>
+                          <p style="text-align: left">2024</p>
+                        </div>
+                      </div>
                       <div
                         style="
                           display: flex;
@@ -2705,648 +1023,152 @@
                           flex-shrink: 0;
                           flex-wrap: nowrap;
                           position: relative;
-                          overflow: hidden;
-                          z-index: 103;
+                          z-index: 69;
                         "
                       >
                         <div
                           style="
                             display: flex;
-                            height: 179.909px;
-                            flex-direction: column;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-position: center;
-                            background-image: url(./assets/images/688fc092-b822-4942-a855-2fe676520294.png);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            position: relative;
-                            z-index: 104;
-                          "
-                        ></div>
-                        <div
-                          style="
-                            flex-shrink: 0;
-                            background-position: center;
-                            background-image: url(./assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png);
-                            background-size: cover;
-                            background-repeat: no-repeat;
-                            position: absolute;
-                            top: 0;
-                            bottom: -0.13px;
-                            left: 0;
-                            right: -0.26px;
-                            z-index: 105;
-                          "
-                        ></div>
-                      </div>
-                      <div
-                        style="
-                          display: flex;
-                          width: 0px;
-                          height: 0px;
-                          align-items: center;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-position: center;
-                          background-image: url(./assets/images/e1fea073-1b34-48f1-a0c2-57648cb02eeb.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 106;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          display: flex;
-                          width: 53.043px;
-                          height: 63.826px;
-                          padding: 6.956px 6.956px 6.956px 6.956px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          justify-content: center;
-                          align-items: center;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: #f8fafc;
-                          position: absolute;
-                          bottom: -31.437px;
-                          right: 13.649px;
-                          box-shadow: 0 3.478px 4.348px 0 rgba(79, 79, 79, 0.12);
-                          z-index: 107;
-                        "
-                      >
-                        <span
-                          style="
-                            height: 20px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Domine, var(--default-font-family);
-                            font-size: 27.825986862182617px;
-                            font-weight: 700;
-                            line-height: 20px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.28px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 108;
-                          "
-                          >04</span
-                        ><span
-                          style="
-                            height: 8px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Outfit, var(--default-font-family);
-                            font-size: 11.851808547973633px;
-                            font-weight: 400;
-                            line-height: 8px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.12px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 109;
-                          "
-                          >June</span
-                        ><span
-                          style="
-                            height: 8px;
-                            flex-shrink: 0;
-                            flex-basis: auto;
-                            font-family: Outfit, var(--default-font-family);
-                            font-size: 11.851808547973633px;
-                            font-weight: 400;
-                            line-height: 8px;
-                            color: rgba(220, 38, 38, 0.9);
-                            letter-spacing: -0.12px;
-                            position: relative;
-                            text-align: left;
-                            white-space: nowrap;
-                            z-index: 110;
-                          "
-                          >2024</span
-                        >
-                      </div>
-                    </div>
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 111;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          padding: 13.913px 13.913px 13.913px 13.913px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: rgba(255, 255, 255, 0);
-                          position: relative;
-                          z-index: 112;
-                        "
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 3.478px 0;
-                            justify-content: space-between;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            border-top: 0.43px dashed rgba(71, 85, 105, 0.5);
-                            position: relative;
-                            z-index: 113;
-                          "
-                        >
-                          <div
-                            style="
-                              display: flex;
-                              width: 105.869px;
-                              gap: 6.956px;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 114;
-                            "
-                          >
-                            <div
-                              style="
-                                display: flex;
-                                width: 41.174px;
-                                padding: 3.478px 0 3.478px 0;
-                                gap: 1.739px;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
-                                border: 1.304px solid rgba(0, 0, 0, 0);
-                                position: relative;
-                                z-index: 115;
-                              "
-                            >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 10.435px;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  background-color: rgba(255, 255, 255, 0);
-                                  opacity: 0.6;
-                                  position: relative;
-                                  overflow: hidden;
-                                  z-index: 116;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 10.435px;
-                                    height: 10.435px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/a0aa1fc6-f1e4-410a-889e-2b4fc41839c4.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    z-index: 117;
-                                  "
-                                ></div>
-                              </div>
-                              <span
-                                style="
-                                  height: 16px;
-                                  flex-shrink: 0;
-                                  flex-basis: auto;
-                                  font-family: Mulish,
-                                    var(--default-font-family);
-                                  font-size: 10.434744834899902px;
-                                  font-weight: 300;
-                                  line-height: 16px;
-                                  color: #475569;
-                                  position: relative;
-                                  text-align: left;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  white-space: nowrap;
-                                  z-index: 118;
-                                "
-                                >Categ</span
-                              >
-                            </div>
-                            <div
-                              style="
-                                width: 2.609px;
-                                height: 2.609px;
-                                flex-shrink: 0;
-                                background-color: rgba(71, 85, 105, 0.4);
-                                border-radius: 6.956px;
-                                position: relative;
-                                z-index: 119;
-                              "
-                            ></div>
-                            <div
-                              style="
-                                display: flex;
-                                width: 48.174px;
-                                padding: 3.478px 0 3.478px 0;
-                                gap: 1.739px;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                opacity: 0.8;
-                                border: 1.304px solid rgba(0, 0, 0, 0);
-                                position: relative;
-                                z-index: 120;
-                              "
-                            >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 10.435px;
-                                  flex-direction: column;
-                                  justify-content: center;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  background-color: rgba(255, 255, 255, 0);
-                                  opacity: 0.6;
-                                  position: relative;
-                                  overflow: hidden;
-                                  z-index: 121;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 10.435px;
-                                    height: 10.435px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/a10df643-061a-4e0f-8cde-aba3afaf073f.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 122;
-                                  "
-                                ></div>
-                              </div>
-                              <span
-                                style="
-                                  height: 16px;
-                                  flex-shrink: 0;
-                                  flex-basis: auto;
-                                  font-family: Mulish,
-                                    var(--default-font-family);
-                                  font-size: 10.434744834899902px;
-                                  font-weight: 300;
-                                  line-height: 16px;
-                                  color: #475569;
-                                  position: relative;
-                                  text-align: left;
-                                  overflow: hidden;
-                                  text-overflow: ellipsis;
-                                  white-space: nowrap;
-                                  z-index: 123;
-                                "
-                                >Partner</span
-                              >
-                            </div>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
-                              width: 55.869px;
-                              padding: 3.478px 3.478px 3.478px 3.478px;
-                              gap: 3.478px;
-                              justify-content: center;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              opacity: 0.8;
-                              border: 1.304px solid rgba(0, 0, 0, 0);
-                              position: relative;
-                              z-index: 124;
-                            "
-                          >
-                            <div
-                              style="
-                                display: flex;
-                                width: 10.435px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
-                                position: relative;
-                                overflow: hidden;
-                                z-index: 125;
-                              "
-                            >
-                              <div
-                                style="
-                                  width: 10.435px;
-                                  height: 10.435px;
-                                  flex-shrink: 0;
-                                  background-position: center;
-                                  background-image: url(./assets/images/898ef543-6d17-42bf-9130-3fc42c21bf9f.png);
-                                  background-size: cover;
-                                  background-repeat: no-repeat;
-                                  position: relative;
-                                  z-index: 126;
-                                "
-                              ></div>
-                            </div>
-                            <span
-                              style="
-                                display: flex;
-                                width: 35px;
-                                height: 13px;
-                                justify-content: center;
-                                align-items: flex-start;
-                                flex-shrink: 0;
-                                flex-basis: auto;
-                                font-family: Mulish, var(--default-font-family);
-                                font-size: 10.434744834899902px;
-                                font-weight: 500;
-                                line-height: 13px;
-                                color: rgba(220, 38, 38, 0.9);
-                                position: relative;
-                                text-align: center;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
-                                white-space: nowrap;
-                                z-index: 127;
-                              "
-                              >Private</span
-                            >
-                          </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 6.956px 0;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-color: rgba(255, 255, 255, 0);
-                            position: relative;
-                            overflow: hidden;
-                            z-index: 128;
-                          "
-                        >
-                          <span
-                            style="
-                              display: flex;
-                              width: 242.04px;
-                              height: 56px;
-                              justify-content: flex-start;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              font-family: Domine, var(--default-font-family);
-                              font-size: 24px;
-                              font-weight: 700;
-                              line-height: 32px;
-                              color: #051d2e;
-                              position: relative;
-                              text-align: left;
-                              z-index: 129;
-                            "
-                            >The Power of Faith in Daily Life</span
-                          >
-                        </div>
-                        <div
-                          style="
-                            display: flex;
+                            padding: 13.913px 13.913px 13.913px 13.913px;
                             flex-direction: column;
                             gap: 6.956px;
                             align-items: flex-start;
                             align-self: stretch;
                             flex-shrink: 0;
                             flex-wrap: nowrap;
+                            background-color: rgba(255, 255, 255, 0);
                             position: relative;
-                            z-index: 130;
+                            z-index: 70;
                           "
                         >
                           <div
                             style="
                               display: flex;
-                              padding: 6.956px 0 6.956px 0;
-                              flex-direction: column;
-                              gap: 6.956px;
-                              align-items: flex-start;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              background-color: #ffffff;
-                              position: relative;
-                              z-index: 131;
-                            "
-                          >
-                            <div
-                              style="
-                                height: 0.87px;
-                                align-self: stretch;
-                                flex-shrink: 0;
-                                background-color: rgba(220, 38, 38, 0.4);
-                                position: relative;
-                                z-index: 132;
-                              "
-                            ></div>
-                          </div>
-                          <div
-                            style="
-                              display: flex;
+                              padding: 0 0 3.478px 0;
                               justify-content: space-between;
                               align-items: center;
                               align-self: stretch;
                               flex-shrink: 0;
                               flex-wrap: nowrap;
                               position: relative;
-                              z-index: 133;
+                              z-index: 71;
                             "
                           >
                             <div
                               style="
                                 display: flex;
-                                width: 116.869px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: flex-start;
+                                width: 105.869px;
+                                gap: 6.956px;
+                                align-items: center;
                                 flex-shrink: 0;
                                 flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
                                 position: relative;
-                                overflow: hidden;
-                                z-index: 134;
+                                z-index: 72;
                               "
                             >
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png"
+                                    alt=""
+                                  />
+                                  <span> Categ </span>
+                                </div>
+                              </div>
+
                               <div
                                 style="
-                                  display: flex;
-                                  width: 116.869px;
-                                  gap: 6.956px;
-                                  align-items: center;
+                                  width: 2.609px;
+                                  height: 2.609px;
                                   flex-shrink: 0;
-                                  flex-wrap: nowrap;
+                                  background-color: rgba(71, 85, 105, 0.4);
+                                  border-radius: 6.956px;
                                   position: relative;
-                                  z-index: 135;
+                                  z-index: 77;
                                 "
-                              >
-                                <div
-                                  style="
-                                    width: 13.913px;
-                                    height: 13.913px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/7e39e695-3a62-401f-a8d0-57658938d6b7.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 136;
-                                  "
-                                ></div>
-                                <div
-                                  style="
-                                    width: 96px;
-                                    flex-shrink: 0;
-                                    font-family: Mulish,
-                                      var(--default-font-family);
-                                    font-size: 12.173869132995605px;
-                                    font-weight: 400;
-                                    line-height: 18px;
-                                    position: relative;
-                                    text-align: left;
-                                    text-overflow: initial;
-                                    white-space: nowrap;
-                                    z-index: 137;
-                                  "
-                                >
-                                  <span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: #6c757d;
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                    >From:</span
-                                  ><span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: rgba(220, 38, 38, 0.8);
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                  >
-                                  </span
-                                  ><span
-                                    style="
-                                      font-family: Mulish,
-                                        var(--default-font-family);
-                                      font-size: 14px;
-                                      font-weight: 400;
-                                      line-height: 18.261px;
-                                      color: #051d2e;
-                                      position: relative;
-                                      text-align: left;
-                                    "
-                                    >Jane Smith</span
-                                  >
+                              ></div>
+
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
+                                    alt=""
+                                  />
+                                  <span> Family </span>
                                 </div>
                               </div>
                             </div>
+                          </div>
+                          <div
+                            style="
+                              display: flex;
+                              padding: 0 0 6 0;
+                              flex-direction: column;
+                              justify-content: center;
+                              align-items: flex-start;
+                              align-self: stretch;
+                            "
+                          >
+                            <h4
+                              class="card-title"
+                              style="line-height: 32px; text-align: left"
+                            >
+                              The Power of Faith in Daily Life
+                            </h4>
+                          </div>
+
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: column;
+                              align-items: flex-start;
+                              align-self: stretch;
+                              flex-shrink: 0;
+                            "
+                          >
                             <div
                               style="
+                                height: 0.87px;
+                                margin: 6px 0;
+                                align-self: stretch;
+                                background-color: rgba(220, 38, 38, 0.4);
+                              "
+                            ></div>
+
+                            <div
+                              class="row"
+                              style="
                                 display: flex;
-                                width: 73.869px;
-                                flex-direction: column;
-                                justify-content: center;
-                                align-items: flex-start;
+                                justify-content: space-between;
+                                align-items: center;
+                                align-self: stretch;
                                 flex-shrink: 0;
                                 flex-wrap: nowrap;
-                                background-color: rgba(255, 255, 255, 0);
                                 position: relative;
-                                overflow: hidden;
-                                z-index: 138;
+                                z-index: 91;
                               "
                             >
-                              <div
-                                style="
-                                  display: flex;
-                                  width: 73.869px;
-                                  gap: 6.956px;
-                                  align-items: center;
-                                  flex-shrink: 0;
-                                  flex-wrap: nowrap;
-                                  position: relative;
-                                  z-index: 139;
-                                "
-                              >
-                                <div
-                                  style="
-                                    width: 13.913px;
-                                    height: 13.913px;
-                                    flex-shrink: 0;
-                                    background-position: center;
-                                    background-image: url(./assets/images/6c4d2b83-cca1-4481-b855-cc84ef0458c0.png);
-                                    background-size: cover;
-                                    background-repeat: no-repeat;
-                                    position: relative;
-                                    overflow: hidden;
-                                    z-index: 140;
-                                  "
-                                ></div>
-                                <span
-                                  style="
-                                    height: 18px;
-                                    flex-shrink: 0;
-                                    flex-basis: auto;
-                                    font-family: Mulish,
-                                      var(--default-font-family);
-                                    font-size: 12.173869132995605px;
-                                    font-weight: 400;
-                                    line-height: 18px;
-                                    color: #6c757d;
-                                    position: relative;
-                                    text-align: left;
-                                    white-space: nowrap;
-                                    z-index: 141;
-                                  "
-                                  >Favourite</span
-                                >
+                              <!-- By -->
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
+                                    alt=""
+                                  />
+                                  <span>By</span>
+                                  <p class="">G. Lightbearer</p>
+                                </div>
+                              </div>
+
+                              <!-- Fav -->
+                              <div class="badge-container">
+                                <div class="badge">
+                                  <img
+                                    src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
+                                    alt=""
+                                  />
+                                  <span>Favourite</span>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -3358,7 +1180,8 @@
               </div>
             </div>
           </div>
-          <div
+
+          <aside
             style="
               display: flex;
               width: 502px;
@@ -4649,9 +2472,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
-      </div>
+      </main>
 
       <footer class="footer">
         <div
