@@ -28,7 +28,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
     />
-    <link rel="stylesheet" href="index.css" />
+    <!-- <link rel="stylesheet" href="index.css" /> -->
     <style>
       :root {
         --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -247,6 +247,200 @@
           padding: 48px 20px;
         }
       }
+
+      /* Header Styles */
+      .main-header {
+        width: 100%;
+        height: 80px;
+        background-color: #ffffff;
+        position: relative;
+        padding: 32px 100px;
+      }
+
+      /* Background Image */
+      .header-background {
+        position: absolute;
+        bottom: 0;
+        left: -96px;
+        right: -96px;
+        z-index: 1;
+        overflow: hidden;
+      }
+
+      .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Header Content */
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Brand Section */
+      .brand-container {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        width: 237px;
+      }
+
+      .brand-logo {
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+      }
+
+      .brand-name {
+        font-family: "Eczar", serif;
+        font-size: 32px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #1477ba;
+        letter-spacing: -0.64px;
+        white-space: nowrap;
+      }
+
+      /* Navigation */
+      .nav-links {
+        display: flex;
+        gap: 48px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-link {
+        font-family: "Mulish", sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #0891b2;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .nav-link.active {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .nav-link:hover {
+        color: #067591;
+      }
+
+      /* Header Actions */
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .search-icon {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+      }
+
+      .login-btn {
+        display: flex;
+        padding: 12px 24px;
+        justify-content: center;
+        align-items: center;
+        background-color: #0891b2;
+        border: none;
+        color: white;
+        font-family: "Mulish", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .login-btn:hover {
+        background-color: #067591;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .main-header {
+          padding: 32px 50px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .brand-name {
+          font-size: 28px;
+        }
+
+        .nav-links {
+          gap: 24px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-header {
+          padding: 32px 20px;
+          height: auto;
+        }
+
+        .header-content {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
+
+        .brand-container {
+          width: auto;
+        }
+
+        .nav-links {
+          order: 3;
+          width: 100%;
+          justify-content: space-between;
+          padding-top: 20px;
+        }
+
+        .header-actions {
+          gap: 16px;
+        }
+
+        .login-btn {
+          padding: 8px 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .brand-name {
+          font-size: 24px;
+        }
+
+        .nav-link {
+          font-size: 16px;
+        }
+
+        .login-btn {
+          font-size: 16px;
+        }
+      }
+
+      /* Mobile Navigation Toggle */
+      .mobile-menu-toggle {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-toggle {
+          display: block;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 5px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -264,239 +458,44 @@
       "
       class="main-container"
     >
-      <div
-        style="
-          display: flex;
-          width: 1440px;
-          height: 80px;
-          padding: 32px 100px 32px 100px;
-          gap: 32px;
-          align-items: center;
-          flex-shrink: 0;
-          flex-wrap: nowrap;
-          background-color: #ffffff;
-          position: relative;
-        "
-      >
-        <div
-          style="
-            flex-shrink: 0;
-            background-position: center;
-            background-image: url(./assets/images/4129d126-4807-413c-ae85-715bc36e6253.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: absolute;
-            bottom: 0;
-            left: -96px;
-            right: -96px;
-            z-index: 15;
-          "
-        ></div>
-        <div
-          style="
-            display: flex;
-            min-width: 0;
-            justify-content: space-between;
-            align-items: center;
-            flex-grow: 1;
-            flex-shrink: 0;
-            flex-basis: 0;
-            flex-wrap: nowrap;
-            position: relative;
-            z-index: 1;
-          "
-        >
-          <div
-            style="
-              display: flex;
-              width: 237px;
-              gap: 4px;
-              justify-content: center;
-              align-items: center;
-              flex-shrink: 0;
-              flex-wrap: nowrap;
-              position: relative;
-              z-index: 2;
-            "
-          >
-            <div
-              style="
-                width: 56px;
-                height: 56px;
-                flex-shrink: 0;
-                background-position: center;
-                background-image: url(./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png);
-                background-size: cover;
-                background-repeat: no-repeat;
-                position: relative;
-                z-index: 3;
-              "
-            >
-              sss
-            </div>
-            <span
-              style="
-                display: flex;
-                width: 177px;
-                height: 24px;
-                justify-content: flex-start;
-                align-items: flex-start;
-                flex-shrink: 0;
-                flex-basis: auto;
-                font-family: Eczar, var(--default-font-family);
-                font-size: 32px;
-                font-weight: 400;
-                line-height: 24px;
-                color: #1477ba;
-                letter-spacing: -0.64px;
-                position: relative;
-                text-align: left;
-                white-space: nowrap;
-                z-index: 4;
-              "
-              >United Christ</span
-            >
+      <header class="main-header">
+        <div class="header-background">
+          <img
+            src="./assets/images/4129d126-4807-413c-ae85-715bc36e6253.png"
+            alt="header background"
+            class="background-image"
+          />
+        </div>
+
+        <div class="header-content">
+          <!-- Logo and Brand Name -->
+          <div class="brand-container">
+            <img
+              src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+              alt="United Christ Logo"
+              class="brand-logo"
+            />
+            <span class="brand-name">United Christ</span>
           </div>
-          <div
-            style="
-              display: flex;
-              width: 258px;
-              gap: 48px;
-              justify-content: center;
-              align-items: center;
-              flex-shrink: 0;
-              flex-wrap: nowrap;
-              position: relative;
-              overflow: hidden;
-              z-index: 5;
-            "
-          >
-            <div
-              style="
-                display: flex;
-                width: 51px;
-                gap: 4px;
-                align-items: center;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                z-index: 6;
-              "
-            >
-              <span
-                style="
-                  height: 20px;
-                  flex-shrink: 0;
-                  flex-basis: auto;
-                  font-family: Mulish, var(--default-font-family);
-                  font-size: 18px;
-                  font-weight: 700;
-                  line-height: 20px;
-                  color: #0891b2;
-                  position: relative;
-                  text-align: left;
-                  text-decoration: underline;
-                  white-space: nowrap;
-                  z-index: 7;
-                "
-                >Home</span
-              >
-            </div>
-            <div
-              style="
-                display: flex;
-                width: 47px;
-                gap: 4px;
-                align-items: center;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                z-index: 8;
-              "
-            >
-              <span
-                style="
-                  height: 20px;
-                  flex-shrink: 0;
-                  flex-basis: auto;
-                  font-family: Mulish, var(--default-font-family);
-                  font-size: 18px;
-                  font-weight: 400;
-                  line-height: 20px;
-                  color: #0891b2;
-                  position: relative;
-                  text-align: left;
-                  white-space: nowrap;
-                  z-index: 9;
-                "
-                >Blogs</span
-              >
-            </div>
-            <div
-              style="
-                display: flex;
-                width: 64px;
-                gap: 4px;
-                align-items: center;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                z-index: 10;
-              "
-            >
-              <span
-                style="
-                  height: 20px;
-                  flex-shrink: 0;
-                  flex-basis: auto;
-                  font-family: Mulish, var(--default-font-family);
-                  font-size: 18px;
-                  font-weight: 400;
-                  line-height: 20px;
-                  color: #0891b2;
-                  position: relative;
-                  text-align: left;
-                  white-space: nowrap;
-                  z-index: 11;
-                "
-                >Prayers</span
-              >
-            </div>
+
+          <!-- Navigation Links -->
+          <nav class="nav-links">
+            <a href="#" class="nav-link active">Home</a>
+            <a href="#" class="nav-link">Blogs</a>
+            <a href="#" class="nav-link">Prayers</a>
+          </nav>
+
+          <!-- Search and Login -->
+          <div class="header-actions">
+            <img
+              src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+              alt="Search"
+              class="search-icon"
+            />
+            <button class="login-btn">Login</button>
           </div>
         </div>
-        <div
-          style="
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            background-position: center;
-            background-image: url(./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: relative;
-            overflow: hidden;
-            z-index: 12;
-          "
-        ></div>
-        <button
-          style="
-            display: flex;
-            width: 95px;
-            padding: 12px 24px 12px 24px;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-            flex-wrap: nowrap;
-            background-color: #0891b2;
-            border: none;
-            position: relative;
-            z-index: 13;
-            cursor: pointer;
-          "
-        >
-          Login
-        </button>
-      </div>
+      </header>
 
       <div
         style="
@@ -4653,6 +4652,7 @@
           </div>
         </div>
       </div>
+      
       <footer class="footer">
         <div
           style="
