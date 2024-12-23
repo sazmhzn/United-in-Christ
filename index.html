@@ -130,6 +130,10 @@
         opacity: 0.8;
       }
 
+      h1 {
+        color: #1477ba;
+      }
+
       /* Footer Sections */
       .footer-section {
         flex: 0 0 200px;
@@ -276,7 +280,6 @@
         flex-direction: column;
         align-items: flex-start;
         flex-wrap: nowrap;
-        gap: 24px;
         background-color: #fefef9;
       "
     >
@@ -287,26 +290,31 @@
             <img
               src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
               alt="United Christ Logo"
-              class="brand-logo"
+              class="brand-logo m-0"
             />
             <span class="brand-name">United Christ</span>
           </div>
 
-          <!-- Navigation Links -->
-          <nav class="nav-links">
-            <a href="#" class="nav-link active">Home</a>
-            <a href="#" class="nav-link">Blogs</a>
-            <a href="#" class="nav-link">Prayers</a>
-          </nav>
+          <div
+            class="d-flex flex-col align-item-center justify-content-end w-100"
+            style="gap: 32px"
+          >
+            <!-- Navigation Links -->
+            <nav class="nav-links">
+              <a href="#" class="nav-link active">Home</a>
+              <a href="#" class="nav-link">Blogs</a>
+              <a href="#" class="nav-link">Prayers</a>
+            </nav>
 
-          <!-- Search and Login -->
-          <div class="header-actions">
-            <img
-              src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
-              alt="Search"
-              class="search-icon"
-            />
-            <button class="login-btn btn">Login</button>
+            <!-- Search and Login -->
+            <div class="header-actions">
+              <img
+                src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                alt="Search"
+                class="search-icon"
+              />
+              <button class="login-btn">Login</button>
+            </div>
           </div>
         </div>
       </header>
@@ -823,7 +831,7 @@
               overflow: hidden; /* Ensures the image doesn't leak outside the section */
               padding: 2em 0;
             "
-            class="blog-section position-relative border-bottom"
+            class="blog-section border-bottom"
           >
             <!-- <img
           loading="lazy"
@@ -835,19 +843,7 @@
           role="presentation"
         /> -->
             <!-- <div class="hero-bg"></div> -->
-            <img
-              loading="lazy"
-              src="/assets/images/image3new.png"
-              class="hero-image start-0"
-              style="
-                object-fit: cover;
-                position: absolute;
-                pointer-events: none;
-              "
-              alt=""
-              width="100"
-              role="presentation"
-            />
+
             <div class="container content" style="z-index: 10">
               <h1 class="w-100 text-center">Our Blogs</h1>
               <div class="divider-wrapper mx-auto w-100">
@@ -1485,6 +1481,21 @@
                 </div>
               </div>
             </div>
+            <img
+              loading="lazy"
+              src="/assets/images/image3new.png"
+              class="hero-image start-0"
+              style="
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                z-index: -5;
+                pointer-events: none;
+              "
+              alt=""
+              width="100"
+              role="presentation"
+            />
           </section>
 
           <section
