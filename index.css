@@ -82,7 +82,7 @@ h1,
   color: var(--color-text-black);
   line-height: var(--line-height-heading);
   letter-spacing: var(--letter-spacing-tight);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 
 h2,
@@ -904,7 +904,7 @@ main {
 }
 
 .carousel-item {
-  height: 90vh;
+  /* height: 90vh; */
   width: 100%;
   overflow: hidden;
 }
@@ -1058,12 +1058,36 @@ main {
 
 .prayer-section {
   display: flex;
-
-  max-width: 100%;
+  position: relative;
   flex-direction: column;
   align-items: start;
-  justify-content: start;
-  padding: 2em 0;
+  justify-content: center;
+  padding: 9.6rem 0;
+  /* background-color: #051d2e; */
+}
+
+.prayer-section .container {
+  z-index: 10;
+}
+
+#prayer-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  min-height: 88vh;
+  z-index: 1;
+  background-image: url("/assets/images/testimonial-image.png");
+}
+
+.prayer-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.prayer-heading > p {
+  color: var(--color-text-black);
+  width: 60%;
 }
 
 .prayer-title {
@@ -1080,7 +1104,6 @@ main {
 }
 .divider-wrapper {
   display: flex;
-  margin: 32px 0 0;
   width: 610px;
   max-width: 100%;
   align-items: center;
@@ -1126,6 +1149,7 @@ main {
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   display: flex;
+  gap: 24px;
   min-width: 240px;
   flex-direction: column;
   overflow: hidden;
@@ -1133,6 +1157,25 @@ main {
   padding: 24px;
   border: 1px solid rgba(166, 166, 176, 0.2);
 }
+
+#calender-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/413ba3bac1eeb1bedbeed0d0af3e9e1c8ad7ccb5823f15d2b82a04a7db798acd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a");
+}
+
+#fav-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a");
+}
+
+#tag-icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a");
+}
+
 @media (max-width: 991px) {
   .testimonial-card {
     padding: 0 20px;
@@ -1176,17 +1219,36 @@ main {
   width: 16px;
 }
 .category-text {
-  color: var(--Text-red, rgba(220, 38, 38, 0.9));
+  color: var(--color-text-black);
   text-align: center;
-  font: 500 14px Mulish, sans-serif;
+  font-size: var(--font-size-sm);
 }
 .testimonial-content {
   display: flex;
-  margin-top: 24px;
+  /* margin-top: 24px; */
   width: 100%;
   padding-bottom: 8px;
   flex-direction: column;
+  gap: 12px;
 }
+
+#card-divider {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-text-heading);
+}
+
+.testimonial-content h2 {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-black);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 1px;
+  word-wrap: break-word;
+}
+.testimonial-content p {
+  margin: 0;
+}
+
 .testimonial-heading {
   color: var(--Text-black, #051d2e);
   font: 700 24px/1 Domine, sans-serif;
@@ -1491,7 +1553,6 @@ main {
 }
 .badge span {
   line-height: 20px;
-  color: #ced4da;
   font-size: var(--font-size-base);
   margin: 0;
 }

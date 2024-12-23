@@ -450,347 +450,205 @@
 
           <section class="prayer-section">
             <div class="container">
-              <h1 class="w-100 text-center">Our Prayers</h1>
-              <div class="divider-wrapper mx-auto w-100">
-                <div class="divider-left"></div>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/8679a5623cd2355ca09a6ea2dda4b0b647e70288ab803702ffd107fc443c5ca4?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                  class="divider-icon"
-                  alt=""
-                />
-                <div class="divider-right"></div>
+              <div class="prayer-heading">
+                <h1 class="w-100 text-center">Our Prayers</h1>
+                <div class="divider-wrapper mx-auto w-100">
+                  <div class="divider-left"></div>
+
+                  <div id="cross-icon"></div>
+                  <div class="divider-right"></div>
+                </div>
+                <p class="text-center w-lg-50 mx-auto">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut seedor labore. Excepteur sint
+                  occaecat.
+                </p>
               </div>
-              <p class="text-muted my-4 text-center w-lg-50 mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut seedor labore. Excepteur sint
-                occaecat.
-              </p>
               <div
-                class="d-flex testimony-container overflow-x-scroll align-item-start gap-4"
+                id="carouselId"
+                class="carousel slide"
+                data-bs-ride="carousel"
               >
-                <article
-                  class="col-lg-3 col-12 p-4 testimonial-card card"
-                  tabindex="0"
+                <div
+                  class="carousel-inner d-flex justify-content-between"
+                  role="listbox"
                 >
-                  <!-- Date Section -->
-                  <header class="date-container">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/413ba3bac1eeb1bedbeed0d0af3e9e1c8ad7ccb5823f15d2b82a04a7db798acd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                    <time class="date-text" datetime="2024-12-03"
-                      >Dec 3, 2024</time
-                    >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                  </header>
+                  <article
+                    class="col-lg-3 col-12 p-4 testimonial-card card"
+                    tabindex="0"
+                  >
+                    <!-- Date Section -->
+                    <header class="date-container">
+                      <span id="calender-icon"></span>
+                      <time class="date-text" datetime="2024-12-03"
+                        >Dec 3, 2024</time
+                      >
+                      <span id="fav-icon"></span>
+                    </header>
 
-                  <!-- Category Badge -->
+                    <!-- Category Badge -->
 
-                  <div class="d-flex gap-0 mt-5 p-0 badge">
-                    <span class="category-icon-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="category-icon"
-                        alt="Category icon"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-
-                  <!-- Testimonial Content -->
-                  <div class="testimonial-content">
-                    <h2 class="">Beacon of Hope</h2>
-                    <div class="card-divider-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/935714c8e3e061841723d05b7f2d0a1c9f056c9ffb33f9f3ece514ef39d9cc5f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="divider"
-                        alt="Divider line"
-                      />
+                    <div class="d-flex justify-content-start gap-2 p-0 badge">
+                      <span id="tag-icon"></span>
+                      <span class="">Family</span>
                     </div>
-                    <p class="text-muted">
-                      United in Christ has been a beacon of hope and faith for
-                      me.
-                    </p>
-                  </div>
 
-                  <!-- Author Details -->
-                  <footer class="author-container">
-                    <div class="author-details">
-                      <p class="fst-italic"><strong>Elena Rodriguez</strong></p>
-                      <p class="h5 text-lowercase fw-normal">
-                        Community Volunteer
+                    <!-- Testimonial Content -->
+                    <div class="testimonial-content">
+                      <h2 class="">Beacon of Hope</h2>
+
+                      <div id="card-divider"></div>
+
+                      <p class="text-muted">
+                        United in Christ has been a beacon of hope...
                       </p>
                     </div>
-                  </footer>
-                </article>
-                <article
-                  class="col-lg-3 col-12 p-4 testimonial-card card"
-                  tabindex="0"
-                >
-                  <!-- Date Section -->
-                  <header class="date-container">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/413ba3bac1eeb1bedbeed0d0af3e9e1c8ad7ccb5823f15d2b82a04a7db798acd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                    <time class="date-text" datetime="2024-12-03"
-                      >Dec 3, 2024</time
-                    >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                  </header>
 
-                  <!-- Category Badge -->
+                    <!-- Author Details -->
+                    <footer class="author-container mt-0">
+                      <div class="author-details">
+                        <p class="fst-italic">
+                          <strong>Elena Rodriguez</strong>
+                        </p>
+                        <p class="h5 text-lowercase fw-normal">
+                          Community Volunteer
+                        </p>
+                      </div>
+                    </footer>
+                  </article>
+                  <article
+                    class="col-lg-3 col-12 p-4 testimonial-card card"
+                    tabindex="0"
+                  >
+                    <!-- Date Section -->
+                    <header class="date-container">
+                      <span id="calender-icon"></span>
+                      <time class="date-text" datetime="2024-12-03"
+                        >Dec 3, 2024</time
+                      >
+                      <span id="fav-icon"></span>
+                    </header>
 
-                  <div class="d-flex gap-0 mt-5 p-0 badge">
-                    <span class="category-icon-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="category-icon"
-                        alt="Category icon"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
+                    <!-- Category Badge -->
 
-                  <!-- Testimonial Content -->
-                  <div class="testimonial-content">
-                    <h2 class="">Beacon of Hope</h2>
-                    <div class="card-divider-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/935714c8e3e061841723d05b7f2d0a1c9f056c9ffb33f9f3ece514ef39d9cc5f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="divider"
-                        alt="Divider line"
-                      />
+                    <div class="d-flex justify-content-start gap-2 p-0 badge">
+                      <span id="tag-icon"></span>
+                      <span class="">Family</span>
                     </div>
-                    <p class="text-muted">
-                      United in Christ has been a beacon of hope and faith for
-                      me.
-                    </p>
-                  </div>
 
-                  <!-- Author Details -->
-                  <footer class="author-container">
-                    <div class="author-details">
-                      <p class="fst-italic"><strong>Elena Rodriguez</strong></p>
-                      <p class="h5 text-lowercase fw-normal">
-                        Community Volunteer
+                    <!-- Testimonial Content -->
+                    <div class="testimonial-content">
+                      <h2 class="">Beacon of Hope</h2>
+
+                      <div id="card-divider"></div>
+
+                      <p class="text-muted">
+                        United in Christ has been a beacon of hope...
                       </p>
                     </div>
-                  </footer>
-                </article>
-                <article
-                  class="col-lg-3 col-12 p-4 testimonial-card card"
-                  tabindex="0"
-                >
-                  <!-- Date Section -->
-                  <header class="date-container">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/413ba3bac1eeb1bedbeed0d0af3e9e1c8ad7ccb5823f15d2b82a04a7db798acd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                    <time class="date-text" datetime="2024-12-03"
-                      >Dec 3, 2024</time
-                    >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                  </header>
 
-                  <!-- Category Badge -->
+                    <!-- Author Details -->
+                    <footer class="author-container mt-0">
+                      <div class="author-details">
+                        <p class="fst-italic">
+                          <strong>Elena Rodriguez</strong>
+                        </p>
+                        <p class="h5 text-lowercase fw-normal">
+                          Community Volunteer
+                        </p>
+                      </div>
+                    </footer>
+                  </article>
+                  <article
+                    class="col-lg-3 col-12 p-4 testimonial-card card"
+                    tabindex="0"
+                  >
+                    <!-- Date Section -->
+                    <header class="date-container">
+                      <span id="calender-icon"></span>
+                      <time class="date-text" datetime="2024-12-03"
+                        >Dec 3, 2024</time
+                      >
+                      <span id="fav-icon"></span>
+                    </header>
 
-                  <div class="d-flex gap-0 mt-5 p-0 badge">
-                    <span class="category-icon-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="category-icon"
-                        alt="Category icon"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
+                    <!-- Category Badge -->
 
-                  <!-- Testimonial Content -->
-                  <div class="testimonial-content">
-                    <h2 class="">Beacon of Hope</h2>
-                    <div class="card-divider-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/935714c8e3e061841723d05b7f2d0a1c9f056c9ffb33f9f3ece514ef39d9cc5f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="divider"
-                        alt="Divider line"
-                      />
+                    <div class="d-flex justify-content-start gap-2 p-0 badge">
+                      <span id="tag-icon"></span>
+                      <span class="">Family</span>
                     </div>
-                    <p class="text-muted">
-                      United in Christ has been a beacon of hope and faith for
-                      me.
-                    </p>
-                  </div>
 
-                  <!-- Author Details -->
-                  <footer class="author-container">
-                    <div class="author-details">
-                      <p class="fst-italic"><strong>Elena Rodriguez</strong></p>
-                      <p class="h5 text-lowercase fw-normal">
-                        Community Volunteer
+                    <!-- Testimonial Content -->
+                    <div class="testimonial-content">
+                      <h2 class="">Beacon of Hope</h2>
+
+                      <div id="card-divider"></div>
+
+                      <p class="text-muted">
+                        United in Christ has been a beacon of hope...
                       </p>
                     </div>
-                  </footer>
-                </article>
-                <article
-                  class="col-lg-3 col-12 p-4 testimonial-card card"
-                  tabindex="0"
-                >
-                  <!-- Date Section -->
-                  <header class="date-container">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/413ba3bac1eeb1bedbeed0d0af3e9e1c8ad7ccb5823f15d2b82a04a7db798acd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                    <time class="date-text" datetime="2024-12-03"
-                      >Dec 3, 2024</time
-                    >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                  </header>
 
-                  <!-- Category Badge -->
+                    <!-- Author Details -->
+                    <footer class="author-container mt-0">
+                      <div class="author-details">
+                        <p class="fst-italic">
+                          <strong>Elena Rodriguez</strong>
+                        </p>
+                        <p class="h5 text-lowercase fw-normal">
+                          Community Volunteer
+                        </p>
+                      </div>
+                    </footer>
+                  </article>
+                  <article
+                    class="col-lg-3 col-12 p-4 testimonial-card card"
+                    tabindex="0"
+                  >
+                    <!-- Date Section -->
+                    <header class="date-container">
+                      <span id="calender-icon"></span>
+                      <time class="date-text" datetime="2024-12-03"
+                        >Dec 3, 2024</time
+                      >
+                      <span id="fav-icon"></span>
+                    </header>
 
-                  <div class="d-flex gap-0 mt-5 p-0 badge">
-                    <span class="category-icon-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="category-icon"
-                        alt="Category icon"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
+                    <!-- Category Badge -->
 
-                  <!-- Testimonial Content -->
-                  <div class="testimonial-content">
-                    <h2 class="">Beacon of Hope</h2>
-                    <div class="card-divider-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/935714c8e3e061841723d05b7f2d0a1c9f056c9ffb33f9f3ece514ef39d9cc5f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="divider"
-                        alt="Divider line"
-                      />
+                    <div class="d-flex justify-content-start gap-2 p-0 badge">
+                      <span id="tag-icon"></span>
+                      <span class="">Family</span>
                     </div>
-                    <p class="text-muted">
-                      United in Christ has been a beacon of hope and faith for
-                      me.
-                    </p>
-                  </div>
 
-                  <!-- Author Details -->
-                  <footer class="author-container">
-                    <div class="author-details">
-                      <p class="fst-italic"><strong>Elena Rodriguez</strong></p>
-                      <p class="h5 text-lowercase fw-normal">
-                        Community Volunteer
+                    <!-- Testimonial Content -->
+                    <div class="testimonial-content">
+                      <h2 class="">Beacon of Hope</h2>
+
+                      <div id="card-divider"></div>
+
+                      <p class="text-muted">
+                        United in Christ has been a beacon of hope...
                       </p>
                     </div>
-                  </footer>
-                </article>
-                <article
-                  class="col-lg-3 col-12 p-4 testimonial-card card"
-                  tabindex="0"
-                >
-                  <!-- Date Section -->
-                  <header class="date-container">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/413ba3bac1eeb1bedbeed0d0af3e9e1c8ad7ccb5823f15d2b82a04a7db798acd?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                    <time class="date-text" datetime="2024-12-03"
-                      >Dec 3, 2024</time
-                    >
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                      class="calendar-icon"
-                      alt="Calendar icon"
-                    />
-                  </header>
 
-                  <!-- Category Badge -->
-
-                  <div class="d-flex gap-0 mt-5 p-0 badge">
-                    <span class="category-icon-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="category-icon"
-                        alt="Category icon"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-
-                  <!-- Testimonial Content -->
-                  <div class="testimonial-content">
-                    <h2 class="">Beacon of Hope</h2>
-                    <div class="card-divider-wrapper">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/935714c8e3e061841723d05b7f2d0a1c9f056c9ffb33f9f3ece514ef39d9cc5f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        class="divider"
-                        alt="Divider line"
-                      />
-                    </div>
-                    <p class="text-muted">
-                      United in Christ has been a beacon of hope and faith for
-                      me.
-                    </p>
-                  </div>
-
-                  <!-- Author Details -->
-                  <footer class="author-container">
-                    <div class="author-details">
-                      <p class="fst-italic"><strong>Elena Rodriguez</strong></p>
-                      <p class="h5 text-lowercase fw-normal">
-                        Community Volunteer
-                      </p>
-                    </div>
-                  </footer>
-                </article>
+                    <!-- Author Details -->
+                    <footer class="author-container mt-0">
+                      <div class="author-details">
+                        <p class="fst-italic">
+                          <strong>Elena Rodriguez</strong>
+                        </p>
+                        <p class="h5 text-lowercase fw-normal">
+                          Community Volunteer
+                        </p>
+                      </div>
+                    </footer>
+                  </article>
+                </div>
               </div>
             </div>
+            <div id="prayer-image"></div>
           </section>
 
           <section
