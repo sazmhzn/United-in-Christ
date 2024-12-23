@@ -202,9 +202,9 @@ button {
 }
 
 button:hover {
-  background-color: multiply(var(--primary-color), 20%);
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  background-color: #1e88d0;
+  border: inset 1px solid var(--primary-blue);
+  box-shadow: 2px 2px 10px -20px rgb(37, 37, 37);
 }
 
 /* ==== Input Fields ==== */
@@ -384,10 +384,6 @@ header .brand-name {
   width: 24px;
   height: 24px;
   cursor: pointer;
-}
-
-.login-btn:hover {
-  background-color: #067591;
 }
 
 @media (max-width: 480px) {
@@ -681,14 +677,15 @@ input:focus-visible {
 }
 .footer-background {
   aspect-ratio: 5.35;
-  object-fit: contain;
-  object-position: center;
-  width: 2038px;
+
   position: absolute;
   z-index: 0;
-  left: -339px;
+  left: 0;
   top: -2px;
-  height: 382px;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/fd8d3435fa1c6aa6fb586828e6fe1f25943ac25209f9872b2d8d0d847fc51d08?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a");
+  background-size: cover;
 }
 
 .footer-content {
@@ -701,10 +698,7 @@ input:focus-visible {
   flex-wrap: wrap;
   padding: 48px 0;
 }
-.brand-container {
-  display: flex;
-  flex-direction: column;
-}
+
 .brand-header {
   display: flex;
   height: 32px;
@@ -712,26 +706,13 @@ input:focus-visible {
   gap: 4px;
   color: #fff;
   letter-spacing: 0.64px;
-  font: 400 32px/1 Great Vibes, sans-serif;
 }
 .brand-logo {
   aspect-ratio: 1;
   width: 48px;
   margin: auto 0;
 }
-.brand-name {
-  width: 188px;
-  margin: auto 0;
-}
-.social-links {
-  display: flex;
-  margin-top: 12px;
-  gap: 12px;
-}
-.social-icon {
-  aspect-ratio: 1;
-  width: 24px;
-}
+
 .footer-column {
   display: flex;
   flex-direction: column;
@@ -1062,7 +1043,7 @@ main {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  padding: 9.6rem 0;
+  padding: 9.6rem 0 0 0;
   /* background-color: #051d2e; */
 }
 
@@ -1077,12 +1058,14 @@ main {
   min-height: 88vh;
   z-index: 1;
   background-image: url("/assets/images/testimonial-image.png");
+  background-size: cover;
 }
 
 .prayer-heading {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-bottom: 8rem;
 }
 
 .prayer-heading > p {
@@ -1182,6 +1165,19 @@ main {
   }
 }
 
+#quote-image {
+  position: absolute;
+  width: 108px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+
+  background-image: url("assets/images/quote.png");
+  background-repeat: no-repeat;
+}
+
 .date-container {
   display: flex;
   width: 100%;
@@ -1227,7 +1223,7 @@ main {
   display: flex;
   /* margin-top: 24px; */
   width: 100%;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   flex-direction: column;
   gap: 12px;
 }
@@ -1273,22 +1269,40 @@ main {
 }
 .author-container {
   display: flex;
-  margin-top: 24px;
+  /* margin-top: 24px; */
   align-items: center;
-  gap: 12px;
+  /* gap: 12px; */
   font-family: Mulish, sans-serif;
+}
+
+.author-details > p {
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .church-quote {
   color: var(--color-text-secondary);
-  font-size: var(--font-size-lg);
-  font-family: var(--font-heading);
+  font-family: var(--font-primary);
 }
 
 @media (max-width: 991px) {
   .church-quote {
     max-width: 100%;
   }
+}
+
+#blog-background {
+  width: 100%;
+  height: calc(100vw * (16 / 9)); /* Maintain 9:16 aspect ratio */
+
+  position: absolute;
+  top: 0;
+  left: 0%;
+  z-index: 3;
+
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/blog-bg.png");
+  background-size: contain;
 }
 
 .blog-cards {
@@ -1302,11 +1316,9 @@ main {
   flex-shrink: 0;
   flex-wrap: wrap;
 
-  /* display: flex;
-  align-items: center; */
-  /* gap: 24px; */
   justify-content: start;
 }
+
 .blog-card {
   background-color: #fff;
   box-shadow: 0 0.75px 3.631px 0 rgba(89, 108, 148, 0.04);
@@ -1320,14 +1332,21 @@ main {
   overflow: hidden;
   align-items: center;
   /* width: 100%; */
-  width: 271.605px;
-  max-width: 626.085px;
+  min-width: 271.605px;
+  flex: 1;
 
   cursor: pointer;
 
   /* width: 389px; */
   margin: auto 0;
 }
+
+#right-arrow {
+  width: 16px;
+  height: 16px;
+  background-image: url("assets/images/arrow-right.png");
+}
+
 .card-image {
   background-blend-mode: normal;
   display: flex;
@@ -1423,6 +1442,16 @@ main {
 .card-title {
   color: var(--color-text-black);
   /* margin-top: 24px; */
+}
+
+.blog-container {
+  gap: 60px;
+  align-items: center;
+}
+
+.blog-container > button {
+  width: fit-content;
+  margin: auto;
 }
 
 .divider {
