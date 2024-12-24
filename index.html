@@ -112,30 +112,6 @@
         color: white;
       }
 
-      .social-icons {
-        display: flex;
-        gap: 12px;
-      }
-
-      .social-icon img {
-        width: 24px;
-        height: 24px;
-        transition: opacity 0.3s;
-      }
-
-      .social-icon:hover img {
-        opacity: 0.8;
-      }
-
-      h1 {
-        color: #1477ba;
-      }
-
-      /* Footer Sections */
-      .footer-section {
-        flex: 0 0 200px;
-      }
-
       .section-header {
         display: flex;
         align-items: center;
@@ -156,12 +132,6 @@
         margin: 0;
         text-transform: capitalize;
       }
-
-      /* .footer-links {
-        list-style: none;
-        padding-inline: 12px;
-        margin: 0;
-      } */
 
       .footer-links li {
         margin-bottom: 8px;
@@ -319,10 +289,7 @@
       <!-- Main Content -->
       <main class="">
         <div class="d-flex flex-column w-100 main-container container-fluid">
-          <section
-            class="p-0 hero position-relative overflow-hidden"
-            style="height: 90dvh"
-          >
+          <section class="p-0 banner-section position-relative overflow-hidden">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
@@ -380,8 +347,10 @@
             </div>
           </section>
 
-          <section class="py-4 hero position-relative">
-            <div class="container-fluid" style="padding-inline: 100px">
+          <section
+            class="py-4 hero position-relative d-flex align-item-center justify-content-center"
+          >
+            <div class="container-fluid">
               <div
                 class="about-section d-flex flex-column flex-md-row align-items-center"
               >
@@ -429,9 +398,10 @@
             </div>
           </section>
 
-          <section class="prayer-section">
+          <section class="prayer-section" style="z-index: 2">
             <div
-              class="d-flex flex-column justify-content-center align-item-center container blog-container"
+              class="d-flex flex-column justify-content-center align-item-center container-fluid blog-container"
+              style="z-index: 23"
             >
               <div class="prayer-heading">
                 <h1 class="w-100 text-center">Our Prayers</h1>
@@ -981,6 +951,7 @@
                             >
                               <img
                                 class="card-image"
+                                57vh;90vh
                                 src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
                                 alt=""
                               />
