@@ -196,7 +196,7 @@ button {
   background-color: var(--secondary-red);
   color: #fff;
   font-size: 1.8rem;
-  padding: 0.5em 1.2em;
+  padding: 0.3em 1.2em;
   border: none;
   cursor: pointer;
 }
@@ -278,6 +278,7 @@ section {
   font-size: 1.8rem;
   color: var(--white);
   text-decoration: none;
+  padding-inline: 12px;
 }
 
 .footer-link:hover {
@@ -791,7 +792,7 @@ input:focus-visible {
   margin-top: 16px;
   flex-direction: column;
   font-family: Mulish, sans-serif;
-  padding: 0 1.6rem;
+  padding: 0 2.4rem;
 }
 .newsletter-description {
   color: #a6a6b0;
@@ -860,7 +861,7 @@ main {
 .hero {
   /* min-height: 90vh; */
   max-height: 90dvh;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .hero-title {
@@ -982,11 +983,13 @@ main {
   display: flex;
   align-items: center;
   gap: 100px;
+  padding-top: 2rem;
 }
 
 .about-section img {
-  width: 100%;
-  aspect-ratio: 1.1;
+  width: 85%;
+  height: 500%;
+  aspect-ratio: 1;
   object-fit: cover;
   position: relative;
 }
@@ -996,7 +999,7 @@ main {
   height: 50%;
   position: absolute;
   bottom: -6%;
-  right: -6%;
+  right: 0%;
   z-index: 0;
   background-image: url("/assets/images/dot-pattern.png");
 }
@@ -1004,9 +1007,9 @@ main {
   width: 50%;
   height: 50%;
   position: absolute;
-  left: -6%;
+  left: 0%;
   top: -6%;
-  z-index: 1;
+  z-index: 0;
   background-image: url("/assets/images/dot-pattern.png");
 }
 
@@ -1085,7 +1088,7 @@ main {
   /* align-self: stretch; */
   /* display: flex; */
   width: 99px;
-  height: 8px;
+  height: 4px;
   /* margin: auto 0; */
 }
 
@@ -1104,20 +1107,9 @@ main {
 
 /* Responsive Adjustments */
 @media (max-width: 991px) {
-  .about-section {
-    gap: 50px; /* Reduce spacing */
-    align-items: center;
-  }
-
   .about-section img {
-    max-width: 80%; /* Scale image for smaller screens */
+    /* max-width: 80%;  */
     margin: 0 auto; /* Center image */
-  }
-
-  #dot-pattern-1,
-  #dot-pattern-2 {
-    width: 25%; /* Reduce size of dot patterns */
-    height: 25%;
   }
 
   .welcome-container {
@@ -1185,8 +1177,7 @@ main {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  padding: 9.6rem 0 0 0;
-  /* background-color: #051d2e; */
+  padding: 6rem 0 0 0;
 }
 
 .prayer-section .container {
@@ -1201,18 +1192,22 @@ main {
   z-index: 1;
   background-image: url("/assets/images/testimonial-image.png");
   background-size: cover;
+  background-position: center;
 }
 
 .prayer-heading {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  margin-bottom: 8rem;
+  gap: 3.2rem;
+  text-align: center;
+  /* margin-bottom: 4rem; */
 }
 
 .prayer-heading > p {
   color: var(--color-text-black);
-  width: 60%;
+  /* width: 60%; */
+  max-width: 90%;
+  /* margin-bottom: 80px; */
 }
 
 .prayer-title {
@@ -1225,10 +1220,13 @@ main {
 .prayer-slider .carousel-inner {
   width: 100%;
   display: flex;
+  gap: 1rem;
 }
 .prayer-slider .carousel-inner > .carousel-item {
-  width: 50%;
-  /* flex: 1; */
+  /* width: 50%; */
+  display: flex;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
 }
 
 @media (max-width: 991px) {
@@ -1236,12 +1234,14 @@ main {
     font-size: 40px;
   }
 }
+
 .divider-wrapper {
   display: flex;
-  width: 610px;
+  /* width: 610px; */
+  width: 100%;
   max-width: 100%;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -1256,9 +1256,9 @@ main {
 }
 .divider-right,
 .divider-left {
-  background-color: rgba(220, 38, 38, 0.9);
+  background-color: rgba(220, 38, 38, 0.4);
   /* min-width: 240px; */
-  width: 20%;
+  width: 10%;
   height: 1px;
   margin: auto 0;
 }
@@ -1284,12 +1284,18 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   display: flex;
   gap: 24px;
-  min-width: 240px;
+  /* min-width: 240px; */
   flex-direction: column;
   overflow: hidden;
-  width: 292px;
+  /* width: 292px; */
+  width: 100%;
+  /* max-width: 280px; */
   padding: 24px;
   border: 1px solid rgba(166, 166, 176, 0.2);
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
 }
 
 #calender-icon {
@@ -1308,12 +1314,6 @@ main {
   width: 16px;
   height: 16px;
   background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a");
-}
-
-@media (max-width: 991px) {
-  .testimonial-card {
-    padding: 0 20px;
-  }
 }
 
 #quote-image {
@@ -1383,12 +1383,13 @@ main {
   width: 100%;
   height: 1.5px;
   background-color: var(--color-text-heading);
+  opacity: 0.7;
 }
 
 .testimonial-content h2 {
   font-size: var(--font-size-lg);
   color: var(--color-text-black);
-  font-weight: var(--font-weight-bold);
+  font-weight: 600;
   letter-spacing: 1px;
   word-wrap: break-word;
 }
@@ -1510,6 +1511,20 @@ main {
   background-color: red;
 }
 
+.blog-section {
+  position: relative;
+  width: 100%;
+  min-height: 130dvh;
+  overflow: hidden;
+  padding: 2em 0;
+}
+
+@media (max-width: 575px) {
+  .blog-section {
+    min-height: 70dvh;
+  }
+}
+
 .blog-card .card-header {
   width: 100%;
   background-color: rebeccapurple;
@@ -1524,15 +1539,16 @@ main {
   position: absolute;
   right: 4%;
   top: 75%;
-  width: 20%;
+  width: 80px;
+  height: 80px;
   /* width: 53.043px; */
   background-color: #fff;
   box-shadow: 0 3.478px 4.348px 0 rgba(79, 79, 79, 0.12);
   display: flex;
-  gap: var(--spacing-1);
+  gap: 4px;
   flex-direction: column;
   align-items: center;
-  padding: 8px;
+  padding: 12px;
   transition: background-color 400ms ease-in-out, color 400ms ease-in-out,
     top 400ms ease-in-out;
 
@@ -1541,12 +1557,12 @@ main {
 
 .date-badge h3 {
   margin: 0px 0 0 0;
-  line-height: 28px;
+  line-height: 24px;
   color: var(--color-text-secondary);
 }
 
 .date-badge p {
-  line-height: 8px;
+  line-height: 12px;
   margin: 0;
   font-size: var(--font-size-xs);
   color: var(--color-text-secondary);
@@ -1556,7 +1572,7 @@ main {
   background-color: var(--color-text-secondary);
   color: white;
   transition-delay: 0.8s;
-  top: 50%;
+  top: 46%;
   transition: ease-in-out;
   transition-duration: 400ms;
 }
