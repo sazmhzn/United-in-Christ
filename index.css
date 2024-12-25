@@ -174,7 +174,7 @@ p {
     font-size: clamp(
       18px,
       1.2vw,
-      24px
+      20px
     ); /* Slightly larger font for readability */
     line-height: 1.8;
   }
@@ -923,7 +923,7 @@ main {
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
 }
@@ -1062,14 +1062,14 @@ main {
 .about-section {
   display: flex;
   align-items: center;
-  gap: 6%;
+  gap: 0%;
   padding-top: 2rem;
 }
 
 .about-section img {
   width: 85%;
-  height: 500%;
-  aspect-ratio: 1;
+
+  /* aspect-ratio: 1; */
   object-fit: cover;
   position: relative;
 }
@@ -1078,8 +1078,8 @@ main {
   width: 50%;
   height: 50%;
   position: absolute;
-  bottom: -6%;
-  right: 0%;
+  bottom: -8%;
+  right: 2%;
   z-index: 0;
   background-image: url("/assets/images/dot-pattern.png");
 }
@@ -1087,8 +1087,8 @@ main {
   width: 50%;
   height: 50%;
   position: absolute;
-  left: 0%;
-  top: -6%;
+  left: 2%;
+  top: -10%;
   z-index: 0;
   background-image: url("/assets/images/dot-pattern.png");
 }
@@ -1107,7 +1107,8 @@ main {
   justify-content: start;
 
   margin: auto 0;
-  padding: 48px 0;
+  /* background-color: #051d2e; */
+  padding-inline: 48px 0;
 }
 
 .header-content {
@@ -1184,7 +1185,7 @@ main {
 /* Responsive Adjustments */
 @media (max-width: 991px) {
   .about-section img {
-    /* max-width: 80%;  */
+    max-width: 80%;
     margin: 0 auto; /* Center image */
   }
 
@@ -1277,11 +1278,11 @@ main {
 }
 
 #prayer-image {
-  min-height: 5vh;
+  min-height: 85vh;
 }
 @media (min-width: 1200px) {
   .prayer-section {
-    min-height: 85vh;
+    min-height: 70vh;
   }
 
   #prayer-image {
@@ -1404,18 +1405,19 @@ main {
   gap: 24px;
   flex-direction: column;
   overflow: hidden;
-  /* width: 292px; */
-  /* width: 100%; */
+
   flex: 1;
   min-width: 271.605px;
 
   /* max-width: 280px; */
   padding: 24px;
   border: 1px solid rgba(166, 166, 176, 0.2);
+  transition: 0.3s;
 }
 
 .testimonial-card:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
+  padding: 0;
 }
 
 #calender-icon {
@@ -1434,6 +1436,15 @@ main {
   width: 16px;
   height: 16px;
   background-image: url("https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a");
+}
+#user-icon {
+  width: 16px;
+  height: 16px;
+  aspect-ratio: 1.1;
+
+  background-image: url("/assets/images/user.png");
+  background-position: center;
+  background-size: cover;
 }
 
 #quote-image {
