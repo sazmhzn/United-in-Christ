@@ -115,6 +115,28 @@ h4,
   margin-bottom: 0.5rem;
 }
 
+/* Larger Screens (e.g., desktops and 4K monitors) */
+@media (min-width: 1200px) {
+  h4,
+  .h4 {
+    font-size: clamp(2.4rem, 3vw, 3.2rem); /* Slightly larger for emphasis */
+    line-height: 1.8;
+  }
+}
+
+/* Smaller Screens (e.g., tablets and phones) */
+@media (max-width: 768px) {
+  h4,
+  .h4 {
+    font-size: clamp(
+      1.6rem,
+      5vw,
+      2rem
+    ); /* Slightly smaller to fit narrow screens */
+    line-height: 1.5; /* Tighter line height for smaller devices */
+  }
+}
+
 h5,
 .h5 {
   font-family: var(--font-primary);
@@ -144,6 +166,30 @@ p {
   color: var(--color-text-black);
   margin-bottom: 1.5rem;
   line-height: var(--line-height-relaxed);
+}
+
+/* Larger Screens (e.g., desktops and 4K monitors) */
+@media (min-width: 1200px) {
+  p {
+    font-size: clamp(
+      18px,
+      1.2vw,
+      24px
+    ); /* Slightly larger font for readability */
+    line-height: 1.8;
+  }
+}
+
+/* Smaller Screens (e.g., tablets and phones) */
+@media (max-width: 768px) {
+  p {
+    font-size: clamp(
+      14px,
+      2.5vw,
+      16px
+    ); /* Reduces font size for smaller screens */
+    line-height: 1.6; /* Tighter line height for better spacing on narrow screens */
+  }
 }
 
 .text-lead {
@@ -368,6 +414,24 @@ header .brand-container {
   justify-content: center;
   align-items: center;
   font-size: var(--font-size-md);
+}
+
+/* Larger Screens (e.g., desktops and 4K monitors) */
+@media (min-width: 1200px) {
+  .nav-links {
+    gap: 64px; /* Increase spacing for better layout on large screens */
+    font-size: 2.4rem; /* Slightly larger font for readability */
+  }
+}
+
+/* Smaller Screens (e.g., tablets and phones) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column; /* Stack links vertically for smaller screens */
+    gap: 24px; /* Reduce spacing */
+    font-size: 1.8rem; /* Smaller font size for compact devices */
+  }
 }
 
 .nav-link.active {
@@ -998,7 +1062,7 @@ main {
 .about-section {
   display: flex;
   align-items: center;
-  gap: 100px;
+  gap: 6%;
   padding-top: 2rem;
 }
 
@@ -1107,7 +1171,6 @@ main {
 
 .description-primary {
   color: var(--Text-gray, #475569);
-  margin-top: 40px;
 }
 
 .description-secondary {
@@ -1137,7 +1200,7 @@ main {
 
   .description-primary,
   .description-secondary {
-    font-size: 1.6rem; /* Reduce font size */
+    font-size: 1.8rem; /* Reduce font size */
     margin-top: 16px;
   }
 
@@ -1208,9 +1271,41 @@ main {
   background-position: center;
 }
 
-@media (min-width: 768px) {
+.container-fluid {
+  padding-inline: 0.8em;
+  /* background-color: red; */
+}
+
+#prayer-image {
+  min-height: 5vh;
+}
+@media (min-width: 1200px) {
+  .prayer-section {
+    min-height: 85vh;
+  }
+
   #prayer-image {
     min-height: 85vh;
+  }
+
+  .prayer-title {
+    font-size: clamp(4.8rem, 8vw, 15rem); /* Responsive scaling */
+    /* background-color: rebeccapurple; */
+  }
+}
+
+@media (min-width: 768px) {
+  .prayer-title {
+    font-size: clamp(
+      4.8rem,
+      2vw,
+      10rem
+    ); /* Adjust scaling for medium screens */
+    /* background-color: #051d2e; */
+  }
+
+  #prayer-image {
+    min-height: 70vh;
   }
 
   .container-fluid {
@@ -1235,9 +1330,9 @@ main {
 
 .prayer-title {
   gap: 16px;
-  color: var(--Primary, #0891b2);
+  color: var(--primary-blue);
   letter-spacing: -0.96px;
-  font: 700 48px/1 Domine, sans-serif;
+  /* font: 700 48px/1 Domine, sans-serif; */
 }
 
 .prayer-slider .carousel-inner {
@@ -1251,12 +1346,12 @@ main {
   justify-content: space-evenly;
   /* flex-wrap: wrap; */
 }
-
+/* 
 @media (max-width: 991px) {
   .prayer-title {
     font-size: 40px;
   }
-}
+} */
 
 .divider-wrapper {
   display: flex;
@@ -1307,11 +1402,13 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   display: flex;
   gap: 24px;
-  /* min-width: 240px; */
   flex-direction: column;
   overflow: hidden;
   /* width: 292px; */
-  width: 100%;
+  /* width: 100%; */
+  flex: 1;
+  min-width: 271.605px;
+
   /* max-width: 280px; */
   padding: 24px;
   border: 1px solid rgba(166, 166, 176, 0.2);
@@ -1342,7 +1439,7 @@ main {
 #quote-image {
   position: absolute;
   width: 108px;
-  height: 100%;
+  height: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -1471,7 +1568,7 @@ main {
   height: calc(100vw * (16 / 9)); /* Maintain 9:16 aspect ratio */
 
   position: absolute;
-  top: 0;
+  top: -10%;
   left: 0%;
   z-index: 1;
 
