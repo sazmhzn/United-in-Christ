@@ -1579,7 +1579,7 @@ main {
   height: calc(100vw * (16 / 9)); /* Maintain 9:16 aspect ratio */
 
   position: absolute;
-  top: -10%;
+  top: -20%;
   left: 0%;
   z-index: 1;
 
@@ -1650,6 +1650,11 @@ main {
   padding: 2em 0;
 }
 
+@media (min-width: 992) {
+  .blog-section {
+    min-height: 100dvh;
+  }
+}
 @media (max-width: 575px) {
   .blog-section {
     min-height: 70dvh;
@@ -1749,7 +1754,7 @@ main {
 
 .blog-container > button {
   width: fit-content;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .divider {
