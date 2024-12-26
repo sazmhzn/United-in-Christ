@@ -146,20 +146,11 @@ h3,
 h4,
 .h4 {
   font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-black);
   line-height: 32px;
   margin-bottom: 0.5rem;
-}
-
-/* Larger Screens (e.g., desktops and 4K monitors) */
-@media (min-width: 1200px) {
-  h4,
-  .h4 {
-    font-size: clamp(2.4rem, 3vw, 3.2rem); /* Slightly larger for emphasis */
-    line-height: 1.8;
-  }
 }
 
 /* Smaller Screens (e.g., tablets and phones) */
@@ -172,6 +163,15 @@ h4,
       2rem
     ); /* Slightly smaller to fit narrow screens */
     line-height: 1.5; /* Tighter line height for smaller devices */
+  }
+}
+
+/* Larger Screens (e.g., desktops and 4K monitors) */
+@media (min-width: 1200px) {
+  h4,
+  .h4 {
+    font-size: clamp(2.4rem, 3vw, 3.2rem); /* Slightly larger for emphasis */
+    line-height: 1.8;
   }
 }
 
@@ -384,7 +384,7 @@ section {
   width: 100%;
   background-color: #ffffff;
   position: relative;
-  padding: 12px 3em;
+  padding: 12px 10%;
 }
 
 /* Header Content */
@@ -515,7 +515,8 @@ header .brand-container {
     font-size: 24px;
   }
 
-  .nav-link {
+  .nav-link,
+  .header-actions {
     display: none;
     font-size: 16px;
   }
@@ -1100,15 +1101,14 @@ main {
     auto-fit,
     minmax(300px, 1fr)
   ); /* Responsive columns */
-  gap: 10%;
+  gap: 5%;
   padding-top: 2rem;
   min-height: 70vh;
   align-items: center; /* Vertically align content */
 }
 
 .about-section img {
-  background-color: #051d2e;
-  width: 95%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
   position: relative;
@@ -1118,7 +1118,7 @@ main {
   width: 50%;
   height: 50%;
   position: absolute;
-  bottom: 6%;
+  bottom: -6%;
   right: -4%;
   z-index: 0;
   background-image: url("/assets/images/dot-pattern.png");
@@ -1187,8 +1187,8 @@ main {
   /* width: 98%; */
   color: var(--color-text-black);
   /* text-align: left; */
-  margin-top: 32px;
-  font-size: 4rem;
+  margin-top: 3%;
+  font-size: 3.2rem;
 
   /* line-height: 4.4rem; */
   font-family: var(--font-primary), sans-serif;
@@ -1221,7 +1221,9 @@ main {
   color: rgba(5, 29, 46, 1);
   letter-spacing: 0.96px;
   margin-top: 40px;
-  font: 400 24px/32px Great Vibes, -apple-system, Roboto, Helvetica, sans-serif;
+  font-family: "Charm", serif;
+  font-weight: 400;
+  font-style: normal;
   line-height: 24px;
 }
 
@@ -1236,7 +1238,7 @@ main {
 
   .about-section img {
     max-width: 100%;
-    min-height: 60vh;
+    min-height: 40vh;
   }
 
   .main-heading {
@@ -1248,19 +1250,25 @@ main {
   }
 
   .progress-indicators {
-    margin-top: 1rem; /* Adjust margin */
+    margin-top: 2rem; /* Adjust margin */
+  }
+}
+
+@media (min-width: 760px) {
+  .about-section {
+    gap: 5%;
   }
 
-  .description-primary,
-  .description-secondary {
-    font-size: 1.4rem;
+  .about-section img {
+    max-width: 100%;
+    height: 45vh;
   }
 }
 
 @media (min-width: 991px) {
   .about-section img {
     max-width: 80%;
-    min-height: 50vh;
+    height: 70vh;
     margin: 0 auto; /* Center image */
   }
 
@@ -1274,7 +1282,7 @@ main {
   }
 
   .main-heading {
-    font-size: 4rem;
+    font-size: 3.6rem;
     margin-top: 16px;
   }
 
@@ -1290,6 +1298,24 @@ main {
 
   .progress-primary {
     width: 60px; /* Adjust width */
+  }
+}
+
+@media (min-width: 1200px) {
+  .about-section img {
+    max-width: 80%;
+    height: 55vh;
+    object-fit: cover;
+    margin: 0 auto; /* Center image */
+  }
+
+  .header-content h1 {
+    line-height: 55px;
+  }
+
+  .main-heading {
+    font-size: 4rem;
+    margin-top: 16px;
   }
 }
 
