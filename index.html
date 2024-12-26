@@ -264,7 +264,7 @@
       "
     >
       <header class="main-header">
-        <div class="header-content d-flex">
+        <div class="header-content d-flex position-relative">
           <!-- Logo and Brand Name -->
           <div class="brand-container">
             <img
@@ -275,8 +275,15 @@
             <span class="brand-name">United Christ</span>
           </div>
 
+          <!-- Hamburger Icon for Mobile -->
+          <div class="hamburger-menu d-lg-none" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
           <div
-            class="d-flex flex-col align-item-center justify-content-end w-100"
+            class="d-lg-flex d-none flex-col align-item-center justify-content-end w-100"
             style="gap: 32px"
           >
             <!-- Navigation Links -->
@@ -287,14 +294,30 @@
             </nav>
 
             <!-- Search and Login -->
-            <div class="header-actions">
-              <img
-                src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
-                alt="Search"
-                class="search-icon"
-              />
+            <div class="header-actions d-flex align-items-center">
+              <!-- Search -->
+              <div
+                class="search-container d-flex align-items-center"
+                id="search-container"
+              >
+                <img
+                  src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                  alt="Search"
+                  class="search-icon"
+                  id="search-icon"
+                  style="cursor: pointer"
+                />
+              </div>
+              <!-- Login -->
               <button class="login-btn">Login</button>
             </div>
+          </div>
+
+          <!-- Mobile Navigation Drawer -->
+          <div class="mobile-nav d-lg-none" id="mobile-nav">
+            <a href="#" class="mobile-nav-link">Home</a>
+            <a href="#" class="mobile-nav-link">Blogs</a>
+            <a href="#" class="mobile-nav-link">Prayers</a>
           </div>
         </div>
       </header>
@@ -374,21 +397,14 @@
                     src="/assets/images/group-of-individuals-standing-together.png"
                     alt="people praying"
                     class="position-relative img-fluid"
-                    style="z-index: 20; max-width: 100%"
                   />
-                  <!-- <img
-                    src="/assets/images/people.png"
-                    alt="people praying"
-                    class="position-relative img-fluid"
-                    style="z-index: 20; max-width: 100%"
-                  /> -->
                 </div>
 
                 <div class="col-12" style="padding-inline: 3%">
                   <div class="welcome-containe">
                     <div class="header-content">
-                      <div class="title-wrapper d-flex align-item-center">
-                        <div id="cross-icon"></div>
+                      <div class="title-wrapper">
+                        <span id="cross-icon"></span>
                         <div class="title">United in Christ!</div>
                       </div>
                       <h1 class="d-block main-heading fw-bold text-start">
@@ -438,7 +454,10 @@
                 </p>
               </div>
 
-              <div class="owl-carousel" style="padding-inline: 4%">
+              <div
+                class="owl-carousel testimony-carousel"
+                style="padding-inline: 0%"
+              >
                 <!-- Card 1 -->
                 <article class="p-4 testimonial-card card" tabindex="0">
                   <!-- Date Section -->
@@ -659,26 +678,13 @@
             <div id="prayer-image"></div>
           </section>
 
-          <section
-            style="
-              min-height: 30dvh;
-              position: relative;
-              z-index: 2;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
+          <section class="quote-container position-relative">
             <div id="quote-image"></div>
-            <div class="container">
+            <div class="container-fluid">
               <div
                 class="row gap-2 align-item-center justify-content-center text-center"
               >
-                <h4
-                  class="col-xl-11 col-lg-8 col-11 p-0 mx-auto church-quote"
-                  role="text"
-                  tabindex="0"
-                >
+                <h4 class="p-0 mx-auto church-quote" role="text" tabindex="0">
                   "Wherever the bishop appears, there let the people be, even as
                   wheresoever Christ Jesus is, there is the catholic church."
                 </h4>
@@ -690,7 +696,6 @@
           <section class="blog-section">
             <div
               class="position-relative d-flex flex-column justify-content-center align-item-center container-fluid blog-container"
-              style="z-index: 10; min-height: 100vh"
             >
               <div class="prayer-heading">
                 <h1 class="w-100 text-center prayer-title">Our Blogs</h1>
@@ -706,39 +711,17 @@
                 </p>
               </div>
 
-              <div class="owl-carousel" style="padding-inline: 0%">
+              <div
+                class="owl-carousel blog-carousel"
+                id="owl-carouse2"
+                style="padding-inline: 0%"
+              >
                 <!-- Card 1 -->
-                <article
-                  class="blog-card"
-                  style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
-                >
-                  <div
-                    style="
-                      display: flex;
-                      min-width: 0;
-                      flex-direction: column;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 59;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-
-                        position: relative;
-                        z-index: 60;
-                        width: 100%;
-                      "
-                    >
+                <article class="blog-card">
+                  <div class="d-flex flex-column">
+                    <div class="d-flex flex-column position-relative">
                       <img
                         class="card-image"
-                        57vh;90vh
                         src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
                         alt=""
                       />
@@ -749,348 +732,60 @@
                         <p style="text-align: left">2024</p>
                       </div>
                     </div>
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 69;
-                      "
-                    >
+
+                    <div class="blog-body">
                       <div
-                        style="
-                          display: flex;
-                          padding: 13.913px 13.913px 13.913px 13.913px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: rgba(255, 255, 255, 0);
-                          position: relative;
-                          z-index: 70;
-                        "
+                        class="d-flex justify-content-between align-item-center"
+                        style=""
                       >
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 3.478px 0;
-                            justify-content: space-between;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            position: relative;
-                            z-index: 71;
-                          "
-                        >
-                          <div
-                            style="
-                              display: flex;
-                              width: 105.869px;
-                              gap: 6.956px;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 72;
-                            "
-                          >
-                            <div class="badge-container">
-                              <div class="badge">
-                                <span id="tag-icon"></span>
-                                <span> Categ </span>
-                              </div>
-                            </div>
-
-                            <div
-                              style="
-                                width: 2.609px;
-                                height: 2.609px;
-                                flex-shrink: 0;
-                                background-color: rgba(71, 85, 105, 0.4);
-                                border-radius: 6.956px;
-                                position: relative;
-                                z-index: 77;
-                              "
-                            ></div>
-
-                            <div class="badge-container">
-                              <div class="badge">
-                                <span id="tag-icon"></span>
-                                <span> Family </span>
-                              </div>
+                        <div class="d-flex align-item-center position-relative">
+                          <div class="badge-container">
+                            <div class="badge">
+                              <span id="tag-icon"></span>
+                              <span> Categ </span>
                             </div>
                           </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 6 0;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: flex-start;
-                            align-self: stretch;
-                          "
-                        >
-                          <h4
-                            class="card-title"
-                            style="line-height: 32px; text-align: left"
-                          >
-                            The Power of Faith in Daily Life
-                          </h4>
-                        </div>
 
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                          "
-                        >
-                          <div
-                            style="
-                              height: 0.87px;
-                              margin: 6px 0;
-                              align-self: stretch;
-                              background-color: rgba(220, 38, 38, 0.4);
-                            "
-                          ></div>
-
-                          <div
-                            class="row"
-                            style="
-                              display: flex;
-                              justify-content: space-between;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 91;
-                            "
-                          >
-                            <!-- By -->
-                            <div class="badge-container">
-                              <div class="badge">
-                                <span id="user-icon"></span>
-                                <span>By</span>
-                                <p class="">G. Lightbearer</p>
-                              </div>
-                            </div>
-
-                            <!-- Fav -->
-                            <div class="badge-container">
-                              <div class="badge">
-                                <img
-                                  src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
-                                  alt=""
-                                />
-                                <span>Favourite</span>
-                              </div>
+                          <div class="badge-container">
+                            <div class="badge">
+                              <span id="tag-icon"></span>
+                              <span> Family </span>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </article>
-                <article
-                  class="blog-card"
-                  style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
-                >
-                  <div
-                    style="
-                      display: flex;
-                      min-width: 0;
-                      flex-direction: column;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      position: relative;
-                      z-index: 59;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
 
-                        position: relative;
-                        z-index: 60;
-                        width: 100%;
-                      "
-                    >
-                      <img
-                        class="card-image"
-                        57vh;90vh
-                        src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
-                        alt=""
-                      />
-
-                      <div class="date-badge">
-                        <h3 style="letter-spacing: -0.28px">04</h3>
-                        <p style="text-align: left">June</p>
-                        <p style="text-align: left">2024</p>
+                      <div class="d-flex flex-column mb-4">
+                        <h4 class="card-title">
+                          The Power of Faith in Daily Life
+                        </h4>
+                        <p class="mb-0">
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          <span class="text-muted">Read more</span>
+                        </p>
                       </div>
-                    </div>
-                    <div
-                      style="
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 69;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          padding: 13.913px 13.913px 13.913px 13.913px;
-                          flex-direction: column;
-                          gap: 6.956px;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          background-color: rgba(255, 255, 255, 0);
-                          position: relative;
-                          z-index: 70;
-                        "
-                      >
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 3.478px 0;
-                            justify-content: space-between;
-                            align-items: center;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            position: relative;
-                            z-index: 71;
-                          "
-                        >
-                          <div
-                            style="
-                              display: flex;
-                              width: 105.869px;
-                              gap: 6.956px;
-                              align-items: center;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 72;
-                            "
-                          >
-                            <div class="badge-container">
-                              <div class="badge">
-                                <span id="tag-icon"></span>
-                                <span> Categ </span>
-                              </div>
-                            </div>
 
-                            <div
-                              style="
-                                width: 2.609px;
-                                height: 2.609px;
-                                flex-shrink: 0;
-                                background-color: rgba(71, 85, 105, 0.4);
-                                border-radius: 6.956px;
-                                position: relative;
-                                z-index: 77;
-                              "
-                            ></div>
+                      <div class="blog-footer w-100 d-flex flex-column gap-4">
+                        <div class="divider-right w-100"></div>
 
-                            <div class="badge-container">
-                              <div class="badge">
-                                <span id="tag-icon"></span>
-                                <span> Family </span>
-                              </div>
+                        <div class="row">
+                          <!-- By -->
+                          <div class="badge-container">
+                            <div class="badge">
+                              <span id="user-icon"></span>
+                              <span>By</span>
+                              <p class="">G. Lightbearer</p>
                             </div>
                           </div>
-                        </div>
-                        <div
-                          style="
-                            display: flex;
-                            padding: 0 0 6 0;
-                            flex-direction: column;
-                            justify-content: center;
-                            align-items: flex-start;
-                            align-self: stretch;
-                          "
-                        >
-                          <h4
-                            class="card-title"
-                            style="line-height: 32px; text-align: left"
-                          >
-                            The Power of Faith in Daily Life
-                          </h4>
-                        </div>
 
-                        <div
-                          style="
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                          "
-                        >
-                          <div
-                            style="
-                              height: 0.87px;
-                              margin: 6px 0;
-                              align-self: stretch;
-                              background-color: rgba(220, 38, 38, 0.4);
-                            "
-                          ></div>
-
-                          <div
-                            class="row"
-                            style="
-                              display: flex;
-                              justify-content: space-between;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 91;
-                            "
-                          >
-                            <!-- By -->
+                          <!-- Fav
                             <div class="badge-container">
                               <div class="badge">
-                                <span id="user-icon"></span>
-                                <span>By</span>
-                                <p class="">G. Lightbearer</p>
-                              </div>
-                            </div>
+                                <span id="fav-icon"></span>
 
-                            <!-- Fav -->
-                            <div class="badge-container">
-                              <div class="badge">
-                                <img
-                                  src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
-                                  alt=""
-                                />
                                 <span>Favourite</span>
                               </div>
-                            </div>
-                          </div>
+                            </div> -->
                         </div>
                       </div>
                     </div>
@@ -1208,7 +903,7 @@
 
     <script>
       $(document).ready(function () {
-        $(".owl-carousel").owlCarousel({
+        $(".blog-carousel").owlCarousel({
           loop: true, // Enables looping
           margin: 30, // Spacing between items
           nav: true, // Show navigation arrows
@@ -1225,7 +920,72 @@
             1024: {
               items: 3, // 4 items for large screens
             },
+            2400: {
+              items: 5, // 4 items for large screens
+            },
           },
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        $(".testimony-carousel").owlCarousel({
+          loop: true, // Enables looping
+          margin: 20, // Spacing between items
+          nav: true, // Show navigation arrows
+          autoplay: true, // Enables autoplay
+          autoplayTimeout: 4000, // Set autoplay interval (3 seconds)
+          autoplayHoverPause: true, // Pause on hover
+          responsive: {
+            0: {
+              items: 1, // 1 item for small screens
+            },
+            768: {
+              items: 2, // 2 items for medium screens
+            },
+            1024: {
+              items: 4, // 4 items for large screens
+            },
+            2400: {
+              items: 5, // 4 items for large screens
+            },
+          },
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerMenu = document.getElementById("hamburger-menu");
+        const mobileNav = document.getElementById("mobile-nav");
+        const searchIcon = document.getElementById("search-icon");
+        const searchContainer = document.getElementById("search-container");
+
+        // Toggle mobile navigation
+        hamburgerMenu.addEventListener("click", function () {
+          mobileNav.classList.toggle("active");
+
+          // Optional: Animate hamburger menu
+          const spans = hamburgerMenu.querySelectorAll("span");
+          spans[0].classList.toggle("rotate-top");
+          spans[1].classList.toggle("fade-out");
+          spans[2].classList.toggle("rotate-bottom");
+        });
+
+        // Show search input
+        searchIcon.addEventListener("click", function () {
+          searchContainer.classList.toggle("input-visible");
+          if (searchContainer.classList.contains("input-visible")) {
+            const inputField = document.createElement("input");
+            inputField.type = "text";
+            inputField.placeholder = "Search...";
+            searchContainer.appendChild(inputField);
+            inputField.focus();
+          } else {
+            const inputField = searchContainer.querySelector("input");
+            if (inputField) inputField.remove();
+          }
         });
       });
     </script>
