@@ -77,12 +77,50 @@ body {
 h1,
 .h1 {
   font-family: var(--font-heading); /* Domine */
-  font-size: var(--font-size-hero);
+  /* font-size: var(--font-size-hero); */
   font-weight: var(--font-weight-bold);
   color: var(--color-text-black);
   line-height: var(--line-height-heading);
   letter-spacing: var(--letter-spacing-tight);
   /* margin-bottom: 1rem; */
+}
+
+/* Smaller Screens (e.g., tablets and phones) */
+@media (min-width: 1200px) {
+  h1,
+  .h1 {
+    font-size: clamp(
+      1.6rem,
+      5vw,
+      2rem
+    ); /* Slightly smaller to fit narrow screens */
+    line-height: 1.5; /* Tighter line height for smaller devices */
+  }
+}
+
+/* Smaller Screens (e.g., tablets and phones) */
+@media (min-width: 768px) {
+  h1,
+  .h1 {
+    font-size: clamp(
+      1.6rem,
+      5vw,
+      2rem
+    ); /* Slightly smaller to fit narrow screens */
+    line-height: 1.5; /* Tighter line height for smaller devices */
+  }
+}
+/* Smaller Screens (e.g., tablets and phones) */
+@media (min-width: 360px) {
+  h1,
+  .h1 {
+    font-size: clamp(
+      1.6rem,
+      5vw,
+      2rem
+    ); /* Slightly smaller to fit narrow screens */
+    line-height: 1.5; /* Tighter line height for smaller devices */
+  }
 }
 
 h2,
@@ -176,7 +214,7 @@ p {
       1.2vw,
       20px
     ); /* Slightly larger font for readability */
-    line-height: 1.8;
+    line-height: 2;
   }
 }
 
@@ -186,9 +224,9 @@ p {
     font-size: clamp(
       14px,
       2.5vw,
-      16px
+      18px
     ); /* Reduces font size for smaller screens */
-    line-height: 1.6; /* Tighter line height for better spacing on narrow screens */
+    line-height: 1.8; /* Tighter line height for better spacing on narrow screens */
   }
 }
 
@@ -1324,7 +1362,7 @@ main {
 .prayer-heading {
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: 2vh;
   text-align: center;
   /* margin-bottom: 4rem; */
 }
@@ -1755,7 +1793,7 @@ main {
 }
 
 .blog-container {
-  gap: 60px;
+  gap: 7vh;
   align-items: center;
 }
 
