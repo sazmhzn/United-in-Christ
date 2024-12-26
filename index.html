@@ -87,7 +87,7 @@
 
       .footer {
         background-color: #03131f;
-        padding: 48px 100px;
+        padding: 48px 10%;
         color: white;
         position: relative;
         overflow: hidden;
@@ -207,10 +207,6 @@
 
       /* Responsive Design */
       @media (max-width: 1200px) {
-        .footer {
-          padding: 48px 50px;
-        }
-
         .footer-newsletter {
           flex: 0 0 350px;
         }
@@ -279,7 +275,7 @@
             style="gap: 32px"
           >
             <!-- Navigation Links -->
-            <nav class="nav-links d-md-flex d-hidden">
+            <nav class="nav-links d-lg-flex justify-content-between d-hidden">
               <a href="#" class="nav-link active">Home</a>
               <a href="#" class="nav-link">Blogs</a>
               <a href="#" class="nav-link">Prayers</a>
@@ -363,12 +359,9 @@
             class="py-4 hero position-relative d-flex align-item-center justify-content-center"
           >
             <div class="container-fluid">
-              <div
-                class="about-section d-flex flex-column flex-md-row align-items-center"
-              >
+              <div class="about-section">
                 <div
-                  class="col-md-6 px-md-0 position-relative d-flex align-item-center justify-content-center"
-                  style="min-height: 55vh"
+                  class="col-md-12 px-md-0 position-relative d-flex align-item-center justify-content-center"
                 >
                   <div id="dot-pattern-1"></div>
                   <div id="dot-pattern-2"></div>
@@ -376,11 +369,11 @@
                     src="/assets/images/people.png"
                     alt="people praying"
                     class="position-relative img-fluid"
-                    style="z-index: 20; max-width: 100%; height: auto"
+                    style="z-index: 20; max-width: 100%"
                   />
                 </div>
 
-                <div class="w-100" style="padding-inline: 3%">
+                <div class="col-12" style="padding-inline: 3%">
                   <div class="welcome-containe">
                     <div class="header-content">
                       <div class="title-wrapper d-flex align-item-center">
@@ -398,7 +391,7 @@
                     </div>
                     <p
                       class="description-primary text-start"
-                      style="margin-top: 40px"
+                      style="margin-top: 5%"
                     >
                       We are a welcoming community of believers, united in faith
                       and dedicated to growing together. Join us to worship,
@@ -1104,7 +1097,7 @@
             class="bg-transparent"
             style="margin: 0em 0; position: relative; z-index: 2"
           >
-            <div class="container py-4 text-center gap-4">
+            <div class="container-fluid py-4 text-center gap-4">
               <div class="prayer-heading mb-4">
                 <h1 class="w-100 prayer-title text-center">Get Involved</h1>
                 <div class="divider-wrapper mx-auto w-100">
@@ -1128,7 +1121,7 @@
         </div>
       </main>
 
-      <footer class="footer position-relative">
+      <footer class="footer position-relative container-fluid">
         <div class="footer-background"></div>
         <div class="footer-content">
           <div class="brand-container d-flex">
@@ -1146,9 +1139,9 @@
               <div>About Us</div>
             </div>
             <div class="footer-links">
-              <div class="footer-link">Our Mission</div>
-              <div class="footer-link">Our Team</div>
-              <div class="footer-link">Contact Us</div>
+              <p class="footer-link">Our Mission</p>
+              <p class="footer-link">Our Team</p>
+              <p class="footer-link">Contact Us</p>
             </div>
           </div>
           <div class="footer-column">
@@ -1158,9 +1151,9 @@
               <div class="">Get Involved</div>
             </div>
             <div class="footer-links">
-              <div class="footer-link">Volunteer</div>
-              <div class="footer-link">Events</div>
-              <div class="footer-link">Donate</div>
+              <p class="footer-link">Volunteer</p>
+              <p class="footer-link">Events</p>
+              <p class="footer-link">Donate</p>
             </div>
           </div>
           <div class="newsletter-section">
@@ -1169,9 +1162,9 @@
               <div>United in Christ Newsletter</div>
             </div>
             <div class="newsletter-content">
-              <div class="newsletter-description">
+              <p class="newsletter-description">
                 Join our newsletter for updates and spiritual insights.
-              </div>
+              </p>
               <form class="newsletter-form">
                 <label for="emailInput" class="visually-hidden"
                   >Email address</label
