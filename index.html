@@ -297,9 +297,16 @@
             <div class="header-actions d-flex align-items-center">
               <!-- Search -->
               <div
-                class="search-container d-flex align-items-center"
+                class="search-container d-flex gap-2 align-items-center justify-content-end"
                 id="search-container"
               >
+                <input
+                  class="input"
+                  id="search-input"
+                  name="text"
+                  placeholder="Search..."
+                  type="search"
+                />
                 <img
                   src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
                   alt="Search"
@@ -312,12 +319,35 @@
               <button class="login-btn">Login</button>
             </div>
           </div>
-
-          <!-- Mobile Navigation Drawer -->
-          <div class="mobile-nav d-lg-none" id="mobile-nav">
-            <a href="#" class="mobile-nav-link">Home</a>
-            <a href="#" class="mobile-nav-link">Blogs</a>
-            <a href="#" class="mobile-nav-link">Prayers</a>
+        </div>
+        <!-- Mobile Navigation Drawer -->
+        <div class="mobile-nav d-lg-none" id="mobile-nav">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#" class="nav-link">Blogs</a>
+          <a href="#" class="nav-link">Prayers</a>
+          <div class="header-actions d-flex flex-column align-items-center">
+            <!-- Search -->
+            <div
+              class="search-container w-100 mt-4 d-flex gap-2 align-items-start justify-content-end"
+              id="search-container"
+            >
+              <input
+                class="inputs w-100"
+                id="search-input"
+                name="text"
+                placeholder="Search..."
+                type="search"
+              />
+              <img
+                src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                alt="Search"
+                class="search-icon"
+                id="search-icon"
+                style="cursor: pointer"
+              />
+            </div>
+            <!-- Login -->
+            <button class="login-btn">Login</button>
           </div>
         </div>
       </header>
@@ -713,26 +743,25 @@
 
               <div class="owl-carousel blog-carousel" id="owl-carouse2">
                 <!-- Card 1 -->
-                <article class="blog-card mx-auto col-12 w-100">
+                <article class="blog-card item mx-auto col-12">
                   <div class="d-flex flex-column">
                     <div class="d-flex flex-column position-relative">
                       <img
                         class="card-image"
-                        src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                        src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
                         alt=""
                       />
 
                       <div class="date-badge">
-                        <h3 style="letter-spacing: -0.28px">04</h3>
-                        <p style="text-align: left">June</p>
-                        <p style="text-align: left">2024</p>
+                        <h3>04</h3>
+                        <p>June</p>
+                        <p>2024</p>
                       </div>
                     </div>
 
                     <div class="blog-body">
                       <div
                         class="d-flex justify-content-between align-item-center"
-                        style=""
                       >
                         <div class="d-flex align-item-center position-relative">
                           <div class="badge-container">
@@ -758,16 +787,20 @@
                         <p class="mb-0">
                           Lorem ipsum dolor sit amet consectetur, adipisicing
                           elit. Dolor nemo dignissimos reprehenderit fuga.
-                          <span class="d-block text-muted">Read more</span>
+                          <span class="d-block fw-bold text-muted"
+                            >Read more >>
+                          </span>
                         </p>
                       </div>
 
                       <div class="blog-footer w-100 d-flex flex-column gap-4">
                         <div class="divider-right w-100"></div>
 
-                        <div class="row">
+                        <div
+                          class="row d-flex flex-nowrap align-item-center justify-content-between"
+                        >
                           <!-- By -->
-                          <div class="badge-container">
+                          <div class="badge-container w-50">
                             <div class="badge">
                               <span id="user-icon"></span>
                               <span>By</span>
@@ -775,14 +808,14 @@
                             </div>
                           </div>
 
-                          <!-- Fav
-                            <div class="badge-container">
-                              <div class="badge">
-                                <span id="fav-icon"></span>
+                          <!-- Fav -->
+                          <div class="badge-container">
+                            <div class="badge">
+                              <span id="fav-icon"></span>
 
-                                <span>Favourite</span>
-                              </div>
-                            </div> -->
+                              <span>Favourite</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -912,7 +945,7 @@
       $(document).ready(function () {
         $(".blog-carousel").owlCarousel({
           loop: true, // Enables looping
-          margin: 0, // Spacing between items
+          margin: 30, // Spacing between items
           nav: true, // Show navigation arrows
           autoplay: true, // Enables autoplay
           autoplayTimeout: 4000, // Set autoplay interval (3 seconds)
@@ -968,6 +1001,9 @@
         const mobileNav = document.getElementById("mobile-nav");
         const searchIcon = document.getElementById("search-icon");
         const searchContainer = document.getElementById("search-container");
+        const searchInput = document.getElementById("search-input");
+
+        // searchInput.style.display = "none";
         // Toggle mobile navigation
         hamburgerMenu.addEventListener("click", function () {
           mobileNav.classList.toggle("active");
@@ -981,16 +1017,10 @@
 
         // Show search input
         searchIcon.addEventListener("click", function () {
-          searchContainer.classList.toggle("input-visible");
-          if (searchContainer.classList.contains("input-visible")) {
-            const inputField = document.createElement("input");
-            inputField.type = "text";
-            inputField.placeholder = "Search...";
-            searchContainer.appendChild(inputField);
-            inputField.focus();
-          } else {
-            const inputField = searchContainer.querySelector("input");
-            if (inputField) inputField.remove();
+          console.log("clicked");
+          searchInput.classList.toggle("input-visible");
+          if (searchInput.classList.contains("input-visible")) {
+            searchInput.focus();
           }
         });
       });

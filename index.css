@@ -153,7 +153,7 @@ h6,
 /* ==== Paragraph Styles ==== */
 
 p {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   color: var(--color-text-black);
   margin-bottom: 1.5rem;
   line-height: var(--line-height-relaxed);
@@ -346,22 +346,53 @@ section {
 .hamburger-menu span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: #000;
   transition: transform 0.3s, opacity 0.3s;
+}
+
+.input {
+  width: 0; /* Initial collapsed width */
+  background-color: #f5f5f5;
+  color: #242424;
+  padding: 0.15rem 0.5rem;
+  min-height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  line-height: 1.15;
+  transition: all 0.3s ease-in-out; /* Smooth transition for width and opacity */
+  opacity: 0; /* Hidden initially */
+  visibility: hidden; /* Element is visually hidden but still occupies space */
+}
+.input-visible {
+  width: 100%; /* Full width when visible */
+  opacity: 1; /* Fully visible */
+  visibility: visible; /* Make element visible */
+}
+
+input:focus {
+  border-bottom: 2px solid #5b5fc7;
+  border-radius: 4px 4px 2px 2px;
+}
+
+input:hover {
+  outline: 1px solid lightgrey;
 }
 
 .mobile-nav {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   width: 100%;
+  padding: 2em;
   background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transform: translateY(-200%);
   transition: transform 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
+  gap: 8px;
   z-index: 99;
 }
 
@@ -1290,6 +1321,7 @@ main {
 }
 
 #prayer-image {
+  max-height: 90vh;
   min-height: 85vh;
 }
 
@@ -1325,6 +1357,7 @@ main {
 
 .prayer-title {
   gap: 16px;
+  font-size: 2.8rem;
   color: var(--primary-blue);
   letter-spacing: -0.96px;
 }
@@ -1563,13 +1596,23 @@ main {
   height: calc(100vw * (16 / 9)); /* Maintain 9:16 aspect ratio */
 
   position: absolute;
-  top: -10%;
+  top: 0%;
   left: 0%;
   z-index: 1;
 
   background-repeat: no-repeat;
   background-image: url("/assets/images/blog-bg.png");
   background-size: contain;
+}
+
+#blog-background::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1%;
+  background-color: white;
 }
 
 .blog-cards {
@@ -1601,12 +1644,14 @@ main {
   overflow: hidden;
   align-items: center;
   /* width: 100%; */
-  min-width: 271.605px;
+  min-width: 300px;
   flex: 1;
   border: none;
   cursor: pointer;
 
-  max-width: 340px;
+  margin: 2% 0;
+
+  max-width: 360px;
   margin: auto 0;
 }
 
@@ -1629,14 +1674,25 @@ main {
   height: 16px;
   background-image: url("assets/images/arrow-right.png");
 }
+
 .owl-item {
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 50px 20px;
+}
+
+.blog-carousel {
+  margin: 0 auto;
+}
+
+.item {
+  width: 100%;
+  margin: 0 0 15% 0;
+  max-width: 360px;
 }
 .card-image {
   background-blend-mode: normal;
   display: flex;
-  height: 220px;
+  height: 320px;
   width: 100%;
   flex-direction: column;
   align-items: end;
@@ -1677,9 +1733,9 @@ main {
 .date-badge {
   position: absolute;
   right: 4%;
-  top: 75%;
-  width: 85px;
-  height: 85px;
+  bottom: -8%;
+  width: 75px;
+  height: 75px;
   /* width: 53.043px; */
   background-color: white;
 
@@ -1697,14 +1753,15 @@ main {
 
 .date-badge h3 {
   margin: 0px 0 0 0;
-  line-height: 24px;
+  line-height: 20px;
   color: var(--color-text-secondary);
 }
 
-.date-badge p {
+.date-badge > p {
   line-height: 12px;
+
   margin: 0;
-  font-size: var(--font-size-xs);
+  font-size: 12px;
   color: var(--color-text-secondary);
 }
 
@@ -1712,17 +1769,13 @@ main {
   background-color: var(--color-text-secondary);
   color: white;
   transition-delay: 0.8s;
-  top: 46%;
+  bottom: 5%;
   transition: ease-in-out;
   transition-duration: 400ms;
 }
 
 .blog-card:hover .date-badge h3 {
   color: white;
-}
-.blog-card h4 {
-  font-size: 3.2rem;
-  line-height: 48px;
 }
 
 .blog-card > p {
@@ -1905,14 +1958,14 @@ main {
 
   .blog-card p {
     color: #4b5563;
-    font-size: 1.6rem;
-    line-height: 24px;
+    /* font-size: 1.6rem; */
+    line-height: 20px;
   }
 
   #blog-background {
     min-height: 50vh;
     background-size: cover;
-    top: -5%;
+    top: -15%;
   }
 }
 
@@ -1939,7 +1992,7 @@ main {
   }
 
   #prayer-image {
-    min-height: 46vh;
+    height: 46vh;
   }
 
   .testimonial-content h2 {
@@ -1959,7 +2012,7 @@ main {
   }
 
   .card-image {
-    height: 200px;
+    height: 240px;
   }
 
   .blog-card h4 {
@@ -2087,7 +2140,9 @@ main {
   }
 
   #blog-background {
-    height: 140vh;
+    top: -5%;
+    height: 150vh;
+    background-size: cover;
   }
 }
 
@@ -2113,11 +2168,29 @@ main {
   }
 
   .testimonial-content h2 {
-    font-size: 4.8rem;
+    font-size: 4rem;
+  }
+  .testimonial-content p {
+    font-size: 2.4rem;
   }
 
   #prayer-image {
-    min-height: 46vh;
+    min-height: 48vh;
+  }
+
+  #blog-background {
+    top: -30%;
+    height: 190vh;
+    background-size: contain;
+  }
+
+  #blog-background::before {
+    display: none;
+  }
+
+  .church-quote {
+    font-size: 5rem;
+    line-height: 80px;
   }
 }
 
@@ -2168,6 +2241,7 @@ main {
 .badge-container {
   display: flex;
   align-items: center;
+  width: fit-content;
 
   gap: var(--spacing-2);
 }
