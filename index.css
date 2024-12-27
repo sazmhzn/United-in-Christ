@@ -1422,6 +1422,7 @@ main {
 
   flex: 1;
   min-width: 271.605px;
+  margin: 3% 0;
 
   /* max-width: 280px; */
   padding: 24px;
@@ -1862,6 +1863,16 @@ main {
   width: 100%;
 }
 
+.my-next-button,
+.my-prev-button,
+.my-next-blog,
+.my-prev-blog {
+  padding: 0.1em 0.8em;
+  color: white;
+  cursor: pointer;
+  background-color: var(--color-text-secondary);
+}
+
 @media (max-width: 991px) {
   .blog-cards {
     max-width: 100%;
@@ -2004,7 +2015,7 @@ main {
   }
 
   .blog-container {
-    gap: 7vh;
+    gap: 2vh;
   }
 
   h4 {
@@ -2136,7 +2147,7 @@ main {
   }
 
   #prayer-image {
-    min-height: 63vh;
+    min-height: 64vh;
   }
 
   #blog-background {
