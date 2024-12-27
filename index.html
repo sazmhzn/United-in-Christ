@@ -449,8 +449,8 @@
                 </div>
                 <p class="description-primary text-center mx-auto">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut seedor labore. Excepteur sint
-                  occaecat.
+                  .testimonial-card h2 do eiusmod tempor incididunt ut seedor
+                  labore. Excepteur sint occaecat.
                 </p>
               </div>
 
@@ -484,10 +484,10 @@
                   <!-- Author Details -->
                   <footer class="author-container mt-0">
                     <div class="author-details">
-                      <p class="fst-italic">
+                      <p class="fst-italic mb-0 pb-0">
                         <strong>Elena Rodriguez</strong>
                       </p>
-                      <p class="h5 text-lowercase fw-normal">
+                      <p class="text-muted mt-0 pt-0 text-lowercase fw-normal">
                         Community Volunteer
                       </p>
                     </div>
@@ -711,13 +711,9 @@
                 </p>
               </div>
 
-              <div
-                class="owl-carousel blog-carousel"
-                id="owl-carouse2"
-                style="padding-inline: 0%"
-              >
+              <div class="owl-carousel blog-carousel" id="owl-carouse2">
                 <!-- Card 1 -->
-                <article class="blog-card">
+                <article class="blog-card mx-auto col-12 w-100">
                   <div class="d-flex flex-column">
                     <div class="d-flex flex-column position-relative">
                       <img
@@ -760,8 +756,9 @@
                           The Power of Faith in Daily Life
                         </h4>
                         <p class="mb-0">
-                          Lorem ipsum dolor sit amet consectetur adipisicing
-                          <span class="text-muted">Read more</span>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit. Dolor nemo dignissimos reprehenderit fuga.
+                          <span class="d-block text-muted">Read more</span>
                         </p>
                       </div>
 
@@ -825,6 +822,25 @@
             </div>
           </section>
         </div>
+
+        <button id="top-button" class="top-button position-fixed">
+          <a href="#top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-up"
+              viewBox="0 0 16 16"
+              stroke="2"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+              />
+            </svg>
+          </a>
+        </button>
       </main>
 
       <footer class="footer position-relative container-fluid">
@@ -892,20 +908,11 @@
       </footer>
     </div>
 
-    <script src="https://unpkg.com/embla-carousel/embla-carousel.umd.js"></script>
-    <script src="https://unpkg.com/embla-carousel-autoplay/embla-carousel-autoplay.umd.js"></script>
-    <script type="text/javascript">
-      const emblaNode = document.querySelector(".embla");
-      const options = { loop: false };
-      const plugins = [EmblaCarouselAutoplay()];
-      const emblaApi = EmblaCarousel(emblaNode, options, plugins);
-    </script>
-
     <script>
       $(document).ready(function () {
         $(".blog-carousel").owlCarousel({
           loop: true, // Enables looping
-          margin: 30, // Spacing between items
+          margin: 0, // Spacing between items
           nav: true, // Show navigation arrows
           autoplay: true, // Enables autoplay
           autoplayTimeout: 4000, // Set autoplay interval (3 seconds)
@@ -961,7 +968,6 @@
         const mobileNav = document.getElementById("mobile-nav");
         const searchIcon = document.getElementById("search-icon");
         const searchContainer = document.getElementById("search-container");
-
         // Toggle mobile navigation
         hamburgerMenu.addEventListener("click", function () {
           mobileNav.classList.toggle("active");
@@ -986,6 +992,29 @@
             const inputField = searchContainer.querySelector("input");
             if (inputField) inputField.remove();
           }
+        });
+      });
+
+      const topButton = document.getElementById("top-button");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          // Show button when scrolled down
+          topButton.classList.add("show");
+          topButton.classList.remove("hide");
+        } else {
+          // Hide button when at the top
+          topButton.classList.add("hide");
+          topButton.classList.remove("show");
+        }
+      });
+
+      // Smooth scroll to top
+      topButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
         });
       });
     </script>
