@@ -321,6 +321,11 @@ section {
   position: relative;
 }
 
+.main-header .nav-link.active {
+  color: var(--secondary-red);
+  font-weight: 600;
+}
+
 .search-input {
   display: none;
   margin-left: 10px;
@@ -508,17 +513,9 @@ header .brand-container {
 }
 
 /* Smaller Screens (e.g., tablets and phones) */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column; /* Stack links vertically for smaller screens */
-    gap: 24px; /* Reduce spacing */
-    font-size: 1.8rem; /* Smaller font size for compact devices */
-  }
-}
 
-.nav-link.active {
-  color: var(--secondary-red);
+.nav-link .active {
+  color: var(--color-text-secondary);
   font-weight: 700;
 }
 

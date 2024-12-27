@@ -255,16 +255,13 @@
   </head>
   <body>
     <div
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        background-color: #fefef9;
-      "
+      class="d-flex flex-column align-item-start flex-nowrap"
+      style="background-color: #fefef9"
     >
-      <header class="main-header">
-        <div class="header-content d-flex position-relative">
+      <header
+        class="main-header bg-white navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      >
+        <div class="container-fluid p-0 m-0 w-100">
           <!-- Logo and Brand Name -->
           <div class="brand-container">
             <img
@@ -274,8 +271,81 @@
             />
             <span class="brand-name">United Christ</span>
           </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-          <!-- Hamburger Icon for Mobile -->
+          <div
+            class="collapse navbar-collapse align-item-center justify-content-end border-0"
+            id="navbarNav"
+          >
+            <div class="navbar-nav ms-auto">
+              <!-- Navigation Links -->
+              <nav
+                class="nav-links justify-content-between d-flex align-item-start"
+              >
+                <ul class="navbar-nav gap-4 me-auto">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Blogs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Prayers</a>
+                  </li>
+                </ul>
+              </nav>
+
+              <!-- Search and Login -->
+              <div class="header-actions d-flex align-items-center">
+                <!-- Search -->
+                <div
+                  class="search-container d-flex gap-2 align-items-center justify-content-end"
+                  id="search-container"
+                >
+                  <input
+                    class="input"
+                    id="search-input"
+                    name="text"
+                    placeholder="Search..."
+                    type="search"
+                  />
+                  <img
+                    src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                    alt="Search"
+                    class="search-icon"
+                    id="search-icon"
+                    style="cursor: pointer"
+                  />
+                </div>
+                <!-- Login -->
+                <button class="login-btn">Login</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- <header class="main-header">
+        <div class="header-content d-flex position-relative">
+          <div class="brand-container">
+            <img
+              src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+              alt="United Christ Logo"
+              class="brand-logo m-0"
+            />
+            <span class="brand-name">United Christ</span>
+          </div>
+
           <div class="hamburger-menu d-lg-none" id="hamburger-menu">
             <span></span>
             <span></span>
@@ -286,16 +356,13 @@
             class="d-lg-flex d-none flex-col align-item-center justify-content-end w-100"
             style="gap: 32px"
           >
-            <!-- Navigation Links -->
             <nav class="nav-links d-lg-flex justify-content-between d-hidden">
               <a href="#" class="nav-link active">Home</a>
               <a href="#" class="nav-link">Blogs</a>
               <a href="#" class="nav-link">Prayers</a>
             </nav>
 
-            <!-- Search and Login -->
             <div class="header-actions d-flex align-items-center">
-              <!-- Search -->
               <div
                 class="search-container d-flex gap-2 align-items-center justify-content-end"
                 id="search-container"
@@ -315,18 +382,15 @@
                   style="cursor: pointer"
                 />
               </div>
-              <!-- Login -->
               <button class="login-btn">Login</button>
             </div>
           </div>
         </div>
-        <!-- Mobile Navigation Drawer -->
         <div class="mobile-nav d-lg-none" id="mobile-nav">
           <a href="#" class="nav-link active">Home</a>
           <a href="#" class="nav-link">Blogs</a>
           <a href="#" class="nav-link">Prayers</a>
           <div class="header-actions d-flex flex-column align-items-center">
-            <!-- Search -->
             <div
               class="search-container w-100 mt-4 d-flex gap-2 align-items-start justify-content-end"
               id="search-container"
@@ -346,11 +410,10 @@
                 style="cursor: pointer"
               />
             </div>
-            <!-- Login -->
             <button class="login-btn">Login</button>
           </div>
         </div>
-      </header>
+      </header> -->
 
       <!-- Main Content -->
       <main class="">
@@ -1116,23 +1179,8 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const hamburgerMenu = document.getElementById("hamburger-menu");
-        const mobileNav = document.getElementById("mobile-nav");
         const searchIcon = document.getElementById("search-icon");
-        const searchContainer = document.getElementById("search-container");
         const searchInput = document.getElementById("search-input");
-
-        // searchInput.style.display = "none";
-        // Toggle mobile navigation
-        hamburgerMenu.addEventListener("click", function () {
-          mobileNav.classList.toggle("active");
-
-          // Optional: Animate hamburger menu
-          const spans = hamburgerMenu.querySelectorAll("span");
-          spans[0].classList.toggle("rotate-top");
-          spans[1].classList.toggle("fade-out");
-          spans[2].classList.toggle("rotate-bottom");
-        });
 
         // Show search input
         searchIcon.addEventListener("click", function () {
