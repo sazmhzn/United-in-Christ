@@ -19,6 +19,27 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <style>
       body {
         font-family: "Mulish", sans-serif;
@@ -36,68 +57,245 @@
         white-space: nowrap;
         width: 1px;
       }
+      .footer {
+        background-color: #03131f;
+        padding: 48px 10%;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Brand Section */
+      .footer-brand {
+        flex: 0 0 240px;
+      }
+
+      .brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+
+      .logo {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+      }
+
+      footer h3 {
+        color: white;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .header-marker {
+        width: 10.581px;
+        height: 16px;
+        background-color: white;
+      }
+
+      .section-header h3 {
+        font-family: "Domine", serif;
+        font-size: 24px;
+        letter-spacing: -0.24px;
+        margin: 0;
+        text-transform: capitalize;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        font-family: "Mulish", sans-serif;
+        font-size: 18px;
+        color: #a6a6b0;
+        text-decoration: none;
+        transition: color 0.3s;
+        line-height: 32px;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      /* Newsletter Section */
+      .footer-newsletter {
+        flex: 0 0 400px;
+      }
+
+      .newsletter-text {
+        font-family: "Mulish", sans-serif;
+        font-size: 18px;
+        color: #a6a6b0;
+        line-height: 32px;
+        margin-bottom: 16px;
+        padding: 0 17px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 12px;
+        /* padding: 0 17px; */
+      }
+
+      .newsletter-form input {
+        flex-grow: 1;
+        padding: 8px 12px;
+        font-family: "Mulish", sans-serif;
+        font-size: 14px;
+        border: 1.5px solid transparent;
+      }
+
+      .subscribe-btn {
+        padding: 8px 16px;
+        background-color: #1477ba;
+        border: 1.5px solid #1477ba;
+        color: white;
+        font-family: "Mulish", sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .subscribe-btn:hover {
+        background-color: #1265a0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .footer-newsletter {
+          flex: 0 0 350px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .footer-content {
+          justify-content: flex-start;
+        }
+
+        .footer-newsletter {
+          flex: 0 0 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+          padding: 48px 30px;
+        }
+
+        .footer-section,
+        .footer-brand {
+          flex: 0 0 100%;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .subscribe-btn {
+          align-self: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer {
+          padding: 48px 20px;
+        }
+      }
     </style>
   </head>
   <body style="margin: 0px">
-    <header>
-      <nav class="navbar navbar-expand-md" aria-label="navbar">
-        <div
-          class="container d-flex align-items-center justify-content-between"
+    <header
+      class="main-header bg-white navbar navbar-expand-lg navbar-light bg-light fixed-top"
+    >
+      <div class="container-fluid p-0 m-0 w-100">
+        <!-- Logo and Brand Name -->
+        <div class="brand-container">
+          <img
+            src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+            alt="United Christ Logo"
+            class="brand-logo m-0"
+          />
+          <span class="brand-name">United Christ</span>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <a class="navbar-brand" href="#">
-            <div class="brand">
-              <img
-                class="brand-logo"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f"
-                alt="United Christ Logo"
-                width="40"
-              />
-              <h4 class="brand-text mb-0">United Christ</h4>
-            </div></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarsExample04"
-            aria-controls="navbarsExample04"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarsExample04">
-            <ul class="navbar-nav ms-auto mx-4 mb-2 mb-md-0">
-              <li class="nav-item p-4">
-                <a
-                  class="nav-link nav-item-active active text-primary fw-bold"
-                  aria-current="page"
-                  href="#"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item p-4">
-                <a class="nav-link" href="#">Blogs</a>
-              </li>
-              <li class="nav-item p-4">
-                <a class="nav-link">Prayers</a>
-              </li>
-            </ul>
+        <div
+          class="collapse navbar-collapse align-item-center justify-content-end border-0"
+          id="navbarNav"
+        >
+          <div class="navbar-nav ms-auto">
+            <!-- Navigation Links -->
+            <nav
+              class="nav-links justify-content-between d-flex align-item-start"
+            >
+              <ul class="navbar-nav gap-4 me-auto">
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Prayers</a>
+                </li>
+              </ul>
+            </nav>
 
-            <div class="d-flex mx-2 p-4 gap-4">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12"
-                alt="Search Icon"
-                width="20"
-              />
-
-              <!-- <button class="login-btn" type="button">Login</button> -->
-              <button type="submit" class="login-btn">Sign Up</button>
+            <!-- Search and Login -->
+            <div class="header-actions d-flex align-items-center">
+              <!-- Search -->
+              <div
+                class="search-container d-flex gap-2 align-items-center justify-content-end"
+                id="search-container"
+              >
+                <input
+                  class="input"
+                  id="search-input"
+                  name="text"
+                  placeholder="Search..."
+                  type="search"
+                />
+                <img
+                  src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                  alt="Search"
+                  class="search-icon"
+                  id="search-icon"
+                  style="cursor: pointer"
+                />
+              </div>
+              <!-- Login -->
+              <button class="login-btn">Login</button>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
 
     <!-- Main Content -->
@@ -111,22 +309,24 @@
                 alt="United Christ welcome image"
                 class="hero-image"
               />
-              <div class="image-overlay">
-                <div class="overlay-title">United Christ</div>
-                <div class="overlay-text">
+              <div
+                class="image-overlay position-absolute mx-auto top-50 start-50"
+              >
+                <h1 class="overlay-title text-center">United Christ</h1>
+                <p class="overlay-text w-100 text-white text-center">
                   Sign Up to get in the moment updated on the things that
                   interest you
-                </div>
+                </p>
               </div>
             </div>
 
             <!-- Sign up Form -->
             <article class="login-form-container">
               <div class="form-content">
-                <header class="welcome-container">
+                <header class="welcome-container d-flex align-item-center">
                   <p class="welcome-header">Welcome To</p>
                   <h1 class="welcome-title">United Christ</h1>
-                  <p class="welcome-description">
+                  <p class="welcome-description mx-auto">
                     Sign up to get in-the-moment updates on the things that
                     interest you.
                   </p>
@@ -135,8 +335,10 @@
                 <form class="form-group">
                   <div class="row mb-4 d-flex">
                     <div class="col-sm-1 col-md-6">
-                      <label for="name" class="input-label">Name</label>
-                      <div class="input-field">
+                      <label for="name" class="input-label mb-3">Name</label>
+                      <div
+                        class="border px-4 input-field d-flex align-item-center gap-4"
+                      >
                         <img
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/e802ed5785c346b6d67d69290d9f88457ee87b0b495f9641d3897b138479c276?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
                           alt=""
@@ -145,7 +347,7 @@
                         <input
                           type="text"
                           id="name"
-                          class="input-placeholder"
+                          class="input-placeholder p-4"
                           placeholder="example"
                           aria-label="Name input"
                         />
@@ -153,8 +355,12 @@
                     </div>
 
                     <div class="col-sm-1 col-md-6">
-                      <label for="username" class="input-label">Username</label>
-                      <div class="input-field">
+                      <label for="username" class="input-label mb-3"
+                        >Username</label
+                      >
+                      <div
+                        class="border px-4 input-field d-flex align-item-center gap-4"
+                      >
                         <img
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/51894cd451ac098f80c6da46d29113689fa197384a5c090f1bd4fdf63cc8adec?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
                           alt=""
@@ -163,7 +369,7 @@
                         <input
                           type="text"
                           id="username"
-                          class="input-placeholder"
+                          class="input-placeholder p-4"
                           placeholder="example"
                           aria-label="Username input"
                         />
@@ -172,8 +378,10 @@
                   </div>
                   <div class="row mb-4 d-flex">
                     <div class="col-sm-1 col-md-6">
-                      <label for="email" class="input-label">Email</label>
-                      <div class="input-field">
+                      <label for="email" class="input-label mb-3">Email</label>
+                      <div
+                        class="border px-4 input-field d-flex align-item-center gap-4"
+                      >
                         <img
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/e802ed5785c346b6d67d69290d9f88457ee87b0b495f9641d3897b138479c276?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
                           alt=""
@@ -182,7 +390,7 @@
                         <input
                           type="email"
                           id="email"
-                          class="input-placeholder"
+                          class="input-placeholder p-4"
                           placeholder="example"
                           aria-label="Email input"
                         />
@@ -190,8 +398,10 @@
                     </div>
 
                     <div class="col-sm-1 col-md-6">
-                      <label for="phone" class="input-label">Phone</label>
-                      <div class="input-field">
+                      <label for="phone" class="input-label mb-3">Phone</label>
+                      <div
+                        class="border px-4 input-field d-flex align-item-center gap-4"
+                      >
                         <img
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/51894cd451ac098f80c6da46d29113689fa197384a5c090f1bd4fdf63cc8adec?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
                           alt=""
@@ -201,7 +411,7 @@
                           type="number"
                           maxlength="10"
                           id="phone"
-                          class="input-placeholder"
+                          class="input-placeholder p-4"
                           placeholder="900000000"
                           aria-label="Phone input"
                         />
@@ -211,8 +421,12 @@
 
                   <div class="row">
                     <div class="col-sm-12 mb-4">
-                      <label for="password" class="input-label">Password</label>
-                      <div class="input-field">
+                      <label for="password" class="input-label mb-3"
+                        >Password</label
+                      >
+                      <div
+                        class="border px-4 input-field d-flex align-item-center gap-4"
+                      >
                         <img
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/51894cd451ac098f80c6da46d29113689fa197384a5c090f1bd4fdf63cc8adec?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
                           alt=""
@@ -221,17 +435,19 @@
                         <input
                           type="password"
                           id="password"
-                          class="input-placeholder"
+                          class="input-placeholder p-4"
                           placeholder="********"
                           aria-label="Password input"
                         />
                       </div>
                     </div>
                     <div class="col-sm-12 mb-4">
-                      <label for="password" class="input-label"
+                      <label for="password" class="input-label mb-3"
                         >Confirm Password</label
                       >
-                      <div class="input-field">
+                      <div
+                        class="border px-4 input-field d-flex align-item-center gap-4"
+                      >
                         <img
                           src="https://cdn.builder.io/api/v1/image/assets/TEMP/51894cd451ac098f80c6da46d29113689fa197384a5c090f1bd4fdf63cc8adec?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
                           alt=""
@@ -240,7 +456,7 @@
                         <input
                           type="password"
                           id="password"
-                          class="input-placeholder"
+                          class="input-placeholder p-4"
                           placeholder="********"
                           aria-label="Confirm Password input"
                         />
@@ -249,18 +465,12 @@
                   </div>
 
                   <div class="form-actions">
-                    <button type="submit" class="login-btn">Sign Up</button>
-                    <div class="form-footer">
-                      <div class="remember-me">
-                        <input type="checkbox" id="remember" class="checkbox" />
-                        <label for="remember">Remember me</label>
-                      </div>
-                    </div>
+                    <button type="submit" class="login-btn p-3">Sign Up</button>
                   </div>
                 </form>
               </div>
 
-              <div class="signup-text">
+              <div class="signup-text mx-auto">
                 Already have an account yet?
                 <a href="/Login.html" class="signup-link">Login Now</a>
               </div>
@@ -270,91 +480,50 @@
       </section>
     </main>
 
-    <div class="footer">
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd8d3435fa1c6aa6fb586828e6fe1f25943ac25209f9872b2d8d0d847fc51d08?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-        class="footer-background"
-        alt=""
-      />
+    <footer class="footer position-relative container-fluid">
+      <div class="footer-background"></div>
       <div class="footer-content">
-        <div class="brand-container">
-          <div class="brand-header">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7df9afbc1a3f9c43d0ba0587294e26fea8f4accca72448a2441a8e9b8d13a83c?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="brand-logo"
-              alt="United in Christ Logo"
-            />
-            <div class="brand-name">UnitedInChrist</div>
-          </div>
-          <div class="social-links">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8aab81e4d6e9bb38c35b156c51db8fa859072a9916069a4161285a9fa35121df?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="social-icon"
-              alt="Facebook"
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/21819bfd59e04e33f7392dffae15e3b697d7ec9e10e240818c53b3546ca4e511?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="social-icon"
-              alt="Twitter"
-            />
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/451631d971eed5ff9b04c63d0fcebf04431c8ef58608370608d7be810ca08573?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="social-icon"
-              alt="Instagram"
-            />
-          </div>
+        <div class="brand-container d-flex">
+          <img
+            src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+            alt="United Christ Logo"
+            class="brand-logo m-0"
+          />
+          <span class="brand-name text-white">United Christ</span>
         </div>
         <div class="footer-column">
           <div class="footer-heading">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/10da3ed112e5af0c17348f4ffc3056a75508cfead71843004676a4bad2d54a86?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="footer-icon"
-              alt=""
-            />
+            <span id="cross-icon"></span>
+
             <div>About Us</div>
           </div>
           <div class="footer-links">
-            <div>Our Mission</div>
-            <div class="footer-link">Our Team</div>
-            <div class="footer-link">Contact Us</div>
+            <p class="footer-link">Our Mission</p>
+            <p class="footer-link">Our Team</p>
+            <p class="footer-link">Contact Us</p>
           </div>
         </div>
         <div class="footer-column">
           <div class="footer-heading">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e347d6ed7478ae98d52c6002984e16a2985683ab21f61f9670547e5a7616e34?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="footer-icon"
-              alt=""
-            />
-            <div>Get Involved</div>
+            <span id="cross-icon"></span>
+
+            <div class="">Get Involved</div>
           </div>
           <div class="footer-links">
-            <div>Volunteer</div>
-            <div class="footer-link">Events</div>
-            <div class="footer-link">Donate</div>
+            <p class="footer-link">Volunteer</p>
+            <p class="footer-link">Events</p>
+            <p class="footer-link">Donate</p>
           </div>
         </div>
         <div class="newsletter-section">
           <div class="newsletter-header">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/24efe50eed6ecda0c6bb6a0f75ac8bca22f0ee35df12ffbd51f5329423c6e56f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="footer-icon"
-              alt=""
-            />
+            <span id="cross-icon"></span>
             <div>United in Christ Newsletter</div>
           </div>
           <div class="newsletter-content">
-            <div class="newsletter-description">
+            <p class="newsletter-description">
               Join our newsletter for updates and spiritual insights.
-            </div>
+            </p>
             <form class="newsletter-form">
               <label for="emailInput" class="visually-hidden"
                 >Email address</label
@@ -371,7 +540,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </footer>
+
+    <script src="/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
