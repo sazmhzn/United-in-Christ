@@ -140,7 +140,7 @@
     </header>
 
     <!-- Main Dashboard Section -->
-    <section class="row gap-4 w-100 flex-nowrap">
+    <section class="row gap-0 w-100 flex-nowrap">
       <!-- Sidebar -->
 
       <aside
@@ -206,30 +206,31 @@
       </aside>
 
       <!-- Main Content -->
-      <main class="col-10 col-md-9 col-lg-9">
+      <div id="dashboard-banner"></div>
+      <main
+        class="w-100 col-10 col-md-9 col-lg-9 bg-transparent position-relative"
+      >
         <!-- Main Content -->
         <div class="container">
-          <h1>Welcome to the Dashboard</h1>
-          <p>
-            This is the main content area where you can display various widgets,
-            charts, or tables.
-          </p>
+          <div class="dashboard-container">
+            <div class="tab-container">
+              <input type="radio" name="tab" id="tab1" class="tab tab--1" />
+              <label class="tab_label" for="tab1">Profile</label>
 
-          <!-- Example Content -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Widget 1</h5>
-                  <p class="card-text">Content for the first widget.</p>
-                </div>
-              </div>
+              <input type="radio" name="tab" id="tab2" class="tab tab--2" />
+              <label class="tab_label" for="tab2">Settings</label>
+
+              <div class="indicator"></div>
             </div>
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Widget 2</h5>
-                  <p class="card-text">Content for the second widget.</p>
+
+            <!-- Example Content -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Widget 1</h5>
+                    <p class="card-text">Content for the first widget.</p>
+                  </div>
                 </div>
               </div>
             </div>
