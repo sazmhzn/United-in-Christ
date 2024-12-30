@@ -3,13 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Page</title>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@500"
+      href="https://fonts.googleapis.com/css2?family=Eczar:wght@400&display=swap"
     />
-    <title>United in Christ</title>
-    <link rel="stylesheet" href="index.css " />
-    <link rel="stylesheet" href="Header.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Eczar:wght@600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@400;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      href="/assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+    />
+
+    <!-- <link rel="stylesheet" href="./css/embla.css" /> -->
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,752 +54,686 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <style>
-      body {
-        font-family: "Mulish", sans-serif;
-        font-size: 1.6rem;
-        min-height: 100vh;
-        background-color: #f9fafb;
+      :root {
+        --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+          "Source Han Sans CN", sans-serif;
       }
 
-      .visually-hidden {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
+      .main-container {
         overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
       }
 
-      .hero-image {
-        position: absolute;
-        top: -21%; /* Moves the image up to create the top fade effect */
-        left: 0;
-        width: 100%;
-        height: 120%; /* Extends beyond 100% to ensure full coverage */
-        object-fit: cover;
-        object-position: center;
-        z-index: -1; /* Puts the image behind the section content */
-      }
-      /* 
-      .hero-image {
-        width: 100%;
-        background-color: red;
-        aspect-ratio: 9/16;
-        object-fit: cover;
-        object-position: center;
-        top: -21%;
-        background-blend-mode: multiply;
-        position: absolute;
-        z-index: -0;
-        height: 1128px;
-      } */
-
-      .hero-bg {
-        background-image: url("images/image3new.png");
-        background-size: cover; /* Ensures the image covers the section */
-        background-position: center top 122%; /* Moves the image up */
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0%; /* Offset the image upward */
-        left: 0;
-        width: 100%;
-        height: 142%; /* Ensure it stretches past the section */
-        z-index: -1; /* Puts it behind the content */
+      .main-container,
+      .main-container * {
+        box-sizing: border-box;
       }
 
-      .content {
+      input,
+      select,
+      textarea,
+      button {
+        outline: 0;
+      }
+
+      .footer {
+        background-color: #03131f;
+        padding: 48px 10%;
+        color: white;
         position: relative;
-        z-index: 1; /* Ensures content stays above the background */
-        color: var(--dark); /* Adjust text color for visibility */
+        overflow: hidden;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Brand Section */
+      .footer-brand {
+        flex: 0 0 240px;
+      }
+
+      .brand-logo {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin-bottom: 12px;
+      }
+
+      .logo {
+        width: 48px;
+        height: 48px;
+        object-fit: cover;
+      }
+
+      footer h3 {
+        color: white;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .header-marker {
+        width: 10.581px;
+        height: 16px;
+        background-color: white;
+      }
+
+      .section-header h3 {
+        font-family: "Domine", serif;
+        font-size: 24px;
+        letter-spacing: -0.24px;
+        margin: 0;
+        text-transform: capitalize;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        font-family: "Mulish", sans-serif;
+        font-size: 18px;
+        color: #a6a6b0;
+        text-decoration: none;
+        transition: color 0.3s;
+        line-height: 32px;
+      }
+
+      .footer-links a:hover {
+        color: white;
+      }
+
+      /* Newsletter Section */
+      .footer-newsletter {
+        flex: 0 0 400px;
+      }
+
+      .newsletter-text {
+        font-family: "Mulish", sans-serif;
+        font-size: 18px;
+        color: #a6a6b0;
+        line-height: 32px;
+        margin-bottom: 16px;
+        padding: 0 17px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        gap: 12px;
+        /* padding: 0 17px; */
+      }
+
+      .newsletter-form input {
+        flex-grow: 1;
+        padding: 8px 12px;
+        font-family: "Mulish", sans-serif;
+        font-size: 14px;
+        border: 1.5px solid transparent;
+      }
+
+      .subscribe-btn {
+        padding: 8px 16px;
+        background-color: #1477ba;
+        border: 1.5px solid #1477ba;
+        color: white;
+        font-family: "Mulish", sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .subscribe-btn:hover {
+        background-color: #1265a0;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 1200px) {
+        .footer-newsletter {
+          flex: 0 0 350px;
+        }
+      }
+
+      @media (max-width: 992px) {
+        .footer-content {
+          justify-content: flex-start;
+        }
+
+        .footer-newsletter {
+          flex: 0 0 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .footer {
+          padding: 48px 30px;
+        }
+
+        .footer-section,
+        .footer-brand {
+          flex: 0 0 100%;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .subscribe-btn {
+          align-self: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .footer {
+          padding: 48px 20px;
+        }
       }
     </style>
   </head>
-  <body style="margin: 0px">
-    <header>
-      <nav class="navbar navbar-expand-md" aria-label="navbar">
-        <div
-          class="container d-flex align-items-center justify-content-between"
+  <body style="margin: 0px; overflow-x: hidden">
+    <header
+      class="main-header bg-white navbar navbar-expand-lg navbar-light bg-light fixed-top"
+    >
+      <div class="container-fluid p-0 m-0 w-100">
+        <!-- Logo and Brand Name -->
+        <div class="brand-container">
+          <img
+            src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+            alt="United Christ Logo"
+            class="brand-logo m-0"
+          />
+          <span class="brand-name">United Christ</span>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <a class="navbar-brand" href="#">
-            <div class="brand">
-              <img
-                class="brand-logo"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/090960d948fdf0946941d4fb1b5a8a4a81e1ee9d672abf6b1ad36266e30fa90f"
-                alt="United Christ Logo"
-                width="40"
-              />
-              <h4 class="brand-text mb-0">United Christ</h4>
-            </div></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarsExample04"
-            aria-controls="navbarsExample04"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-          <div class="collapse navbar-collapse" id="navbarsExample04">
-            <ul class="navbar-nav ms-auto mx-4 mb-2 mb-md-0">
-              <li class="nav-item p-4">
-                <a class="nav-link" aria-current="page" href="/index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item p-4">
-                <a
-                  class="nav-link nav-item-active active text-primary fw-bold"
-                  href="/Blog.html"
-                  >Blogs</a
-                >
-              </li>
-              <li class="nav-item p-4">
-                <a class="nav-link">Prayers</a>
-              </li>
-            </ul>
+        <div
+          class="collapse navbar-collapse align-item-center justify-content-end border-0"
+          id="navbarNav"
+        >
+          <div class="navbar-nav ms-auto">
+            <!-- Navigation Links -->
+            <nav
+              class="nav-links justify-content-between d-flex align-item-start"
+            >
+              <ul class="navbar-nav gap-4 me-auto">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link active">Blogs</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">Prayers</a>
+                </li>
+              </ul>
+            </nav>
 
-            <div class="d-flex mx-2 p-4 gap-4">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/82b9db3a0af07747041195a9e94c14916bbee814ec6a2fb04b8efdda3b58ef12"
-                alt="Search Icon"
-                width="20"
-              />
-
-              <!-- <button class="login-btn" type="button">Login</button> -->
-              <button type="submit" class="login-btn">Sign Up</button>
+            <!-- Search and Login -->
+            <div class="header-actions d-flex align-items-center">
+              <!-- Search -->
+              <div
+                class="search-container d-flex gap-2 align-items-center justify-content-end"
+                id="search-container"
+              >
+                <input
+                  class="input"
+                  id="search-input"
+                  name="text"
+                  placeholder="Search..."
+                  type="search"
+                />
+                <img
+                  src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                  alt="Search"
+                  class="search-icon"
+                  id="search-icon"
+                  style="cursor: pointer"
+                />
+              </div>
+              <!-- Login -->
+              <button class="login-btn">Login</button>
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
 
     <!-- Main Content -->
     <main>
-      <section class="p-0 hero position-relative">
-        <div data-bs-ride="carousel">
-          <div>
-            <div class="bg-warning overflow-hidden active">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/4bc14cc297c9c246dd5b120340ba0e40514807d3ac2e02911b61c50dca6ad2f1?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                className="hero-image"
-                alt="Group of diverse individuals standing together in prayer"
-              />
+      <div class="d-flex flex-column w-100 main-container">
+        <section class="p-0 banner-section position-relative overflow-hidden">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active">
+              <div class="bg-warning overflow-hidden active">
+                <img
+                  loading="lazy"
+                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/4bc14cc297c9c246dd5b120340ba0e40514807d3ac2e02911b61c50dca6ad2f1?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
+                  className="hero-image w-100"
+                  alt="Group of diverse individuals standing together in prayer"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <!-- Prayer Circle Section -->
+            <div class="prayer-circle-container w-100 text-center">
+              <h1 class="section-heading mx-auto">Our Blogs</h1>
+            </div>
+          </div>
+        </section>
+
+        <div class="container py-4">
+          <div class="row g-4">
+            <!-- Blog Card 1 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="blog-card item mx-auto col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Family </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column mb-4">
+                      <h4 class="card-title">
+                        The Power of Faith in Daily Life
+                      </h4>
+                      <p class="mb-0">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Dolor nemo dignissimos reprehenderit fuga.
+                        <span class="d-block fw-bold text-muted"
+                          >Read more >>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-50">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span>By</span>
+                            <p class="">G. Lightbearer</p>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Favourite</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Blog Card 2 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="blog-card item mx-auto col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Family </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column mb-4">
+                      <h4 class="card-title">
+                        The Power of Faith in Daily Life
+                      </h4>
+                      <p class="mb-0">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Dolor nemo dignissimos reprehenderit fuga.
+                        <span class="d-block fw-bold text-muted"
+                          >Read more >>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-50">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span>By</span>
+                            <p class="">G. Lightbearer</p>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Favourite</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Blog Card 3 -->
+            <div class="col-md-6 col-lg-4">
+              <article class="blog-card item mx-auto col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Family </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column mb-4">
+                      <h4 class="card-title">
+                        The Power of Faith in Daily Life
+                      </h4>
+                      <p class="mb-0">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Dolor nemo dignissimos reprehenderit fuga.
+                        <span class="d-block fw-bold text-muted"
+                          >Read more >>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-50">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span>By</span>
+                            <p class="">G. Lightbearer</p>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Favourite</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <!-- Blog Card 4 (Optional) -->
+            <div class="col-md-6 col-lg-4">
+              <article class="blog-card item mx-auto col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Family </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column mb-4">
+                      <h4 class="card-title">
+                        The Power of Faith in Daily Life
+                      </h4>
+                      <p class="mb-0">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Dolor nemo dignissimos reprehenderit fuga.
+                        <span class="d-block fw-bold text-muted"
+                          >Read more >>
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-50">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span>By</span>
+                            <p class="">G. Lightbearer</p>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Favourite</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
-
-        <div class="container">
-          <!-- Prayer Circle Section -->
-          <div class="position-absolute top-50 start-50 translate-middle">
-            <div class="prayer-circle-container">
-              <h1 class="section-heading">Blogs</h1>
-              <p class="section-text text-truncate">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        style="
-          position: relative;
-          width: 100%;
-          min-height: 100vh;
-          overflow: hidden; /* Ensures the image doesn't leak outside the section */
-          padding: 2em 0;
-        "
-        class="blog-section position-relative border-bottom"
-      >
-        <!-- <img
-        loading="lazy"
-        src="images/image3new.png"
-        class="hero-image start-0"
-        style="object-fit: cover"
-        alt=""
-        width="100"
-        role="presentation"
-      /> -->
-        <!-- <div class="hero-bg"></div> -->
-
-        <div class="container content" style="z-index: 10">
-          <div
-            class="flex-wrap row gap-0 justify-content-between align-items-center"
-          >
-            <article class="border-0 p-4 col-12 col-md-4">
-              <article class="blog-card card p-0">
-                <header class="card-header p-0 m-0">
-                  <div class="card-image card-top-image">
-                    <img
-                      class="card-img-top"
-                      src="/images/image2.png"
-                      alt="Title"
-                    />
-                    <div
-                      class="date-badge"
-                      aria-label="Publication date: 04 June 2024"
-                    >
-                      <span class="date-number fw-bold">04</span>
-                      <span class="date-month">June</span>
-                      <span class="date-year">2024</span>
-                    </div>
-                  </div>
-                </header>
-                <div class="card-content px-4">
-                  <div class="category-badge">
-                    <span class="icon-container" aria-hidden="true">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        alt="Category Icon"
-                        class="category-icon"
-                        width="16"
-                        height="16"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-                  <h4 class="card-title">The Power of Faith in Daily Life</h4>
-                  <p class="text-muted my-2 w-lg-50 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod
-                  </p>
-
-                  <div class="divider my-4"></div>
-                  <footer class="my-4 px-4">
-                    <div class="row align-item-center justify-content-between">
-                      <div
-                        class="d-inline-flex col-6 align-item-center justify-content-start gap-2 col-6"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Jane Smith avatar"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <p class="m-0">
-                          From:
-                          <span class="fst-italic p-0 m-0">Jane Smith</span>
-                        </p>
-                      </div>
-                      <div
-                        class="d-inline-flex justify-content-end gap-2 col-4"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Category Icon"
-                            class="category-icon"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <span class="text-muted">Favourite</span>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </article>
-            </article>
-
-            <article class="border-0 p-4 col-12 col-md-4">
-              <article class="blog-card card p-0">
-                <header class="card-header p-0 m-0">
-                  <div class="card-image card-top-image">
-                    <img
-                      class="card-img-top"
-                      src="/images/image2.png"
-                      alt="Title"
-                    />
-                    <div
-                      class="date-badge"
-                      aria-label="Publication date: 04 June 2024"
-                    >
-                      <span class="date-number fw-bold">04</span>
-                      <span class="date-month">June</span>
-                      <span class="date-year">2024</span>
-                    </div>
-                  </div>
-                </header>
-                <div class="card-content px-4">
-                  <div class="category-badge">
-                    <span class="icon-container" aria-hidden="true">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        alt="Category Icon"
-                        class="category-icon"
-                        width="16"
-                        height="16"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-                  <h4 class="card-title">The Power of Faith in Daily Life</h4>
-                  <p class="text-muted my-2 w-lg-50 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod
-                  </p>
-
-                  <div class="divider my-4"></div>
-                  <footer class="my-4 px-4">
-                    <div class="row align-item-center justify-content-between">
-                      <div
-                        class="d-inline-flex col-6 align-item-center justify-content-start gap-2 col-6"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Jane Smith avatar"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <p class="m-0">
-                          From:
-                          <span class="fst-italic p-0 m-0">Jane Smith</span>
-                        </p>
-                      </div>
-                      <div
-                        class="d-inline-flex justify-content-end gap-2 col-4"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Category Icon"
-                            class="category-icon"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <span class="text-muted">Favourite</span>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </article>
-            </article>
-
-            <article class="border-0 p-4 col-12 col-md-4">
-              <article class="blog-card card p-0">
-                <header class="card-header p-0 m-0">
-                  <div class="card-image card-top-image">
-                    <img
-                      class="card-img-top"
-                      src="/images/image2.png"
-                      alt="Title"
-                    />
-                    <div
-                      class="date-badge"
-                      aria-label="Publication date: 04 June 2024"
-                    >
-                      <span class="date-number fw-bold">04</span>
-                      <span class="date-month">June</span>
-                      <span class="date-year">2024</span>
-                    </div>
-                  </div>
-                </header>
-                <div class="card-content px-4">
-                  <div class="category-badge">
-                    <span class="icon-container" aria-hidden="true">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        alt="Category Icon"
-                        class="category-icon"
-                        width="16"
-                        height="16"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-                  <h4 class="card-title">The Power of Faith in Daily Life</h4>
-                  <p class="text-muted my-2 w-lg-50 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod
-                  </p>
-
-                  <div class="divider my-4"></div>
-                  <footer class="my-4 px-4">
-                    <div class="row align-item-center justify-content-between">
-                      <div
-                        class="d-inline-flex col-6 align-item-center justify-content-start gap-2 col-6"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Jane Smith avatar"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <p class="m-0">
-                          From:
-                          <span class="fst-italic p-0 m-0">Jane Smith</span>
-                        </p>
-                      </div>
-                      <div
-                        class="d-inline-flex justify-content-end gap-2 col-4"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Category Icon"
-                            class="category-icon"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <span class="text-muted">Favourite</span>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </article>
-            </article>
-            <article class="border-0 p-4 col-12 col-md-4">
-              <article class="blog-card card p-0">
-                <header class="card-header p-0 m-0">
-                  <div class="card-image card-top-image">
-                    <img
-                      class="card-img-top"
-                      src="/images/image2.png"
-                      alt="Title"
-                    />
-                    <div
-                      class="date-badge"
-                      aria-label="Publication date: 04 June 2024"
-                    >
-                      <span class="date-number fw-bold">04</span>
-                      <span class="date-month">June</span>
-                      <span class="date-year">2024</span>
-                    </div>
-                  </div>
-                </header>
-                <div class="card-content px-4">
-                  <div class="category-badge">
-                    <span class="icon-container" aria-hidden="true">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        alt="Category Icon"
-                        class="category-icon"
-                        width="16"
-                        height="16"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-                  <h4 class="card-title">The Power of Faith in Daily Life</h4>
-                  <p class="text-muted my-2 w-lg-50 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod
-                  </p>
-
-                  <div class="divider my-4"></div>
-                  <footer class="my-4 px-4">
-                    <div class="row align-item-center justify-content-between">
-                      <div
-                        class="d-inline-flex col-6 align-item-center justify-content-start gap-2 col-6"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Jane Smith avatar"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <p class="m-0">
-                          From:
-                          <span class="fst-italic p-0 m-0">Jane Smith</span>
-                        </p>
-                      </div>
-                      <div
-                        class="d-inline-flex justify-content-end gap-2 col-4"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Category Icon"
-                            class="category-icon"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <span class="text-muted">Favourite</span>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </article>
-            </article>
-
-            <article class="border-0 p-4 col-12 col-md-4">
-              <article class="blog-card card p-0">
-                <header class="card-header p-0 m-0">
-                  <div class="card-image card-top-image">
-                    <img
-                      class="card-img-top"
-                      src="/images/image2.png"
-                      alt="Title"
-                    />
-                    <div
-                      class="date-badge"
-                      aria-label="Publication date: 04 June 2024"
-                    >
-                      <span class="date-number fw-bold">04</span>
-                      <span class="date-month">June</span>
-                      <span class="date-year">2024</span>
-                    </div>
-                  </div>
-                </header>
-                <div class="card-content px-4">
-                  <div class="category-badge">
-                    <span class="icon-container" aria-hidden="true">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        alt="Category Icon"
-                        class="category-icon"
-                        width="16"
-                        height="16"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-                  <h4 class="card-title">The Power of Faith in Daily Life</h4>
-                  <p class="text-muted my-2 w-lg-50 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod
-                  </p>
-
-                  <div class="divider my-4"></div>
-                  <footer class="my-4 px-4">
-                    <div class="row align-item-center justify-content-between">
-                      <div
-                        class="d-inline-flex col-6 align-item-center justify-content-start gap-2 col-6"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Jane Smith avatar"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <p class="m-0">
-                          From:
-                          <span class="fst-italic p-0 m-0">Jane Smith</span>
-                        </p>
-                      </div>
-                      <div
-                        class="d-inline-flex justify-content-end gap-2 col-4"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Category Icon"
-                            class="category-icon"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <span class="text-muted">Favourite</span>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </article>
-            </article>
-
-            <article class="border-0 p-4 col-12 col-md-4">
-              <article class="blog-card card p-0">
-                <header class="card-header p-0 m-0">
-                  <div class="card-image card-top-image">
-                    <img
-                      class="card-img-top"
-                      src="/images/image2.png"
-                      alt="Title"
-                    />
-                    <div
-                      class="date-badge"
-                      aria-label="Publication date: 04 June 2024"
-                    >
-                      <span class="date-number fw-bold">04</span>
-                      <span class="date-month">June</span>
-                      <span class="date-year">2024</span>
-                    </div>
-                  </div>
-                </header>
-                <div class="card-content px-4">
-                  <div class="category-badge">
-                    <span class="icon-container" aria-hidden="true">
-                      <img
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                        alt="Category Icon"
-                        class="category-icon"
-                        width="16"
-                        height="16"
-                      />
-                    </span>
-                    <span class="category-text">Family</span>
-                  </div>
-                  <h4 class="card-title">The Power of Faith in Daily Life</h4>
-                  <p class="text-muted my-2 w-lg-50 mx-auto">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod
-                  </p>
-
-                  <div class="divider my-4"></div>
-                  <footer class="my-4 px-4">
-                    <div class="row align-item-center justify-content-between">
-                      <div
-                        class="d-inline-flex col-6 align-item-center justify-content-start gap-2 col-6"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/01819d9992016312ef74cfbe3cb655380e6cabb645308af4afb5290b9c315647?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Jane Smith avatar"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <p class="m-0">
-                          From:
-                          <span class="fst-italic p-0 m-0">Jane Smith</span>
-                        </p>
-                      </div>
-                      <div
-                        class="d-inline-flex justify-content-end gap-2 col-4"
-                      >
-                        <span class="" aria-hidden="true">
-                          <img
-                            src="https://cdn.builder.io/api/v1/image/assets/TEMP/6370a1c0c0bd492165f618ba95ed756de15db37b256daa944d1213d8870ce8ad?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-                            alt="Category Icon"
-                            class="category-icon"
-                            width="16"
-                            height="16"
-                          />
-                        </span>
-                        <span class="text-muted">Favourite</span>
-                      </div>
-                    </div>
-                  </footer>
-                </div>
-              </article>
-            </article>
-
-            <!-- Add more articles if needed -->
-          </div>
-        </div>
-      </section>
-
-      <section
-        class="bg-transparent"
-        style="margin: 0em 0; position: relative; z-index: 2"
-      >
-        <div class="container py-4 text-center gap-4">
-          <h1 class="w-100 text-center">Get Involved</h1>
-          <div class="divider-wrapper mx-auto w-100">
-            <div class="divider-left"></div>
-
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/8679a5623cd2355ca09a6ea2dda4b0b647e70288ab803702ffd107fc443c5ca4?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="divider-icon"
-              alt=""
-            />
-            <div class="divider-right"></div>
-          </div>
-          <p class="text-muted my-4 text-center w-lg-0 mx-auto">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut seedor labore. Excepteur sint occaecat.
-          </p>
-          <button class="mx-auto">Learn More</button>
-
-          <div class="blog-cards">
-            <img src="/images/image3.png" alt="" class="" />
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
 
-    <footer class="footer">
-      <img
-        loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/fd8d3435fa1c6aa6fb586828e6fe1f25943ac25209f9872b2d8d0d847fc51d08?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-        class="footer-background"
-        alt=""
-      />
+    <footer class="footer position-relative container-fluid">
+      <div class="footer-background"></div>
       <div class="footer-content">
-        <div class="brand-container">
-          <div class="brand-header">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/7df9afbc1a3f9c43d0ba0587294e26fea8f4accca72448a2441a8e9b8d13a83c?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="brand-logo"
-              alt="United in Christ Logo"
-            />
-            <div class="brand-name">UnitedInChrist</div>
-          </div>
+        <div class="brand-container d-flex">
+          <img
+            src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+            alt="United Christ Logo"
+            class="brand-logo m-0"
+          />
+          <span class="brand-name text-white">United Christ</span>
         </div>
         <div class="footer-column">
           <div class="footer-heading">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/10da3ed112e5af0c17348f4ffc3056a75508cfead71843004676a4bad2d54a86?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="footer-icon"
-              alt=""
-            />
+            <span id="cross-icon"></span>
+
             <div>About Us</div>
           </div>
           <div class="footer-links">
-            <div class="footer-link">Our Mission</div>
-            <div class="footer-link">Our Team</div>
-            <div class="footer-link">Contact Us</div>
+            <p class="footer-link">Our Mission</p>
+            <p class="footer-link">Our Team</p>
+            <p class="footer-link">Contact Us</p>
           </div>
         </div>
         <div class="footer-column">
           <div class="footer-heading">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/5e347d6ed7478ae98d52c6002984e16a2985683ab21f61f9670547e5a7616e34?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="footer-icon"
-              alt=""
-            />
+            <span id="cross-icon"></span>
+
             <div class="">Get Involved</div>
           </div>
           <div class="footer-links">
-            <div class="footer-link">Volunteer</div>
-            <div class="footer-link">Events</div>
-            <div class="footer-link">Donate</div>
+            <p class="footer-link">Volunteer</p>
+            <p class="footer-link">Events</p>
+            <p class="footer-link">Donate</p>
           </div>
         </div>
         <div class="newsletter-section">
           <div class="newsletter-header">
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/24efe50eed6ecda0c6bb6a0f75ac8bca22f0ee35df12ffbd51f5329423c6e56f?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a"
-              class="footer-icon"
-              alt=""
-            />
+            <span id="cross-icon"></span>
             <div>United in Christ Newsletter</div>
           </div>
           <div class="newsletter-content">
-            <div class="newsletter-description">
+            <p class="newsletter-description">
               Join our newsletter for updates and spiritual insights.
-            </div>
+            </p>
             <form class="newsletter-form">
               <label for="emailInput" class="visually-hidden"
                 >Email address</label
@@ -782,6 +751,43 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      $(document).ready(function () {
+        $(".blog-carousel").owlCarousel({
+          loop: true, // Enables looping
+          margin: 30, // Spacing between items
+          // nav: true,
+          autoplay: true, // Enables autoplay
+          autoplayTimeout: 4000, // Set autoplay interval (3 seconds)
+          autoplayHoverPause: true, // Pause on hover
+          responsive: {
+            0: {
+              items: 1, // 1 item for small screens
+            },
+            768: {
+              items: 2, // 2 items for medium screens
+            },
+            1024: {
+              items: 3, // 4 items for large screens
+            },
+            2400: {
+              items: 5, // 4 items for large screens
+            },
+          },
+        });
+      });
+
+      var selectorBlog = $(".blog-carousel");
+
+      $(".my-next-blog").click(function () {
+        selectorBlog.trigger("next.owl.carousel");
+      });
+
+      $(".my-prev-blog").click(function () {
+        selectorBlog.trigger("prev.owl.carousel");
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
