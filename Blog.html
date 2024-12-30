@@ -290,13 +290,15 @@
             >
               <ul class="navbar-nav gap-4 me-auto">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">Home</a>
+                  <a href="index.html" class="nav-link">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link active">Blogs</a>
+                  <a href="blogs-detail-new.html" class="nav-link active"
+                    >Blogs</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">Prayers</a>
+                  <a href="Prayer.html" class="nav-link">Prayers</a>
                 </li>
               </ul>
             </nav>
@@ -324,7 +326,11 @@
                 />
               </div>
               <!-- Login -->
-              <button class="login-btn">Login</button>
+              <button class="login-btn">
+                <a href="Login.html" class="text-white text-decoration-none"
+                  >Login</a
+                >
+              </button>
             </div>
           </div>
         </div>
@@ -688,6 +694,25 @@
           </div>
         </div>
       </div>
+
+      <button id="top-button" class="top-button position-fixed">
+        <a href="#top">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-chevron-up"
+            viewBox="0 0 16 16"
+            stroke="2"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+            />
+          </svg>
+        </a>
+      </button>
     </main>
 
     <footer class="footer position-relative container-fluid">
@@ -786,6 +811,45 @@
 
       $(".my-prev-blog").click(function () {
         selectorBlog.trigger("prev.owl.carousel");
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchIcon = document.getElementById("search-icon");
+        const searchInput = document.getElementById("search-input");
+
+        // Show search input
+        searchIcon.addEventListener("click", function () {
+          console.log("clicked");
+          searchInput.classList.toggle("input-visible");
+          if (searchInput.classList.contains("input-visible")) {
+            searchInput.focus();
+          }
+        });
+      });
+
+      const topButton = document.getElementById("top-button");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          // Show button when scrolled down
+          topButton.classList.add("show");
+          topButton.classList.remove("hide");
+        } else {
+          // Hide button when at the top
+          topButton.classList.add("hide");
+          topButton.classList.remove("show");
+        }
+      });
+
+      // Smooth scroll to top
+      topButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
