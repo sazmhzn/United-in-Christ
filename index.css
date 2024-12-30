@@ -269,7 +269,6 @@ section {
   transition: transform 0.3s, opacity 0.3s;
 }
 .input {
-  width: 0;
   background-color: #f5f5f5;
   color: #242424;
   padding: 0.15rem 0.5rem;
@@ -281,6 +280,11 @@ section {
   transition: all 0.3s ease-in-out;
   opacity: 0;
   visibility: hidden;
+}
+
+#remember {
+  width: 24px;
+  background-color: #000;
 }
 .input-visible {
   width: 100%;
@@ -483,7 +487,7 @@ header .brand-container {
   color: #1477ba;
 }
 .welcome-description {
-  text-align: center;
+  width: 40ch;
   color: #9ca3af;
 }
 .login-form-container {
@@ -562,6 +566,12 @@ input:focus-visible {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.image-overlay {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
 .image-section {
   position: relative;
   display: flex;
@@ -571,6 +581,13 @@ input:focus-visible {
 .image-section img {
   object-fit: cover;
 }
+
+.overlay-title {
+  color: white;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-hero);
+}
+
 .hero-image {
   aspect-ratio: 1.16;
   object-fit: contain;
@@ -939,6 +956,11 @@ main {
   margin: auto 0;
   padding-inline: 48px 0;
 }
+
+.form-content .welcome-container {
+  padding: 0;
+}
+
 .header-content {
   display: flex;
   width: 100%;
