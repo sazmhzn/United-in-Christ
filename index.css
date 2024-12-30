@@ -1129,8 +1129,15 @@ main {
 #fav-icon {
   width: 16px;
   height: 16px;
+  cursor: pointer;
   background-image: url(https://cdn.builder.io/api/v1/image/assets/TEMP/1956a33894d2a98cc147d445536dc9d4e68720695be3865f4a65f18c0fb7c253?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a);
 }
+
+#fav-icon.favorite-active {
+  background-image: url(https://cdn.builder.io/api/v1/image/assets/TEMP/1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a); /* Replace with your "active" icon URL */
+  transform: scale(1.2); /* Optional animation for a subtle pop effect */
+}
+
 #tag-icon {
   width: 16px;
   height: 16px;
@@ -1360,6 +1367,10 @@ main {
 .card-image img {
   height: 100%;
   object-fit: cover;
+}
+
+.horizontal-card-image {
+  box-shadow: 4px 4px 16.399999618530273px rgba(209.1, 209.1, 239.7, 0.19);
 }
 .date-badge {
   position: absolute;

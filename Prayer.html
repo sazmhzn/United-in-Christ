@@ -65,7 +65,10 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <style>
       :root {
         --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -1059,6 +1062,29 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Select all favorite buttons
+        const favoriteButtons = document.querySelectorAll("#fav-icon");
+
+        // Add click event listener to each button
+        favoriteButtons.forEach((button) => {
+          button.addEventListener("click", () => {
+            // Toggle the active class
+            button.classList.toggle("favorite-active");
+            console.log("Clicked");
+
+            // Optionally, update the button text or tooltip
+            if (button.classList.contains("favorite-active")) {
+              button.setAttribute("title", "Remove from favorites");
+            } else {
+              button.setAttribute("title", "Add to favorites");
+            }
+          });
+        });
+      });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

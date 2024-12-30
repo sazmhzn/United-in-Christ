@@ -3,10 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog Details</title>
+    <title>Blog Details Page</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Eczar:wght@400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Eczar:wght@600&display=swap"
     />
     <link
       rel="stylesheet"
@@ -28,12 +32,40 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
     />
-    <link rel="stylesheet" href="/index.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="icon"
       href="/assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
     />
-    <!-- <link rel="stylesheet" href="index.css" /> -->
+
+    <!-- <link rel="stylesheet" href="./css/embla.css" /> -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link rel="stylesheet" href="/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <style>
       :root {
         --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -60,7 +92,7 @@
 
       .footer {
         background-color: #03131f;
-        padding: 48px 100px;
+        padding: 48px 10%;
         color: white;
         position: relative;
         overflow: hidden;
@@ -93,35 +125,8 @@
         object-fit: cover;
       }
 
-      .brand-name {
-        font-family: "Great Vibes", cursive;
-        font-size: 32px;
-        letter-spacing: 0.64px;
-        color: white;
-      }
-
       footer h3 {
         color: white;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 12px;
-      }
-
-      .social-icon img {
-        width: 24px;
-        height: 24px;
-        transition: opacity 0.3s;
-      }
-
-      .social-icon:hover img {
-        opacity: 0.8;
-      }
-
-      /* Footer Sections */
-      .footer-section {
-        flex: 0 0 200px;
       }
 
       .section-header {
@@ -143,12 +148,6 @@
         letter-spacing: -0.24px;
         margin: 0;
         text-transform: capitalize;
-      }
-
-      .footer-links {
-        list-style: none;
-        padding-left: 16px;
-        margin: 0;
       }
 
       .footer-links li {
@@ -185,7 +184,7 @@
       .newsletter-form {
         display: flex;
         gap: 12px;
-        padding: 0 17px;
+        /* padding: 0 17px; */
       }
 
       .newsletter-form input {
@@ -213,10 +212,6 @@
 
       /* Responsive Design */
       @media (max-width: 1200px) {
-        .footer {
-          padding: 48px 50px;
-        }
-
         .footer-newsletter {
           flex: 0 0 350px;
         }
@@ -260,141 +255,124 @@
   </head>
   <body>
     <div
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        flex-wrap: nowrap;
-        background-color: #fefef9;
-      "
+      class="d-flex flex-column align-item-start flex-nowrap"
+      style="background-color: #fefef9"
     >
-      <header class="main-header">
-        <div class="header-content row">
+      <header
+        class="main-header bg-white navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      >
+        <div class="container-fluid p-0 m-0 w-100">
           <!-- Logo and Brand Name -->
           <div class="brand-container">
             <img
               src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
               alt="United Christ Logo"
-              class="brand-logo"
+              class="brand-logo m-0"
             />
             <span class="brand-name">United Christ</span>
           </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-          <!-- Navigation Links -->
-          <nav class="nav-links">
-            <a href="#" class="nav-link active">Home</a>
-            <a href="#" class="nav-link">Blogs</a>
-            <a href="#" class="nav-link">Prayers</a>
-          </nav>
+          <div
+            class="collapse navbar-collapse align-item-center justify-content-end border-0"
+            id="navbarNav"
+          >
+            <div class="navbar-nav ms-auto">
+              <!-- Navigation Links -->
+              <nav
+                class="nav-links justify-content-between d-flex align-item-start"
+              >
+                <ul class="navbar-nav gap-4 me-auto">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Blogs</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">Prayers</a>
+                  </li>
+                </ul>
+              </nav>
 
-          <!-- Search and Login -->
-          <div class="header-actions">
-            <img
-              src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
-              alt="Search"
-              class="search-icon"
-            />
-            <button class="login-btn btn">Login</button>
+              <!-- Search and Login -->
+              <div class="header-actions d-flex align-items-center">
+                <!-- Search -->
+                <div
+                  class="search-container d-flex gap-2 align-items-center justify-content-end"
+                  id="search-container"
+                >
+                  <input
+                    class="input"
+                    id="search-input"
+                    name="text"
+                    placeholder="Search..."
+                    type="search"
+                  />
+                  <img
+                    src="./assets/images/e7b4d2b9-12b2-4e25-b7d5-55d24abdec8d.png"
+                    alt="Search"
+                    class="search-icon"
+                    id="search-icon"
+                    style="cursor: pointer"
+                  />
+                </div>
+                <!-- Login -->
+                <button class="login-btn">Login</button>
+              </div>
+            </div>
           </div>
         </div>
       </header>
 
       <main>
-        <div class="blog-detail-main-container">
-          <div>
-            <div
-              style="
-                display: flex;
-                padding: 24px 0 24px 0;
-                flex-direction: column;
-                gap: 24px;
-                align-items: center;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                z-index: 19;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  flex-direction: column;
-                  gap: 32px;
-                  align-items: flex-start;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  position: relative;
-                  z-index: 20;
-                "
-              >
-                <nav class="breadcrumb">
-                  <a class="breadcrumb-item" href="#">Home > </a>
-                  <a class="breadcrumb-item" href="#">Blogs ></a>
-                  <span class="breadcrumb-item active" aria-current="page"
-                    >Blog name</span
-                  >
-                </nav>
-
+        <div
+          class="blog-detail-main-container row d-flex flex-wrap container-fluid"
+        >
+          <div class="d-flex flex-column col-12 col-lg-7 main-container gap-4">
+            <div class="d-flex p-4">
+              <div class="d-flex flex-column gap-4">
                 <div class="badge-container">
-                  <span class="badge">
-                    <img
-                      src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
-                      alt=""
-                    />
-                    Family</span
-                  >
-                  <span class="badge">
-                    <img
-                      src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
-                      alt=""
-                    />
-                    Family</span
-                  >
-                  <span class="badge">
-                    <img
-                      src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
-                      alt=""
-                    />
-                    Family</span
-                  >
+                  <div class="d-flex justify-content-start gap-2 p-0 badge">
+                    <span id="tag-icon"></span>
+                    <span>Family</span>
+                  </div>
+                  <div class="d-flex justify-content-start gap-2 p-0 badge">
+                    <span id="tag-icon"></span>
+                    <span>Family</span>
+                  </div>
+                  <div class="d-flex justify-content-start gap-2 p-0 badge">
+                    <span id="tag-icon"></span>
+                    <span>Family</span>
+                  </div>
                 </div>
-                <h1>The Teachings of Jesus: Insights and Reflections</h1>
+                <h1 class="mb-0">
+                  The Teachings of Jesus: Insights and Reflections
+                </h1>
                 <p>
                   Examining the profound lessons and future implications of
                   Jesus Christ's teachings.
                 </p>
               </div>
             </div>
-            <div
-              style="
-                display: flex;
-                padding: 24px 0 24px 0;
-                gap: 48px;
-                justify-content: center;
-                align-items: center;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                background-color: #ffffff;
-                position: relative;
-                overflow: hidden;
-                z-index: 37;
-              "
-            >
+            <div class="d-flex">
               <img
+                class="w-100"
                 style="
-                  height: 432px;
-                  flex-grow: 1;
-                  flex-shrink: 0;
-                  flex-basis: 0;
                   background-position: center;
                   background-image: url(./assets/images/43d4ad54b3a93e3451347af8e51e046d00233c4b.png);
-                  background-size: cover;
+                  background-size: contain;
                   background-repeat: no-repeat;
-                  position: relative;
-                  z-index: 38;
                 "
                 src="./assets/images/43d4ad54b3a93e3451347af8e51e046d00233c4b.png"
                 alt=""
@@ -441,14 +419,12 @@
                     z-index: 41;
                   "
                 >
-                  <div class="badge-container">
-                    <div class="badge">
-                      <img
-                        src="./assets/images/05d56e52-dfc3-45a0-a060-2c29b286836b.png"
-                        alt=""
-                      />
-                      <p class="">November 1, 2023</p>
-                    </div>
+                  <div class="badge">
+                    <img
+                      src="./assets/images/05d56e52-dfc3-45a0-a060-2c29b286836b.png"
+                      alt=""
+                    />
+                    <p>Categ</p>
                   </div>
 
                   <div class="badge-container">
@@ -462,51 +438,16 @@
                     </div>
                   </div>
                 </div>
-                <div
-                  style="
-                    display: flex;
-                    width: 97px;
-                    gap: 8px;
-                    align-items: center;
-                    flex-shrink: 0;
-                    flex-wrap: nowrap;
-                    position: relative;
-                    z-index: 48;
-                  "
-                >
-                  <div class="badge-container">
-                    <div class="badge">
-                      <img
-                        src="/assets/images/87d93cc6-4e79-4816-a748-46cce8797971.png"
-                        alt=""
-                      />
-                      <p>Favourite</p>
-                    </div>
-                  </div>
+
+                <div class="badge">
+                  <span id="fav-icon"></span>
+                  <p>Favourite</p>
                 </div>
               </div>
             </div>
-            <div
-              style="
-                display: flex;
-                padding: 48px 0 48px 0;
-                flex-direction: column;
-                gap: 24px;
-                align-items: start;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                overflow: hidden;
-                z-index: 51;
-              "
-            >
-              <h3
-                style="line-height: 36px; position: relative; text-align: left"
-              >
-                Overview
-              </h3>
-              <p style="width: 706px; color: #475569; text-align: justified">
+            <div>
+              <h3 class="my-2 py-4">Overview</h3>
+              <p class="text-muted">
                 The teachings of Jesus Christ continue to inspire millions
                 around the world. In this article, we will explore the core
                 messages of love, compassion, and forgiveness that define His
@@ -561,2012 +502,581 @@
               <h4 style="text-align: left">Related Teachings</h4>
               <div class="blog-cards row">
                 <div
-                  class="blog-cards"
-                  style="
-                    display: flex;
-                    gap: 24px;
-                    align-items: flex-start;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    flex-wrap: wrap;
-                  "
+                  class="blog-cards flex-wrap d-flex gap-4 align-item-start justify-content-start"
                 >
-                  <div
-                    class="blog-card"
-                    style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        min-width: 0;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 59;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-
-                          position: relative;
-                          z-index: 60;
-                        "
-                      >
+                  <article class="blog-card mb-0 item mx-auto col-12">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-column position-relative">
                         <img
                           class="card-image"
-                          src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                          src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
                           alt=""
                         />
 
                         <div class="date-badge">
-                          <h3 style="letter-spacing: -0.28px">04</h3>
-                          <p style="text-align: left">June</p>
-                          <p style="text-align: left">2024</p>
+                          <h3>04</h3>
+                          <p>June</p>
+                          <p>2024</p>
                         </div>
                       </div>
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          position: relative;
-                          z-index: 69;
-                        "
-                      >
+
+                      <div class="blog-body">
                         <div
-                          style="
-                            display: flex;
-                            padding: 13.913px 13.913px 13.913px 13.913px;
-                            flex-direction: column;
-                            gap: 6.956px;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-color: rgba(255, 255, 255, 0);
-                            position: relative;
-                            z-index: 70;
-                          "
+                          class="d-flex justify-content-between align-item-center"
                         >
                           <div
-                            style="
-                              display: flex;
-                              padding: 0 0 3.478px 0;
-                              justify-content: space-between;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 71;
-                            "
+                            class="d-flex align-item-center position-relative"
                           >
-                            <div
-                              style="
-                                display: flex;
-                                width: 105.869px;
-                                gap: 6.956px;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                position: relative;
-                                z-index: 72;
-                              "
-                            >
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png"
-                                    alt=""
-                                  />
-                                  <span> Categ </span>
-                                </div>
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Categ </span>
                               </div>
+                            </div>
 
-                              <div
-                                style="
-                                  width: 2.609px;
-                                  height: 2.609px;
-                                  flex-shrink: 0;
-                                  background-color: rgba(71, 85, 105, 0.4);
-                                  border-radius: 6.956px;
-                                  position: relative;
-                                  z-index: 77;
-                                "
-                              ></div>
-
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
-                                    alt=""
-                                  />
-                                  <span> Family </span>
-                                </div>
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Family </span>
                               </div>
                             </div>
                           </div>
-                          <div
-                            style="
-                              display: flex;
-                              padding: 0 0 6 0;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: flex-start;
-                              align-self: stretch;
-                            "
-                          >
-                            <h4
-                              class="card-title"
-                              style="line-height: 32px; text-align: left"
-                            >
-                              The Power of Faith in Daily Life
-                            </h4>
-                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column mb-4">
+                          <h4 class="card-title">
+                            The Power of Faith in Daily Life
+                          </h4>
+                          <p class="mb-0">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Dolor nemo dignissimos reprehenderit fuga.
+                            <span class="d-block fw-bold text-muted"
+                              >Read more >>
+                            </span>
+                          </p>
+                        </div>
+
+                        <div class="blog-footer w-100 d-flex flex-column gap-4">
+                          <div class="divider-right w-100"></div>
 
                           <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              align-items: flex-start;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                            "
+                            class="row d-flex flex-nowrap align-item-center justify-content-between"
                           >
-                            <div
-                              style="
-                                height: 0.87px;
-                                margin: 6px 0;
-                                align-self: stretch;
-                                background-color: rgba(220, 38, 38, 0.4);
-                              "
-                            ></div>
-
-                            <div
-                              class="row"
-                              style="
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                align-self: stretch;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                position: relative;
-                                z-index: 91;
-                              "
-                            >
-                              <!-- By -->
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
-                                    alt=""
-                                  />
-                                  <span>By</span>
-                                  <p class="">G. Lightbearer</p>
-                                </div>
+                            <!-- By -->
+                            <div class="badge-container w-50">
+                              <div class="badge">
+                                <span id="user-icon"></span>
+                                <span>By</span>
+                                <p class="">G. Lightbearer</p>
                               </div>
+                            </div>
 
-                              <!-- Fav -->
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
-                                    alt=""
-                                  />
-                                  <span>Favourite</span>
-                                </div>
+                            <!-- Fav -->
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="fav-icon"></span>
+
+                                <span>Favourite</span>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
 
-                  <div
-                    class="blog-card"
-                    style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        min-width: 0;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 59;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-
-                          position: relative;
-                          z-index: 60;
-                        "
-                      >
+                  <article class="blog-card mb-0 item mx-auto col-12">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-column position-relative">
                         <img
                           class="card-image"
-                          src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                          src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
                           alt=""
                         />
 
                         <div class="date-badge">
-                          <h3 style="letter-spacing: -0.28px">04</h3>
-                          <p style="text-align: left">June</p>
-                          <p style="text-align: left">2024</p>
+                          <h3>04</h3>
+                          <p>June</p>
+                          <p>2024</p>
                         </div>
                       </div>
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          position: relative;
-                          z-index: 69;
-                        "
-                      >
+
+                      <div class="blog-body">
                         <div
-                          style="
-                            display: flex;
-                            padding: 13.913px 13.913px 13.913px 13.913px;
-                            flex-direction: column;
-                            gap: 6.956px;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-color: rgba(255, 255, 255, 0);
-                            position: relative;
-                            z-index: 70;
-                          "
+                          class="d-flex justify-content-between align-item-center"
                         >
                           <div
-                            style="
-                              display: flex;
-                              padding: 0 0 3.478px 0;
-                              justify-content: space-between;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 71;
-                            "
+                            class="d-flex align-item-center position-relative"
                           >
-                            <div
-                              style="
-                                display: flex;
-                                width: 105.869px;
-                                gap: 6.956px;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                position: relative;
-                                z-index: 72;
-                              "
-                            >
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png"
-                                    alt=""
-                                  />
-                                  <span> Categ </span>
-                                </div>
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Categ </span>
                               </div>
+                            </div>
 
-                              <div
-                                style="
-                                  width: 2.609px;
-                                  height: 2.609px;
-                                  flex-shrink: 0;
-                                  background-color: rgba(71, 85, 105, 0.4);
-                                  border-radius: 6.956px;
-                                  position: relative;
-                                  z-index: 77;
-                                "
-                              ></div>
-
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
-                                    alt=""
-                                  />
-                                  <span> Family </span>
-                                </div>
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Family </span>
                               </div>
                             </div>
                           </div>
-                          <div
-                            style="
-                              display: flex;
-                              padding: 0 0 6 0;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: flex-start;
-                              align-self: stretch;
-                            "
-                          >
-                            <h4
-                              class="card-title"
-                              style="line-height: 32px; text-align: left"
-                            >
-                              The Power of Faith in Daily Life
-                            </h4>
-                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column mb-4">
+                          <h4 class="card-title">
+                            The Power of Faith in Daily Life
+                          </h4>
+                          <p class="mb-0">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Dolor nemo dignissimos reprehenderit fuga.
+                            <span class="d-block fw-bold text-muted"
+                              >Read more >>
+                            </span>
+                          </p>
+                        </div>
+
+                        <div class="blog-footer w-100 d-flex flex-column gap-4">
+                          <div class="divider-right w-100"></div>
 
                           <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              align-items: flex-start;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                            "
+                            class="row d-flex flex-nowrap align-item-center justify-content-between"
                           >
-                            <div
-                              style="
-                                height: 0.87px;
-                                margin: 6px 0;
-                                align-self: stretch;
-                                background-color: rgba(220, 38, 38, 0.4);
-                              "
-                            ></div>
-
-                            <div
-                              class="row"
-                              style="
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                align-self: stretch;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                position: relative;
-                                z-index: 91;
-                              "
-                            >
-                              <!-- By -->
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
-                                    alt=""
-                                  />
-                                  <span>By</span>
-                                  <p class="">G. Lightbearer</p>
-                                </div>
+                            <!-- By -->
+                            <div class="badge-container w-50">
+                              <div class="badge">
+                                <span id="user-icon"></span>
+                                <span>By</span>
+                                <p class="">G. Lightbearer</p>
                               </div>
+                            </div>
 
-                              <!-- Fav -->
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
-                                    alt=""
-                                  />
-                                  <span>Favourite</span>
-                                </div>
+                            <!-- Fav -->
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="fav-icon"></span>
+
+                                <span>Favourite</span>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
 
-                  <div
-                    class="blog-card"
-                    style="border: 0.87px solid rgba(0, 0, 0, 0.17)"
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        min-width: 0;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        align-self: stretch;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 59;
-                      "
-                    >
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-
-                          position: relative;
-                          z-index: 60;
-                        "
-                      >
+                  <article class="blog-card mx-0 item mx-auto col-12">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-column position-relative">
                         <img
                           class="card-image"
-                          src="/assets/images/2df42aa2212f27a5478e82cc28734385f0888356.png"
+                          src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
                           alt=""
                         />
 
                         <div class="date-badge">
-                          <h3 style="letter-spacing: -0.28px">04</h3>
-                          <p style="text-align: left">June</p>
-                          <p style="text-align: left">2024</p>
+                          <h3>04</h3>
+                          <p>June</p>
+                          <p>2024</p>
                         </div>
                       </div>
-                      <div
-                        style="
-                          display: flex;
-                          flex-direction: column;
-                          align-items: flex-start;
-                          align-self: stretch;
-                          flex-shrink: 0;
-                          flex-wrap: nowrap;
-                          position: relative;
-                          z-index: 69;
-                        "
-                      >
+
+                      <div class="blog-body">
                         <div
-                          style="
-                            display: flex;
-                            padding: 13.913px 13.913px 13.913px 13.913px;
-                            flex-direction: column;
-                            gap: 6.956px;
-                            align-items: flex-start;
-                            align-self: stretch;
-                            flex-shrink: 0;
-                            flex-wrap: nowrap;
-                            background-color: rgba(255, 255, 255, 0);
-                            position: relative;
-                            z-index: 70;
-                          "
+                          class="d-flex justify-content-between align-item-center"
                         >
                           <div
-                            style="
-                              display: flex;
-                              padding: 0 0 3.478px 0;
-                              justify-content: space-between;
-                              align-items: center;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                              flex-wrap: nowrap;
-                              position: relative;
-                              z-index: 71;
-                            "
+                            class="d-flex align-item-center position-relative"
                           >
-                            <div
-                              style="
-                                display: flex;
-                                width: 105.869px;
-                                gap: 6.956px;
-                                align-items: center;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                position: relative;
-                                z-index: 72;
-                              "
-                            >
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/a8fc5841-16bd-439d-b1dc-2e8b1154d191.png"
-                                    alt=""
-                                  />
-                                  <span> Categ </span>
-                                </div>
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Categ </span>
                               </div>
+                            </div>
 
-                              <div
-                                style="
-                                  width: 2.609px;
-                                  height: 2.609px;
-                                  flex-shrink: 0;
-                                  background-color: rgba(71, 85, 105, 0.4);
-                                  border-radius: 6.956px;
-                                  position: relative;
-                                  z-index: 77;
-                                "
-                              ></div>
-
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/8677df3b-3111-4e46-a40b-3cb705c652de.png"
-                                    alt=""
-                                  />
-                                  <span> Family </span>
-                                </div>
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Family </span>
                               </div>
                             </div>
                           </div>
-                          <div
-                            style="
-                              display: flex;
-                              padding: 0 0 6 0;
-                              flex-direction: column;
-                              justify-content: center;
-                              align-items: flex-start;
-                              align-self: stretch;
-                            "
-                          >
-                            <h4
-                              class="card-title"
-                              style="line-height: 32px; text-align: left"
-                            >
-                              The Power of Faith in Daily Life
-                            </h4>
-                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column mb-4">
+                          <h4 class="card-title">
+                            The Power of Faith in Daily Life
+                          </h4>
+                          <p class="mb-0">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Dolor nemo dignissimos reprehenderit fuga.
+                            <span class="d-block fw-bold text-muted"
+                              >Read more >>
+                            </span>
+                          </p>
+                        </div>
+
+                        <div class="blog-footer w-100 d-flex flex-column gap-4">
+                          <div class="divider-right w-100"></div>
 
                           <div
-                            style="
-                              display: flex;
-                              flex-direction: column;
-                              align-items: flex-start;
-                              align-self: stretch;
-                              flex-shrink: 0;
-                            "
+                            class="row d-flex flex-nowrap align-item-center justify-content-between"
                           >
-                            <div
-                              style="
-                                height: 0.87px;
-                                margin: 6px 0;
-                                align-self: stretch;
-                                background-color: rgba(220, 38, 38, 0.4);
-                              "
-                            ></div>
-
-                            <div
-                              class="row"
-                              style="
-                                display: flex;
-                                justify-content: space-between;
-                                align-items: center;
-                                align-self: stretch;
-                                flex-shrink: 0;
-                                flex-wrap: nowrap;
-                                position: relative;
-                                z-index: 91;
-                              "
-                            >
-                              <!-- By -->
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/a8036471-9693-4574-a548-081090910617.png"
-                                    alt=""
-                                  />
-                                  <span>By</span>
-                                  <p class="">G. Lightbearer</p>
-                                </div>
+                            <!-- By -->
+                            <div class="badge-container w-50">
+                              <div class="badge">
+                                <span id="user-icon"></span>
+                                <span>By</span>
+                                <p class="">G. Lightbearer</p>
                               </div>
+                            </div>
 
-                              <!-- Fav -->
-                              <div class="badge-container">
-                                <div class="badge">
-                                  <img
-                                    src="/assets/images/f16819d9-7656-49f7-93f1-904942a45a11.png"
-                                    alt=""
-                                  />
-                                  <span>Favourite</span>
-                                </div>
+                            <!-- Fav -->
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="fav-icon"></span>
+
+                                <span>Favourite</span>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
+                  <article class="blog-card mx-0 item mx-auto col-12">
+                    <div class="d-flex flex-column">
+                      <div class="d-flex flex-column position-relative">
+                        <img
+                          class="card-image"
+                          src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                          alt=""
+                        />
+
+                        <div class="date-badge">
+                          <h3>04</h3>
+                          <p>June</p>
+                          <p>2024</p>
+                        </div>
+                      </div>
+
+                      <div class="blog-body">
+                        <div
+                          class="d-flex justify-content-between align-item-center"
+                        >
+                          <div
+                            class="d-flex align-item-center position-relative"
+                          >
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Categ </span>
+                              </div>
+                            </div>
+
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="tag-icon"></span>
+                                <span> Family </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="d-flex flex-column mb-4">
+                          <h4 class="card-title">
+                            The Power of Faith in Daily Life
+                          </h4>
+                          <p class="mb-0">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. Dolor nemo dignissimos reprehenderit fuga.
+                            <span class="d-block fw-bold text-muted"
+                              >Read more >>
+                            </span>
+                          </p>
+                        </div>
+
+                        <div class="blog-footer w-100 d-flex flex-column gap-4">
+                          <div class="divider-right w-100"></div>
+
+                          <div
+                            class="row d-flex flex-nowrap align-item-center justify-content-between"
+                          >
+                            <!-- By -->
+                            <div class="badge-container w-50">
+                              <div class="badge">
+                                <span id="user-icon"></span>
+                                <span>By</span>
+                                <p class="">G. Lightbearer</p>
+                              </div>
+                            </div>
+
+                            <!-- Fav -->
+                            <div class="badge-container">
+                              <div class="badge">
+                                <span id="fav-icon"></span>
+
+                                <span>Favourite</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
                 </div>
               </div>
             </div>
           </div>
 
-          <aside
-            style="
-              display: flex;
-              width: 502px;
-              padding: 32px 32px 32px 32px;
-              flex-direction: column;
-              gap: 32px;
-              align-items: flex-start;
-              flex-shrink: 0;
-              flex-wrap: nowrap;
-              position: relative;
-              overflow: hidden;
-              z-index: 184;
-            "
-          >
-            <div
-              style="
-                min-width: 0;
-                height: 1.5px;
-                align-self: stretch;
-                flex-shrink: 0;
-                background-position: center;
-                background-image: url(./assets/images/95f24ad8-e641-44a6-858d-e3ac56346205.png);
-                background-size: cover;
-                background-repeat: no-repeat;
-                position: relative;
-                z-index: 185;
-              "
-            ></div>
-            <span
-              style="
-                min-width: 0;
-                height: 32px;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-basis: auto;
-                font-family: Domine, var(--default-font-family);
-                font-size: 24px;
-                font-weight: 700;
-                line-height: 32px;
-                color: #000000;
-                position: relative;
-                text-align: left;
-                white-space: nowrap;
-                z-index: 186;
-              "
-              >Category</span
-            >
-            <div
-              style="
-                display: flex;
-                min-width: 0;
-                flex-direction: column;
-                gap: 16px;
-                align-items: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                z-index: 187;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  width: 105px;
-                  padding: 4px 8px 4px 8px;
-                  gap: 4px;
-                  justify-content: center;
-                  align-items: center;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  opacity: 0.8;
-                  position: relative;
-                  z-index: 188;
-                "
-              >
-                <div
-                  style="
-                    display: flex;
-                    width: 16px;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    flex-shrink: 0;
-                    flex-wrap: nowrap;
-                    background-color: rgba(255, 255, 255, 0);
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 189;
-                  "
-                >
-                  <div
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      flex-shrink: 0;
-                      background-position: center;
-                      background-image: url(./assets/images/9e5e6dc6-450d-426d-b650-df8992205c64.png);
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      position: relative;
-                      z-index: 190;
-                    "
-                  ></div>
-                </div>
-                <div
-                  style="
-                    width: 69px;
-                    flex-shrink: 0;
-                    font-family: Mulish, var(--default-font-family);
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 17.57px;
-                    position: relative;
-                    text-align: center;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    z-index: 191;
-                  "
-                >
-                  <span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 20.08px;
-                      color: rgba(220, 38, 38, 0.9);
-                      position: relative;
-                      text-align: center;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                    >Family(3)</span
-                  >
-                </div>
+          <aside class="col-12 col-lg-5">
+            <h4 class="py-4">Category</h4>
+            <div class="d-flex flex-column gap-4">
+              <div class="d-flex justify-content-start gap-2 p-0 badge">
+                <span id="tag-icon"></span>
+                <span>Family</span>
               </div>
-              <div
-                style="
-                  display: flex;
-                  width: 105px;
-                  padding: 4px 8px 4px 8px;
-                  gap: 4px;
-                  justify-content: center;
-                  align-items: center;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  opacity: 0.8;
-                  position: relative;
-                  z-index: 192;
-                "
-              >
-                <div
-                  style="
-                    display: flex;
-                    width: 16px;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    flex-shrink: 0;
-                    flex-wrap: nowrap;
-                    background-color: rgba(255, 255, 255, 0);
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 193;
-                  "
-                >
-                  <div
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      flex-shrink: 0;
-                      background-position: center;
-                      background-image: url(./assets/images/25dec166-5a1f-42fe-851d-e64983872506.png);
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      position: relative;
-                      z-index: 194;
-                    "
-                  ></div>
-                </div>
-                <div
-                  style="
-                    width: 69px;
-                    flex-shrink: 0;
-                    font-family: Mulish, var(--default-font-family);
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 17.57px;
-                    position: relative;
-                    text-align: center;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    z-index: 195;
-                  "
-                >
-                  <span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 20.08px;
-                      color: rgba(220, 38, 38, 0.9);
-                      position: relative;
-                      text-align: center;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                    >Family(3)</span
-                  >
-                </div>
+              <div class="d-flex justify-content-start gap-2 p-0 badge">
+                <span id="tag-icon"></span>
+                <span>Family</span>
               </div>
-              <div
-                style="
-                  display: flex;
-                  width: 105px;
-                  padding: 4px 8px 4px 8px;
-                  gap: 4px;
-                  justify-content: center;
-                  align-items: center;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  opacity: 0.8;
-                  position: relative;
-                  z-index: 196;
-                "
-              >
-                <div
-                  style="
-                    display: flex;
-                    width: 16px;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    flex-shrink: 0;
-                    flex-wrap: nowrap;
-                    background-color: rgba(255, 255, 255, 0);
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 197;
-                  "
-                >
-                  <div
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      flex-shrink: 0;
-                      background-position: center;
-                      background-image: url(./assets/images/ae2a22a5-88e3-4847-9c35-e5544d1a4b43.png);
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      position: relative;
-                      z-index: 198;
-                    "
-                  ></div>
-                </div>
-                <div
-                  style="
-                    width: 69px;
-                    flex-shrink: 0;
-                    font-family: Mulish, var(--default-font-family);
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 17.57px;
-                    position: relative;
-                    text-align: center;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    z-index: 199;
-                  "
-                >
-                  <span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 20.08px;
-                      color: rgba(220, 38, 38, 0.9);
-                      position: relative;
-                      text-align: center;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                    >Family(3)</span
-                  >
-                </div>
-              </div>
-              <div
-                style="
-                  display: flex;
-                  width: 105px;
-                  padding: 4px 8px 4px 8px;
-                  gap: 4px;
-                  justify-content: center;
-                  align-items: center;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  opacity: 0.8;
-                  position: relative;
-                  z-index: 200;
-                "
-              >
-                <div
-                  style="
-                    display: flex;
-                    width: 16px;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    flex-shrink: 0;
-                    flex-wrap: nowrap;
-                    background-color: rgba(255, 255, 255, 0);
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 201;
-                  "
-                >
-                  <div
-                    style="
-                      width: 16px;
-                      height: 16px;
-                      flex-shrink: 0;
-                      background-position: center;
-                      background-image: url(./assets/images/cb356f55-e11b-49db-b0ea-e4d4742096ab.png);
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                      position: relative;
-                      z-index: 202;
-                    "
-                  ></div>
-                </div>
-                <div
-                  style="
-                    width: 69px;
-                    flex-shrink: 0;
-                    font-family: Mulish, var(--default-font-family);
-                    font-size: 14px;
-                    font-weight: 500;
-                    line-height: 17.57px;
-                    position: relative;
-                    text-align: center;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    z-index: 203;
-                  "
-                >
-                  <span
-                    style="
-                      font-family: Mulish, var(--default-font-family);
-                      font-size: 16px;
-                      font-weight: 400;
-                      line-height: 20.08px;
-                      color: rgba(220, 38, 38, 0.9);
-                      position: relative;
-                      text-align: center;
-                      overflow: hidden;
-                      text-overflow: ellipsis;
-                    "
-                    >Family(3)</span
-                  >
-                </div>
+              <div class="d-flex justify-content-start gap-2 p-0 badge">
+                <span id="tag-icon"></span>
+                <span>Family</span>
               </div>
             </div>
-            <div
-              style="
-                min-width: 0;
-                height: 1.5px;
-                align-self: stretch;
-                flex-shrink: 0;
-                background-position: center;
-                background-image: url(./assets/images/8da38a30-47b9-4374-a17c-5e802696f5cb.png);
-                background-size: cover;
-                background-repeat: no-repeat;
-                position: relative;
-                z-index: 204;
-              "
-            ></div>
-            <span
-              style="
-                min-width: 0;
-                height: 32px;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-basis: auto;
-                font-family: Domine, var(--default-font-family);
-                font-size: 24px;
-                font-weight: 700;
-                line-height: 32px;
-                color: #000000;
-                position: relative;
-                text-align: left;
-                white-space: nowrap;
-                z-index: 205;
-              "
-              >Recent Posts</span
-            >
-            <div
-              style="
-                display: flex;
-                min-width: 0;
-                flex-direction: column;
-                gap: 24px;
-                align-items: flex-start;
-                align-self: stretch;
-                flex-shrink: 0;
-                flex-wrap: nowrap;
-                position: relative;
-                z-index: 206;
-              "
-            >
-              <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  background-color: #ffffff;
-                  position: relative;
-                  box-shadow: 4px 4px 16.4px 0 rgba(209, 209, 239, 0.19);
-                  z-index: 207;
-                "
-              >
-                <div
-                  style="
-                    width: 160px;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    background-position: center;
-                    background-image: url(./assets/images/aa1a68b3eb988e7276c4920d2b8c5b9645c1bb26.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 208;
-                  "
-                ></div>
-                <div
-                  style="
-                    display: flex;
-                    padding: 8px 16px 8px 16px;
-                    flex-direction: column;
-                    gap: 8px;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-grow: 1;
-                    flex-shrink: 0;
-                    flex-basis: 0;
-                    flex-wrap: nowrap;
-                    position: relative;
-                    z-index: 209;
-                  "
-                >
-                  <div
-                    style="
-                      display: flex;
-                      width: 79px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 210;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 211;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/d2d1e1f5-945d-4913-9820-012eff962cea.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 212;
-                        "
-                      ></div>
+
+            <div class="bg-black mt-4 divider opacity-25"></div>
+            <h4 class="py-4 mt-4">Recent Blogs</h4>
+            <article class="w-100 horizontal-card-image my-4 bg-white">
+              <div class="d-flex row">
+                <div class="d-flex col-4 flex-column position-relative">
+                  <img
+                    class="h-100"
+                    src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                    alt=""
+                  />
+                </div>
+
+                <div class="blog-body gap-4 col-7">
+                  <div class="badge-container">
+                    <div class="badge p-0">
+                      <span id="tag-icon"></span>
+                      <span> Categ </span>
                     </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 43px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 213;
-                      "
-                      >Family</span
-                    >
                   </div>
-                  <span
-                    style="
-                      display: flex;
-                      width: 246px;
-                      height: 64px;
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      font-family: Domine, var(--default-font-family);
-                      font-size: 24px;
-                      font-weight: 700;
-                      opacity: 0.9;
-                      line-height: 32px;
-                      color: #051d2e;
-                      position: relative;
-                      text-align: left;
-                      z-index: 214;
-                    "
-                    >The Power of Faith in Daily Life</span
-                  >
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: wrap;
-                      position: relative;
-                      z-index: 215;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 158px;
-                        gap: 8px;
-                        align-items: center;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 216;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 24px;
-                          height: 24px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/f0e8b5f8-1bc4-47bb-9c7e-dfc3ad6c8159.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          overflow: hidden;
-                          z-index: 217;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          width: 126px;
-                          flex-shrink: 0;
-                          font-family: Mulish, var(--default-font-family);
-                          font-size: 16px;
-                          font-weight: 400;
-                          line-height: 20px;
-                          position: relative;
-                          text-align: left;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                          z-index: 218;
-                        "
-                      >
-                        <span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #a6a6b0;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >From: </span
-                        ><span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #051d2e;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >Jane Smith</span
-                        >
-                      </div>
+
+                  <h4 class="card-title mb-0">
+                    The Power of Faith in Daily Life
+                  </h4>
+
+                  <!-- By -->
+                  <div class="badge-container p-0 w-50">
+                    <div class="badge p-0">
+                      <span id="user-icon"></span>
+                      <span>By</span>
+                      <p class="text-black">G. Lightbearer</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  background-color: #ffffff;
-                  position: relative;
-                  box-shadow: 4px 4px 16.4px 0 rgba(209, 209, 239, 0.19);
-                  z-index: 219;
-                "
-              >
-                <div
-                  style="
-                    width: 160px;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    background-position: center;
-                    background-image: url(./assets/images/aa1a68b3eb988e7276c4920d2b8c5b9645c1bb26.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 220;
-                  "
-                ></div>
-                <div
-                  style="
-                    display: flex;
-                    padding: 8px 16px 8px 16px;
-                    flex-direction: column;
-                    gap: 8px;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-grow: 1;
-                    flex-shrink: 0;
-                    flex-basis: 0;
-                    flex-wrap: nowrap;
-                    position: relative;
-                    z-index: 221;
-                  "
-                >
-                  <div
-                    style="
-                      display: flex;
-                      width: 79px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 222;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 223;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/499bcba5-9714-4f7c-ac98-0c83582184dd.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 224;
-                        "
-                      ></div>
+            </article>
+            <article class="w-100 horizontal-card-image my-4 bg-white">
+              <div class="d-flex row">
+                <div class="d-flex col-4 flex-column position-relative">
+                  <img
+                    class="h-100"
+                    src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                    alt=""
+                  />
+                </div>
+
+                <div class="blog-body gap-4 col-7">
+                  <div class="badge-container">
+                    <div class="badge p-0">
+                      <span id="tag-icon"></span>
+                      <span> Categ </span>
                     </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 43px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 225;
-                      "
-                      >Family</span
-                    >
                   </div>
-                  <span
-                    style="
-                      display: flex;
-                      width: 246px;
-                      height: 64px;
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      font-family: Domine, var(--default-font-family);
-                      font-size: 24px;
-                      font-weight: 700;
-                      opacity: 0.9;
-                      line-height: 32px;
-                      color: #051d2e;
-                      position: relative;
-                      text-align: left;
-                      z-index: 226;
-                    "
-                    >The Power of Faith in Daily Life</span
-                  >
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: wrap;
-                      position: relative;
-                      z-index: 227;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 158px;
-                        gap: 8px;
-                        align-items: center;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 228;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 24px;
-                          height: 24px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/629e9a5d-441e-476f-bf00-a1d4e94dd102.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          overflow: hidden;
-                          z-index: 229;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          width: 126px;
-                          flex-shrink: 0;
-                          font-family: Mulish, var(--default-font-family);
-                          font-size: 16px;
-                          font-weight: 400;
-                          line-height: 20px;
-                          position: relative;
-                          text-align: left;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                          z-index: 230;
-                        "
-                      >
-                        <span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #a6a6b0;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >From: </span
-                        ><span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #051d2e;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >Jane Smith</span
-                        >
-                      </div>
+
+                  <h4 class="card-title mb-0">
+                    The Power of Faith in Daily Life
+                  </h4>
+
+                  <!-- By -->
+                  <div class="badge-container p-0 w-50">
+                    <div class="badge p-0">
+                      <span id="user-icon"></span>
+                      <span>By</span>
+                      <p class="text-black">G. Lightbearer</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  background-color: #ffffff;
-                  position: relative;
-                  box-shadow: 4px 4px 16.4px 0 rgba(209, 209, 239, 0.19);
-                  z-index: 231;
-                "
-              >
-                <div
-                  style="
-                    width: 160px;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    background-position: center;
-                    background-image: url(./assets/images/aa1a68b3eb988e7276c4920d2b8c5b9645c1bb26.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 232;
-                  "
-                ></div>
-                <div
-                  style="
-                    display: flex;
-                    padding: 8px 16px 8px 16px;
-                    flex-direction: column;
-                    gap: 8px;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-grow: 1;
-                    flex-shrink: 0;
-                    flex-basis: 0;
-                    flex-wrap: nowrap;
-                    position: relative;
-                    z-index: 233;
-                  "
-                >
-                  <div
-                    style="
-                      display: flex;
-                      width: 79px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 234;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 235;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/78c2744e-8408-4f07-9f7f-4aac419ffa54.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 236;
-                        "
-                      ></div>
+            </article>
+            <article class="w-100 horizontal-card-image my-4 bg-white">
+              <div class="d-flex row">
+                <div class="d-flex col-4 flex-column position-relative">
+                  <img
+                    class="h-100"
+                    src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                    alt=""
+                  />
+                </div>
+
+                <div class="blog-body gap-4 col-7">
+                  <div class="badge-container">
+                    <div class="badge p-0">
+                      <span id="tag-icon"></span>
+                      <span> Categ </span>
                     </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 43px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 237;
-                      "
-                      >Family</span
-                    >
                   </div>
-                  <span
-                    style="
-                      display: flex;
-                      width: 246px;
-                      height: 64px;
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      font-family: Domine, var(--default-font-family);
-                      font-size: 24px;
-                      font-weight: 700;
-                      opacity: 0.9;
-                      line-height: 32px;
-                      color: #051d2e;
-                      position: relative;
-                      text-align: left;
-                      z-index: 238;
-                    "
-                    >The Power of Faith in Daily Life</span
-                  >
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: wrap;
-                      position: relative;
-                      z-index: 239;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 158px;
-                        gap: 8px;
-                        align-items: center;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 240;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 24px;
-                          height: 24px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/130b0a84-29a4-4afd-be2a-721e038404cb.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          overflow: hidden;
-                          z-index: 241;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          width: 126px;
-                          flex-shrink: 0;
-                          font-family: Mulish, var(--default-font-family);
-                          font-size: 16px;
-                          font-weight: 400;
-                          line-height: 20px;
-                          position: relative;
-                          text-align: left;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                          z-index: 242;
-                        "
-                      >
-                        <span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #a6a6b0;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >From: </span
-                        ><span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #051d2e;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >Jane Smith</span
-                        >
-                      </div>
+
+                  <h4 class="card-title mb-0">
+                    The Power of Faith in Daily Life
+                  </h4>
+
+                  <!-- By -->
+                  <div class="badge-container p-0 w-50">
+                    <div class="badge p-0">
+                      <span id="user-icon"></span>
+                      <span>By</span>
+                      <p class="text-black">G. Lightbearer</p>
                     </div>
                   </div>
                 </div>
               </div>
-              <div
-                style="
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  align-self: stretch;
-                  flex-shrink: 0;
-                  flex-wrap: nowrap;
-                  background-color: #ffffff;
-                  position: relative;
-                  box-shadow: 4px 4px 16.4px 0 rgba(209, 209, 239, 0.19);
-                  z-index: 243;
-                "
-              >
-                <div
-                  style="
-                    width: 160px;
-                    align-self: stretch;
-                    flex-shrink: 0;
-                    background-position: center;
-                    background-image: url(./assets/images/aa1a68b3eb988e7276c4920d2b8c5b9645c1bb26.png);
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 244;
-                  "
-                ></div>
-                <div
-                  style="
-                    display: flex;
-                    padding: 8px 16px 8px 16px;
-                    flex-direction: column;
-                    gap: 8px;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-grow: 1;
-                    flex-shrink: 0;
-                    flex-basis: 0;
-                    flex-wrap: nowrap;
-                    position: relative;
-                    z-index: 245;
-                  "
-                >
-                  <div
-                    style="
-                      display: flex;
-                      width: 79px;
-                      padding: 4px 8px 4px 8px;
-                      gap: 4px;
-                      justify-content: center;
-                      align-items: center;
-                      flex-shrink: 0;
-                      flex-wrap: nowrap;
-                      opacity: 0.8;
-                      border: 1.5px solid rgba(0, 0, 0, 0);
-                      position: relative;
-                      z-index: 246;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 16px;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                        flex-shrink: 0;
-                        flex-wrap: nowrap;
-                        background-color: rgba(255, 255, 255, 0);
-                        position: relative;
-                        overflow: hidden;
-                        z-index: 247;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 16px;
-                          height: 16px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/3c261f45-9419-409d-8299-1b14343e86be.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          z-index: 248;
-                        "
-                      ></div>
-                    </div>
-                    <span
-                      style="
-                        display: flex;
-                        width: 43px;
-                        height: 18px;
-                        justify-content: center;
-                        align-items: flex-start;
-                        flex-shrink: 0;
-                        flex-basis: auto;
-                        font-family: Mulish, var(--default-font-family);
-                        font-size: 14px;
-                        font-weight: 500;
-                        line-height: 17.57px;
-                        color: rgba(220, 38, 38, 0.9);
-                        position: relative;
-                        text-align: center;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        z-index: 249;
-                      "
-                      >Family</span
-                    >
-                  </div>
-                  <span
-                    style="
-                      display: flex;
-                      width: 246px;
-                      height: 64px;
-                      justify-content: flex-start;
-                      align-items: flex-start;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      font-family: Domine, var(--default-font-family);
-                      font-size: 24px;
-                      font-weight: 700;
-                      opacity: 0.9;
-                      line-height: 32px;
-                      color: #051d2e;
-                      position: relative;
-                      text-align: left;
-                      z-index: 250;
-                    "
-                    >The Power of Faith in Daily Life</span
-                  >
-                  <div
-                    style="
-                      display: flex;
-                      justify-content: space-between;
-                      align-items: center;
-                      align-self: stretch;
-                      flex-shrink: 0;
-                      flex-wrap: wrap;
-                      position: relative;
-                      z-index: 251;
-                    "
-                  >
-                    <div
-                      style="
-                        display: flex;
-                        width: 158px;
-                        gap: 8px;
-                        align-items: center;
-                        flex-wrap: nowrap;
-                        position: relative;
-                        z-index: 252;
-                      "
-                    >
-                      <div
-                        style="
-                          width: 24px;
-                          height: 24px;
-                          flex-shrink: 0;
-                          background-position: center;
-                          background-image: url(./assets/images/19df9568-3a8a-492a-b4b9-49d09d8d07ae.png);
-                          background-size: cover;
-                          background-repeat: no-repeat;
-                          position: relative;
-                          overflow: hidden;
-                          z-index: 253;
-                        "
-                      ></div>
-                      <div
-                        style="
-                          width: 126px;
-                          flex-shrink: 0;
-                          font-family: Mulish, var(--default-font-family);
-                          font-size: 16px;
-                          font-weight: 400;
-                          line-height: 20px;
-                          position: relative;
-                          text-align: left;
-                          overflow: hidden;
-                          text-overflow: ellipsis;
-                          white-space: nowrap;
-                          z-index: 254;
-                        "
-                      >
-                        <span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #a6a6b0;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >From: </span
-                        ><span
-                          style="
-                            font-family: Mulish, var(--default-font-family);
-                            font-size: 16px;
-                            font-weight: 400;
-                            line-height: 20.08px;
-                            color: #051d2e;
-                            position: relative;
-                            text-align: left;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                          "
-                          >Jane Smith</span
-                        >
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            </article>
           </aside>
         </div>
+        <button id="top-button" class="top-button position-fixed">
+          <a href="#top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-chevron-up"
+              viewBox="0 0 16 16"
+              stroke="2"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"
+              />
+            </svg>
+          </a>
+        </button>
       </main>
 
-      <footer class="footer">
-        <div
-          style="
-            width: 2038px;
-            height: 382px;
-            flex-shrink: 0;
-            background-position: center;
-            background-image: url(./assets/images/45257279-468e-42ef-8109-f32e7cc9143b.png);
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: absolute;
-            top: -2px;
-            left: -339px;
-            z-index: 256;
-          "
-        ></div>
+      <footer class="footer position-relative container-fluid">
+        <div class="footer-background"></div>
         <div class="footer-content">
-          <!-- Brand Section -->
-          <div class="footer-brand">
-            <div class="brand-logo">
-              <img
-                src="/assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
-                alt="United Christ Logo"
-                class="logo"
-              />
+          <div class="brand-container d-flex">
+            <img
+              src="./assets/images/3809df5a112b509e08a9fef41bff3e9cdad3661e.png"
+              alt="United Christ Logo"
+              class="brand-logo m-0"
+            />
+            <span class="brand-name text-white">United Christ</span>
+          </div>
+          <div class="footer-column">
+            <div class="footer-heading">
+              <span id="cross-icon"></span>
 
-              <span class="brand-name">UnitedInChrist</span>
+              <div>About Us</div>
+            </div>
+            <div class="footer-links">
+              <p class="footer-link">Our Mission</p>
+              <p class="footer-link">Our Team</p>
+              <p class="footer-link">Contact Us</p>
             </div>
           </div>
+          <div class="footer-column">
+            <div class="footer-heading">
+              <span id="cross-icon"></span>
 
-          <!-- About Us Section -->
-          <div class="footer-section">
-            <div class="section-header align-item-start">
-              <div class="header row align-item-start">
-                <img
-                  src="/assets/images/ae9489fb-ac1c-4255-bc1c-f0b430122a7b.png"
-                  alt=""
-                />
-              </div>
-              <h3>About Us</h3>
+              <div class="">Get Involved</div>
             </div>
-            <ul class="footer-links">
-              <li><a href="#">Our Mission</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
+            <div class="footer-links">
+              <p class="footer-link">Volunteer</p>
+              <p class="footer-link">Events</p>
+              <p class="footer-link">Donate</p>
+            </div>
           </div>
-
-          <!-- Get Involved Section -->
-          <div class="footer-section">
-            <div class="section-header">
-              <div class="header row align-item-start">
-                <img
-                  src="/assets/images/ae9489fb-ac1c-4255-bc1c-f0b430122a7b.png"
-                  alt=""
-                />
-              </div>
-              <h3>Get Involved</h3>
+          <div class="newsletter-section">
+            <div class="newsletter-header">
+              <span id="cross-icon"></span>
+              <div>United in Christ Newsletter</div>
             </div>
-            <ul class="footer-links">
-              <li><a href="#">Volunteer</a></li>
-              <li><a href="#">Events</a></li>
-              <li><a href="#">Donate</a></li>
-            </ul>
-          </div>
-
-          <!-- Newsletter Section -->
-          <div class="footer-newsletter">
-            <div class="section-header">
-              <div class="header row align-item-start">
-                <img
-                  src="/assets/images/ae9489fb-ac1c-4255-bc1c-f0b430122a7b.png"
-                  alt=""
+            <div class="newsletter-content">
+              <p class="newsletter-description">
+                Join our newsletter for updates and spiritual insights.
+              </p>
+              <form class="newsletter-form">
+                <label for="emailInput" class="visually-hidden"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  id="emailInput"
+                  class="email-input"
+                  placeholder="Email address"
+                  aria-label="Email address"
                 />
-              </div>
-              <h3>United in Christ Newsletter</h3>
+                <button type="submit" class="subscribe-button">
+                  Subscribe
+                </button>
+              </form>
             </div>
-            <p class="newsletter-text">
-              Join our newsletter for updates and spiritual insights.
-            </p>
-            <form class="newsletter-form">
-              <input
-                type="email"
-                placeholder="Email address"
-                class="form-control"
-              />
-              <button type="submit" class="subscribe-btn">Subscribe</button>
-            </form>
           </div>
         </div>
       </footer>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchIcon = document.getElementById("search-icon");
+        const searchInput = document.getElementById("search-input");
+
+        // Show search input
+        searchIcon.addEventListener("click", function () {
+          console.log("clicked");
+          searchInput.classList.toggle("input-visible");
+          if (searchInput.classList.contains("input-visible")) {
+            searchInput.focus();
+          }
+        });
+      });
+
+      const topButton = document.getElementById("top-button");
+
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          // Show button when scrolled down
+          topButton.classList.add("show");
+          topButton.classList.remove("hide");
+        } else {
+          // Hide button when at the top
+          topButton.classList.add("hide");
+          topButton.classList.remove("show");
+        }
+      });
+
+      // Smooth scroll to top
+      topButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
