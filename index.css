@@ -1104,7 +1104,8 @@ main {
 .testimony-container::-webkit-scrollbar {
   width: 100%;
 }
-.testimonial-card {
+.testimonial-card,
+.dashboard-testimony-card {
   background: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
   display: flex;
@@ -1115,7 +1116,19 @@ main {
   margin: 3% 0;
   padding: 24px;
   border: 0;
-  transition: 0.3s;
+  transition: 0.8s;
+}
+
+.dashboard-testimony-card .edit-delete-buttons {
+  opacity: 0;
+  /* display: none; */
+  height: 0%;
+  transition: all 0.8s ease-in-out;
+}
+
+.dashboard-testimony-card:hover .edit-delete-buttons {
+  opacity: 1;
+  display: inline;
 }
 .testimonial-card:hover {
   transform: scale(1.01);
