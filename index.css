@@ -1147,7 +1147,7 @@ main {
   width: 16px;
   height: 16px;
   aspect-ratio: 1.1;
-  background-image: url(/assets/images/user.png);
+  background-image: url(/assets/images/user.svg);
   background-position: center;
   background-size: cover;
 }
@@ -1779,10 +1779,10 @@ main {
 /* user dashboard */
 
 .sidebar {
-  height: 100vh;
+  height: 90dvh;
   position: sticky;
   /* max-width: 292px; */
-  top: 0;
+  top: 10%;
   left: 0%;
   background-color: #343a40;
   color: white;
@@ -1805,7 +1805,7 @@ main {
 
 /* dashboard main section */
 #dashboard-banner {
-  position: absolute;
+  position: fixed;
   width: 100%;
   top: 10%;
   right: 0;
@@ -1818,7 +1818,34 @@ main {
 }
 
 .dashboard-container {
-  margin-top: 230px;
+  margin-top: 200px;
+}
+
+.filter-container {
+  padding: 1em;
+  background-color: #eff6ff;
+}
+
+#plus-icon {
+  width: 16px;
+  height: 28px;
+  background-image: url("assets/images/plus.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+#tab-edit-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url("assets/images/tab-edit.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#startDate::placeholder {
+  font-size: 1rem;
+  color: #888;
 }
 
 /* tabs */
@@ -1841,10 +1868,6 @@ main {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-
-  padding: 0.4em;
-
-  border-radius: 9px;
 }
 
 .indicator {
@@ -1857,7 +1880,6 @@ main {
   left: 1%;
   z-index: 9;
   border: 0.5px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
   border-radius: 7px;
   transition: all 0.2s ease-out;
 }
@@ -1869,24 +1891,27 @@ main {
   z-index: 99;
   outline: none;
   opacity: 0;
+  padding: 12px 8px;
 }
 
 .tab_label {
-  height: 28px;
-  padding: 1em 1.5em;
+  padding: 12px 8px;
   position: relative;
   z-index: 99;
+  font-size: 1.8rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   border: 0;
-
-  font-size: 1.6rem;
   opacity: 0.6;
 
   cursor: pointer;
+}
+
+.tab--1:checked ~ .tab_label {
+  color: var(--secondary-red);
 }
 
 .tab--1:checked ~ .indicator {
@@ -1894,5 +1919,6 @@ main {
 }
 
 .tab--2:checked ~ .indicator {
-  left: calc(100px + 1%);
+  width: 130px;
+  left: calc(100px + 2%);
 }

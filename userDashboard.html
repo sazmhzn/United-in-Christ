@@ -181,71 +181,162 @@
 
       <!-- Main Content -->
       <div id="dashboard-banner"></div>
-      <main class="col-10 col-md-10 bg-transparent position-relative">
+      <main class="pb-0 col-9 col-md-9 mx-auto bg-transparent position-relative">
         <!-- Main Content -->
         <div class="container">
-          <div class="px-4 dashboard-container rounded bg-white">
-            <div class="tab-container mb-4">
+          <div class="p-4 dashboard-container rounded bg-white">
+            <div class="tab-container">
               <input type="radio" name="tab" id="tab1" class="tab tab--1" />
-              <label class="tab_label" for="tab1">Profile</label>
+              <label class="tab_label d-flex gap-2" for="tab1"> <span id="tab-edit-icon" class=""></span> My Blogs</label>
 
               <input type="radio" name="tab" id="tab2" class="tab tab--2" />
-              <label class="tab_label" for="tab2">Settings</label>
+              <label class="tab_label d-flex gap-2" for="tab2"> <span id="user-icon"></span> Saved Blogs</label>
 
               <div class="indicator"></div>
             </div>
 
             <div
-              class="d-flex align-item-center justify-content-between px-2 mt-4"
+              class="d-flex mb-4 align-item-center justify-content-between px-2 mt-4"
             >
-              <h1 class="prayer-title">My Blogs</h1>
+              <h1 class="fw-bold prayer-title">My Blogs</h2>
 
-              <button type="button" class="py-2 h-100">Create</button>
+              <button type="button" class="py-3 d-flex gap-2 align-item-center h-100"> <span id="plus-icon"></span> Create</button>
             </div>
 
-            <div class="px-3 mb-3 d-flex">
-              <div class="dropdown open">
-                <button
-                  class="border-danger dropdown-toggle h-100 rounded bg-white text-secondary"
-                  type="button"
-                  id="triggerId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Status
-                </button>
-                <div class="dropdown-menu" aria-labelledby="triggerId">
-                  <button class="dropdown-item" href="#">Active</button>
-                  <button class="dropdown-item disabled" href="#">
-                    Disabled
+            <div class="px-3 mb-3 d-flex gap-4 justify-content-between filter-container">
+              <div class=" d-flex gap-4">
+
+                <div class="dropdown open">
+                  <button
+                    class="border py-2 px-4 dropdown-toggle rounded bg-white text-secondary"
+                    type="button"
+                    id="triggerId"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Status
                   </button>
+                  <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <button class="dropdown-item" href="#">Active</button>
+                    <button class="dropdown-item disabled" href="#">
+                      Disabled
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <div class="dropdown open">
-                <button
-                  class="border-danger dropdown-toggle h-100 rounded bg-white text-secondary"
-                  type="button"
-                  id="triggerId"
-                  data-bs-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Status
-                </button>
-                <div class="dropdown-menu" aria-labelledby="triggerId">
-                  <button class="dropdown-item" href="#">Active</button>
-                  <button class="dropdown-item disabled" href="#">
-                    Disabled
+  
+                <div class="dropdown open">
+                  <button
+                    class="border  py-2 px-4  dropdown-toggle rounded bg-white text-secondary"
+                    type="button"
+                    id="triggerId"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Categories
                   </button>
+                  <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <button class="dropdown-item" href="#">Active</button>
+                    <button class="dropdown-item disabled" href="#">
+                      Disabled
+                    </button>
+                  </div>
                 </div>
+                  <input
+                    id="startDate"
+                    class=" py-2 px-4 h-100 border rounded text-secondary"
+                    type="date"
+                  />
+                
               </div>
+
+              <button
+                class="text-muted bg-white border rounded"
+              >
+                Clear
+           
+              </button>
+              
             </div>
 
             <!-- Example Content -->
-            <div class="row w-100 mt-4 d-flex flex-wrap gap-4">
+            <div class="row px-3 mt-4 d-flex justify-content-start align-item-start flex-wrap gap-4">
+          
               <!-- Card 1 -->
-              <article class="blog-card col-md-4 p-0 mb-0 item mx-auto col-12">
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Partner </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="divider-right opacity-25 w-100"></div>
+
+                    <div class="d-flex flex-column mb-0">
+                      <h4 class="card-title m-0">
+                        The Power of Faith in Daily Life
+                      </h4>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right opacity-25 w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-25 mx-auto">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span class="text-primary">Edit</span>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container mx-auto">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Delete</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
                 <div class="d-flex flex-column">
                   <div class="d-flex flex-column position-relative">
                     <img
@@ -317,7 +408,7 @@
                 </div>
               </article>
               <!-- Card 1 -->
-              <article class="blog-card col-md-4 p-0 mb-0 item mx-auto col-12">
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
                 <div class="d-flex flex-column">
                   <div class="d-flex flex-column position-relative">
                     <img
@@ -389,7 +480,7 @@
                 </div>
               </article>
               <!-- Card 1 -->
-              <article class="blog-card col-md-4 p-0 mb-0 item mx-auto col-12">
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
                 <div class="d-flex flex-column">
                   <div class="d-flex flex-column position-relative">
                     <img
@@ -461,7 +552,7 @@
                 </div>
               </article>
               <!-- Card 1 -->
-              <article class="blog-card col-md-4 p-0 mb-0 item mx-auto col-12">
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
                 <div class="d-flex flex-column">
                   <div class="d-flex flex-column position-relative">
                     <img
@@ -532,6 +623,295 @@
                   </div>
                 </div>
               </article>
+              <!-- Card 1 -->
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Partner </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="divider-right opacity-25 w-100"></div>
+
+                    <div class="d-flex flex-column mb-0">
+                      <h4 class="card-title m-0">
+                        The Power of Faith in Daily Life
+                      </h4>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right opacity-25 w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-25 mx-auto">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span class="text-primary">Edit</span>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container mx-auto">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Delete</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Partner </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="divider-right opacity-25 w-100"></div>
+
+                    <div class="d-flex flex-column mb-0">
+                      <h4 class="card-title m-0">
+                        The Power of Faith in Daily Life
+                      </h4>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right opacity-25 w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-25 mx-auto">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span class="text-primary">Edit</span>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container mx-auto">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Delete</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <!-- Card 1 -->
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Partner </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="divider-right opacity-25 w-100"></div>
+
+                    <div class="d-flex flex-column mb-0">
+                      <h4 class="card-title m-0">
+                        The Power of Faith in Daily Life
+                      </h4>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right opacity-25 w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-25 mx-auto">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span class="text-primary">Edit</span>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container mx-auto">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Delete</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+              <!-- Card 1 -->
+              <article class="blog-card col-md-4 p-0 mb-0 item col-12">
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-column position-relative">
+                    <img
+                      class="card-image"
+                      src="https://preview.colorlib.com/theme/crose/img/bg-img/7.jpg.webp"
+                      alt=""
+                    />
+
+                    <div class="date-badge">
+                      <h3>04</h3>
+                      <p>June</p>
+                      <p>2024</p>
+                    </div>
+                  </div>
+
+                  <div class="blog-body">
+                    <div
+                      class="d-flex justify-content-between align-item-center"
+                    >
+                      <div class="d-flex align-item-center position-relative">
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Categ </span>
+                          </div>
+                        </div>
+
+                        <div class="badge-container">
+                          <div class="badge">
+                            <span id="tag-icon"></span>
+                            <span> Partner </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="divider-right opacity-25 w-100"></div>
+
+                    <div class="d-flex flex-column mb-0">
+                      <h4 class="card-title m-0">
+                        The Power of Faith in Daily Life
+                      </h4>
+                    </div>
+
+                    <div class="blog-footer w-100 d-flex flex-column gap-4">
+                      <div class="divider-right opacity-25 w-100"></div>
+
+                      <div
+                        class="row d-flex flex-nowrap align-item-center justify-content-between"
+                      >
+                        <!-- By -->
+                        <div class="badge-container w-25 mx-auto">
+                          <div class="badge">
+                            <span id="user-icon"></span>
+                            <span class="text-primary">Edit</span>
+                          </div>
+                        </div>
+
+                        <!-- Fav -->
+                        <div class="badge-container mx-auto">
+                          <div class="badge">
+                            <span id="fav-icon"></span>
+
+                            <span>Delete</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+         
             </div>
           </div>
         </div>
