@@ -185,16 +185,40 @@
         <!-- Main Content -->
         <div class="container">
           <div class="p-4 dashboard-container rounded bg-white">
-            <div class="tab-container border-bottom">
-              <input type="radio" name="tab" id="tab1" class="tab tab--1" />
-              <label class="tab_label d-flex gap-2" for="tab1"> <span id="tab-edit-icon" class=""></span> My Prayers</label>
-
-              <input type="radio" name="tab" id="tab2" class="tab tab--2" />
-              <label class="tab_label d-flex gap-2" for="tab2"> <span id="user-icon"></span> Saved Prayers</label>
-
-              <div class="indicator"></div>
-            </div>
-
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="prayers-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#prayers"
+                  type="button"
+                  role="tab"
+                  aria-controls="prayers"
+                  aria-selected="true"
+                >
+                <p class="tab_label m-0 p-0 d-flex gap-2" for="tab1"> <span id="tab-edit-icon" class=""></span> My Prayers</p>
+  
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="saved-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#saved"
+                  type="button"
+                  role="tab"
+                  aria-controls="saved"
+                  aria-selected="false"
+                >
+                <p class="tab_label m-0 p-0 d-flex gap-2" for="tab2"> <span id="user-icon"></span> Saved Prayers</p>
+  
+                </button>
+              </li>
+             
+            </ul>
             <div class="d-flex mb-4 align-item-center justify-content-between px-2 mt-4"
             >
               <h1 class="fw-bold prayer-title">Prayers</h2>
@@ -258,9 +282,16 @@
               </button>
               
             </div>
-
-            <!-- Example Content -->
-            <div class="row px-0 mt-4 d-flex justify-content-start align-item-start flex-wrap gap-0">
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <div
+                class="tab-pane active"
+                id="prayers"
+                role="tabpanel"
+                aria-labelledby="prayer-tab"
+              >
+                  <!-- Example Content -->
+            <div class=" row px-0 mt-4 d-flex justify-content-start align-item-start flex-wrap gap-0">
 
               <div class="col-md-6 col-lg-4">
                 <article class="card dashboard-testimony-card shadow-sm p-2 rounded" tabindex="0">
@@ -737,6 +768,21 @@
               </div>
               
             </div>
+              </div>
+              <div
+                class="tab-pane"
+                id="saved"
+                role="tabpanel"
+                aria-labelledby="saved-tab"
+              >
+                 Saved 
+              </div>
+           
+            </div>
+
+        
+
+           
           </div>
         </div>
       </main>
