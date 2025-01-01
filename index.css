@@ -944,7 +944,7 @@ main {
   left: -4%;
   top: -7%;
 }
-#cross-icon {
+.cross-icon {
   width: 20px;
   height: 31px;
   background-image: url(https://cdn.builder.io/api/v1/image/assets/TEMP/3778b12dfb8b751ee45a6d4fa3d862b7126562161d44660c1da140b12a0e1200?placeholderIfAbsent=true&apiKey=abebc751c1754b4eac46155cfb49606a);
@@ -1934,4 +1934,11 @@ main {
 .tab--2:checked ~ .indicator {
   width: 130px;
   left: calc(100px + 2%);
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  /* display: none; */
+  padding: 1em;
+  border: none;
+  border-radius: 8px 0 0 8px;
 }
